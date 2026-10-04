@@ -1,0 +1,19 @@
+# Dependencies and test output
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Replica: reference screenshots of the original are research only.
+# They are never shipped or committed (see .claude/skills/replica-recon).
+replica/screens/
