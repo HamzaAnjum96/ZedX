@@ -5,10 +5,12 @@
 - **Go-ahead from the site owner:** yes. The redesign brief ended "Go".
 
 **Host:** GitHub Pages. GitHub Actions publishes `docs/` from the default
-branch (`ccr-ab1de275-d2wjpb`) using `.github/workflows/pages.yml`. There is
-no build step: the files in `docs/` are the site.
+branch (`main`) using `.github/workflows/pages.yml`. There is no build step:
+the files in `docs/` are the site.
 
-**Live:** https://hamzaanjum96.github.io/ZedX/ (returns 200).
+**Live:** https://hamzaanjum96.github.io/ZedX/ (returns 200). The redesign
+was built on `ccr-ab1de275-d2wjpb` and goes live when that branch is merged
+into `main`. It is a fast-forward of `main`'s current head, 237e2ae.
 
 ## Preflight (all must pass)
 
