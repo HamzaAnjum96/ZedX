@@ -82,7 +82,7 @@ Confidence is **high** for every published row: each is stated on the official p
 | Power BI integration | G-Cloud 14 listing only | as above |
 | CSV import, Excel/PDF export platform-wide | G-Cloud 14 listing only | narrowed: Excel export is stated for Project Portfolios only |
 | Two-factor authentication, Cyber Essentials, free trial, support hours | G-Cloud 14 listing only | not confirmed current |
-| Prices (from £150 per 10 users per month, May 2024) | G-Cloud 14 pricing document | may be out of date; the site says Swiftpro quotes |
+| Prices (from £150 per 10 users per month, May 2024) | G-Cloud 14 pricing document | may be out of date; the site asks visitors to ask Swiftpro for pricing |
 | Editions for government, education and business | HOME, Sectors page | true but not needed for these two apps; may return in a later edit |
 | Any customer name, count, quote, rating or outcome | none | none are public; nothing invented |
 | Competitor comparisons | earlier research (`fixes.md`) | not supported by official sources; removed in the redesign |
