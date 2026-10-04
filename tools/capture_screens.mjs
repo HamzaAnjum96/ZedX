@@ -14,6 +14,7 @@
 // Each screen is captured at 1600 x 1000 CSS px (device scale 2). Crops are
 // given in those CSS px and always cut one contiguous area of the real screen.
 // Every crop is written at 1x and 2x its CSS width: <screen>-<crop>-<width>.webp.
+// The manifest (crop areas, file sizes, demo views) goes to tools/screens.json, outside the published folder.
 
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -190,7 +191,7 @@ async function encode() {
     }
     manifest.push({ name: shot.name, app: shot.app, view: shot.view, demo: `${APP}${shot.hash}`, crops });
   }
-  await writeFile(`${OUT}/screens.json`, `${JSON.stringify({ source: DEMO, captured: new Date().toISOString().slice(0, 10), view: VIEW, screens: manifest }, null, 2)}\n`);
+  await writeFile('tools/screens.json', `${JSON.stringify({ source: DEMO, captured: new Date().toISOString().slice(0, 10), view: VIEW, screens: manifest }, null, 2)}\n`);
   await browser.close();
 }
 

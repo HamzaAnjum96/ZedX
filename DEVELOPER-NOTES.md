@@ -52,7 +52,7 @@ data, at 1600×1000 CSS px and device scale 2.
 The crops are defined in `tools/capture_screens.mjs`. Each one cuts a single
 contiguous area. Every crop is written at 1x and 2x as
 `docs/assets/img/screens/<screen>-<crop>-<width>.webp`, and the manifest is
-`screens.json`.
+`tools/screens.json`, which is kept out of the published folder.
 
 Each screen was identified from the visible interface (app logo, breadcrumb,
 title, columns), not from file names.
