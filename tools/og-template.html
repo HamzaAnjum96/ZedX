@@ -8,51 +8,28 @@
   <link rel="stylesheet" href="assets/css/site.css">
   <style>
     html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
-    .og { position: relative; width: 1200px; height: 630px; box-sizing: border-box; padding: 64px 64px 56px; color: var(--c-on-navy);
-      background:
-        radial-gradient(700px 420px at 100% 0%, color-mix(in srgb, var(--c-accent-bright) 30%, transparent), transparent 70%),
-        radial-gradient(600px 380px at 0% 100%, color-mix(in srgb, var(--c-ws) 20%, transparent), transparent 70%),
-        var(--c-navy); }
-    .og::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(to right, color-mix(in srgb, var(--c-on-navy) 6%, transparent) 1px, transparent 1px); background-size: 120px 100%; }
-    .og > * { position: relative; }
-    .og .brand { color: var(--c-on-navy); font-size: 26px; }
-    .og .brand-glyph { width: 40px; height: 40px; }
-    .og .brand-name span { color: var(--c-on-navy-muted); }
-    .og h1 { margin-top: 48px; width: 560px; font-size: 60px; line-height: 64px; color: var(--c-on-navy); }
-    .og p { margin-top: 22px; width: 540px; font-family: var(--font-display); font-size: 27px; line-height: 35px; font-weight: 600; }
-    .og .hl-ws { color: var(--c-ws); }
-    .og .hl-as { color: var(--c-as); }
-    .og .art { position: absolute; right: 56px; top: 92px; width: 520px; height: 440px; }
-    .og .art .screen { position: absolute; }
-    .og .art .screen-back { left: 0; top: 0; width: 430px; }
-    .og .art .screen-front { right: 0; bottom: 0; width: 360px; }
-    .og .url { position: absolute; left: 64px; bottom: 50px; font-size: 20px; color: var(--c-on-navy-muted); }
-    .mini-burn path.actual { stroke-dashoffset: 0; animation: none; }
-    .mini-burn circle { opacity: 1; animation: none; }
+    .og { position: relative; display: grid; grid-template-columns: 500px 1fr; gap: 48px; width: 1200px; height: 630px; padding: 64px 0 56px 64px; background: var(--c-navy); color: var(--c-on-navy); }
+    .og .eyebrow { font-size: 18px; line-height: 24px; margin-bottom: 28px; }
+    .og h1 { color: var(--c-white); font-size: 50px; line-height: 58px; max-width: none; }
+    .og .names { margin-top: 28px; font-size: 22px; line-height: 32px; color: var(--c-on-navy-muted); }
+    .og .names strong { color: var(--c-white); }
+    .og .note { position: absolute; left: 64px; bottom: 48px; font-family: var(--font-mono); font-size: 17px; color: var(--c-on-navy-muted); }
+    .og .shots { display: grid; gap: 22px; align-content: start; padding-top: 6px; }
+    .og .shot-frame { width: 640px; border-radius: 6px 0 0 6px; border-right: 0; border-color: var(--c-on-navy-rule); }
   </style>
 </head>
 <body>
   <div class="og">
-    <p class="brand"><svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true"><rect class="g-bg" width="32" height="32" rx="8"/><rect class="g-ws" x="6.5" y="7" width="5" height="13" rx="2.5"/><rect class="g-as" x="13.5" y="7" width="5" height="18" rx="2.5"/><rect class="g-zx" x="20.5" y="7" width="5" height="9" rx="2.5"/></svg><span class="brand-name">ZedX <span>Apps Platform</span></span></p>
-    <h1>Group WorkStreams &amp; Agile Sprints</h1>
-    <p><span class="hl-ws">Kanban</span> for the everyday. <span class="hl-as">Scrum</span> for delivery. One platform for both.</p>
-    <div class="art">
-      <div class="screen screen-back theme-ws">
-        <div class="screen-bar"><span class="dot"></span>Group WorkStreams <span class="sep">›</span> <b>Staff onboarding</b></div>
-        <div class="screen-body"><div class="mini-board">
-          <div class="mini-col"><h5>Requested</h5><div class="mini-card">Building pass<div class="meta"><span class="tag tag-plain">Estates</span><span class="who">JO</span></div></div><div class="mini-card">Payroll set-up<div class="meta"><span class="tag tag-plain">Finance</span><span class="who">RK</span></div></div></div>
-          <div class="mini-col"><h5>In progress</h5><div class="mini-card">Induction plan<div class="meta"><span class="tag tag-plain">HR</span><span class="who">AM</span></div></div></div>
-          <div class="mini-col"><h5>Done</h5><div class="mini-card">Contract signed<div class="meta"><span class="tag tag-plain">HR</span><span class="who">AM</span></div></div></div>
-        </div></div>
-      </div>
-      <div class="screen screen-front theme-as">
-        <div class="screen-bar"><span class="dot"></span>Agile Sprints <span class="sep">›</span> <b>Sprint 7</b></div>
-        <div class="screen-body"><div class="mini-sprint">
-          <div class="mini-panel"><h5>Burndown</h5><svg class="mini-burn" viewBox="0 0 200 110"><line x1="10" y1="15" x2="190" y2="15"/><line x1="10" y1="55" x2="190" y2="55"/><line x1="10" y1="95" x2="190" y2="95"/><path class="ideal" d="M10 15 L190 95"/><path class="actual" d="M10 15 L28 15 L46 27 L64 35 L82 35 L100 55 L118 60"/><circle cx="118" cy="60" r="4.5"/></svg></div>
-          <div class="mini-panel"><h5>Stand-up</h5><ul class="standup-lines"><li class="done"><svg class="icon"><use href="assets/img/icons.svg#i-circle-check"/></svg>3 done</li><li class="doing"><svg class="icon"><use href="assets/img/icons.svg#i-refresh-ccw"/></svg>3 in progress</li><li class="blocked"><svg class="icon"><use href="assets/img/icons.svg#i-circle-alert"/></svg>1 blocked</li></ul></div>
-        </div></div>
-      </div>
+    <div>
+      <p class="eyebrow">Independent promotional site</p>
+      <h1>Workflows for<br>everyday work.<br>Sprints for<br>planned delivery.</h1>
+      <p class="names"><strong>Group WorkStreams</strong> and <strong>Agile Sprints</strong>,<br>two ZedX apps</p>
     </div>
+    <div class="shots">
+      <div class="shot-frame"><img src="assets/img/screens/gw-board-catering-strip-1544.webp" width="772" height="274" alt=""></div>
+      <div class="shot-frame"><img src="assets/img/screens/as-sprint-strip-1544.webp" width="772" height="274" alt=""></div>
+    </div>
+    <p class="note">Real screens from the ZedX demo</p>
   </div>
 </body>
 </html>

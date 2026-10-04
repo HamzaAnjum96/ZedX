@@ -32,7 +32,7 @@ const dialog = document.querySelector('[data-viewer-dialog]');
 
 if (dialog && typeof dialog.showModal === 'function') {
   const title = dialog.querySelector('#viewer-title');
-  const img = dialog.querySelector('[data-viewer-img]');
+  let img = dialog.querySelector('[data-viewer-img]');
   const caption = dialog.querySelector('[data-viewer-caption]');
   const zoom = dialog.querySelector('[data-viewer-zoom]');
   const zoomLabel = zoom.querySelector('span');
@@ -50,12 +50,21 @@ if (dialog && typeof dialog.showModal === 'function') {
     const name = link.dataset.viewer;
     opener = link;
     title.textContent = link.dataset.title || 'Screenshot';
+    if (img.dataset.name !== name) {
+      // A fresh element for each screenshot, so the previous one never shows under a new title.
+      const fresh = img.cloneNode(false);
+      fresh.removeAttribute('src');
+      fresh.removeAttribute('srcset');
+      fresh.dataset.name = name;
+      fresh.sizes = '100vw';
+      fresh.srcset = `${SCREENS}${name}-full-1600.webp 1600w, ${SCREENS}${name}-full-2400.webp 2400w`;
+      fresh.src = `${SCREENS}${name}-full-1600.webp`;
+      fresh.width = 1600;
+      fresh.height = 1000;
+      img.replaceWith(fresh);
+      img = fresh;
+    }
     img.alt = link.dataset.alt || '';
-    img.src = `${SCREENS}${name}-full-1600.webp`;
-    img.srcset = `${SCREENS}${name}-full-1600.webp 1600w, ${SCREENS}${name}-full-2400.webp 2400w`;
-    img.sizes = '100vw';
-    img.width = 1600;
-    img.height = 1000;
     const text = link.closest('figcaption')?.querySelector('.shot-text');
     caption.textContent = `${text ? `${text.textContent.trim()} ` : ''}Full screen from the ZedX demo environment, with its sample data.`;
     // On small screens a whole screen is unreadable when fitted, so start at actual size.
@@ -90,8 +99,6 @@ if (dialog && typeof dialog.showModal === 'function') {
   });
 
   dialog.addEventListener('close', () => {
-    img.removeAttribute('src');
-    img.removeAttribute('srcset');
     if (opener && document.contains(opener)) opener.focus();
     opener = null;
   });

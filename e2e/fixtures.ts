@@ -1,6 +1,8 @@
-import { test as base, expect } from '@playwright/test';
+import { test as base, expect, type Page } from '@playwright/test';
 
 export const PAGES = ['index.html', 'workstreams.html', 'agile-sprints.html'];
+export const DEMO_FORM = 'https://www.zedxapps.com/index.html#formContact';
+export const LOGIN = 'https://zedx.net/';
 
 // Every test fails on console errors or warnings, uncaught exceptions,
 // 5xx responses and failed requests to the local site.
@@ -25,5 +27,21 @@ export const test = base.extend<{ guard: void; allowConsole: RegExp[] }>({
     expect(problems, 'console errors, page errors or failed requests').toEqual([]);
   }, { auto: true }],
 });
+
+// Bring every visible image into view so lazy images load, then return to the top.
+// Images in hidden figures (for example the secondary figure dropped on phones) are skipped.
+export async function scrollThrough(page: Page) {
+  const images = page.locator('main img:not([data-viewer-img])');
+  const count = await images.count();
+  for (let i = 0; i < count; i += 1) {
+    const img = images.nth(i);
+    if (!(await img.isVisible())) continue;
+    await img.scrollIntoViewIfNeeded();
+    await expect.poll(() => img.evaluate((el) => (el as HTMLImageElement).complete && (el as HTMLImageElement).naturalWidth > 0)).toBe(true);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
+}
+
+export const isNarrow = (page: Page) => (page.viewportSize()?.width ?? 1440) < 1100;
 
 export { expect };

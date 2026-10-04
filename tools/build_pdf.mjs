@@ -35,7 +35,7 @@ try {
 
   // 1. The brochure
   await page.goto(`${BASE}brochure.html`, { waitUntil: 'networkidle' });
-  await page.waitForFunction(() => document.documentElement.dataset.ready === 'true');
+  await page.waitForFunction(() => [...document.images].every((img) => img.complete && img.naturalWidth > 0));
   await page.evaluate(() => document.fonts.ready);
   await page.emulateMedia({ media: 'print' });
   await page.pdf({ path: 'docs/brochure.pdf', format: 'A4', printBackground: true, preferCSSPageSize: true, tagged: true, outline: true });
@@ -46,6 +46,7 @@ try {
   await page.setViewportSize({ width: 1200, height: 630 });
   await page.goto(`${BASE}404.html`);
   await page.setContent(await readFile('tools/og-template.html', 'utf8'), { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => [...document.images].every((img) => img.complete && img.naturalWidth > 0));
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: 'docs/assets/img/og-image.png' });
   console.log('wrote docs/assets/img/og-image.png');

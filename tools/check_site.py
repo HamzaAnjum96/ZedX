@@ -6,11 +6,14 @@ needs nothing installed.
 
 For every HTML page under the folder:
   - <html lang>, <title>, meta description and exactly one <h1>
-  - every local href/src points at a file that exists
+  - every local href/src/srcset points at a file that exists
   - every #anchor exists in the page it points at
   - every icon in the sprite that a page uses exists
+  - every screenshot viewer link has its full-size images
+  - every <img> has alt text and width/height (the viewer's empty <img> aside)
   - no element id is used twice on a page
-Plus: the files the pages promise (brochure.pdf, og-image.png) exist.
+  - the copy avoids filler and ownership claims the site must not make
+Plus: the files the pages promise (brochure.pdf, og-image.png, ...) exist.
 
 Exit 1 with a list of problems, 0 when clean.
 """
@@ -19,6 +22,11 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
+
+
+# Words and claims the brief rules out (case-insensitive, visible text only).
+BANNED = ['unlock', 'revolutionis', 'seamless', 'all-in-one', 'our software',
+          'our platform', 'we built', 'jira', 'trello', 'atlassian']
 
 
 class Page(HTMLParser):
@@ -32,6 +40,10 @@ class Page(HTMLParser):
         self.ids = []
         self.refs = []  # (attr, value)
         self.base = None
+        self.viewers = []
+        self.imgs = []  # attribute dicts
+        self.text = []
+        self.skip = 0
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -45,21 +57,39 @@ class Page(HTMLParser):
             self.h1 += 1
         elif tag == 'base':
             self.base = a.get('href')
+        if tag in ('script', 'style'):
+            self.skip += 1
         if 'id' in a:
             self.ids.append(a['id'])
         for attr in ('href', 'src'):
             if a.get(attr) and tag != 'base':
                 self.refs.append((tag, a[attr]))
+        if a.get('srcset'):
+            for candidate in a['srcset'].split(','):
+                url = candidate.strip().split(' ')[0]
+                if url:
+                    self.refs.append((tag + ' srcset', url))
+        if a.get('data-viewer'):
+            self.viewers.append(a['data-viewer'])
+        if tag == 'img':
+            self.imgs.append(a)
 
-    handle_startendtag = handle_starttag
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        if tag in ('script', 'style'):
+            self.skip -= 1
 
     def handle_endtag(self, tag):
         if tag == 'title':
             self.in_title = False
+        if tag in ('script', 'style'):
+            self.skip -= 1
 
     def handle_data(self, data):
         if self.in_title:
             self.title += data
+        if not self.skip:
+            self.text.append(data)
 
 
 def parse(path):
@@ -105,6 +135,22 @@ def main(argv):
             problems.append('%s: missing or short meta description' % where)
         if page.h1 != 1:
             problems.append('%s: expected one <h1>, found %d' % (where, page.h1))
+        for img in page.imgs:
+            if 'data-viewer-img' in img:
+                continue
+            if not (img.get('alt') or '').strip():
+                problems.append('%s: <img src=%s> has no alt text' % (where, img.get('src')))
+            if not img.get('width') or not img.get('height'):
+                problems.append('%s: <img src=%s> has no width/height' % (where, img.get('src')))
+        for name in page.viewers:
+            for size in (1600, 2400):
+                full = root / 'assets' / 'img' / 'screens' / ('%s-full-%d.webp' % (name, size))
+                if not full.exists():
+                    problems.append('%s: viewer image missing: %s' % (where, full.relative_to(root)))
+        text = ' '.join(page.text).lower()
+        for word in BANNED:
+            if word in text:
+                problems.append('%s: copy uses "%s"' % (where, word))
         dupes = {i for i in page.ids if page.ids.count(i) > 1}
         if dupes:
             problems.append('%s: duplicate ids %s' % (where, ', '.join(sorted(dupes))))
@@ -136,7 +182,8 @@ def main(argv):
                 if parts.fragment not in ids_in(target, cache):
                     problems.append('%s: #%s not found in %s' % (where, parts.fragment, target.relative_to(root)))
 
-    for promised in ('brochure.pdf', 'assets/img/og-image.png', 'assets/img/favicon.svg', '.nojekyll'):
+    for promised in ('brochure.pdf', 'assets/img/og-image.png', 'assets/img/favicon.svg',
+                     'assets/img/apple-touch-icon.png', '.nojekyll'):
         if not (root / promised).exists():
             problems.append('missing %s' % promised)
 
@@ -145,7 +192,7 @@ def main(argv):
         for line in problems:
             print('  - ' + line)
         return 1
-    print('site check passed: %d pages, links, anchors and icons all resolve' % len(pages))
+    print('site check passed: %d pages; links, anchors, icons, images and copy rules all clean' % len(pages))
     return 0
 
 
