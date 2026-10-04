@@ -12,7 +12,7 @@ re-read on 2026-10-04. Sources:
 | HOME | https://www.zedxapps.com/index.html (contact form `#formContact`) |
 | DEMO | what is visible in the public ZedX demo (demo.zedx.net), sample data. Used only to describe what a screenshot shows. |
 
-Pages: I = index, W = workstreams.html, A = agile-sprints.html, B = brochure PDF.
+Pages: I = index, W = workstreams.html, A = agile-sprints.html, B = brochure PDF, L = legal.html, P = privacy.html.
 
 Confidence is **high** for every published row: each is stated on the official page, or visible on the screen it describes. Nothing below high is published.
 
@@ -72,6 +72,19 @@ Confidence is **high** for every published row: each is stated on the official p
 | L8 | Four licence options: per app per user; per app in blocks of 10 or 100 users; per app unlimited users (own server or Azure); all current and future apps unlimited (own server or Azure) | PLAT |
 | L9 | Demo requests go through the contact form to Swiftpro, who "will get back to you"; nothing is booked automatically | HOME |
 | L10 | ZedX and the apps are products of Swiftpro Corporation Ltd, London | HOME footer |
+
+## Legal notice and privacy policy
+
+Checked on 2026-10-04.
+
+| ID | claim as published | source | used on |
+| --- | --- | --- | --- |
+| R1 | GitHub logs and stores the IP address of everyone who visits a GitHub Pages site, for security purposes | GitHub Docs, What is GitHub Pages, "Data collection": https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection | P |
+| R2 | The site sets no cookies, uses no web storage, has no forms and loads nothing from other websites | this site's own code; `e2e/content.spec.ts` checks it on every page | P, footer |
+| R3 | The demo form on zedxapps.com is covered by Swiftpro's Privacy Policy; Swiftpro's Terms of Use apply on its site | HOME footer links: https://www.zedxapps.com/PrivacyPolicy.html, https://www.zedxapps.com/WebsiteTerms.html | L P |
+| R4 | UK visitors can complain to the Information Commissioner's Office | https://ico.org.uk/make-a-complaint/ | P |
+| R5 | IBM Plex Sans is used under the SIL Open Font License; the icons are Lucide, under the ISC licence | `docs/assets/fonts/OFL-IBM-Plex-Sans.txt`, `docs/assets/img/LICENSE-lucide.txt` | L |
+| R6 | The site is published from the GitHub account HamzaAnjum96; issues on its repository are public | the repository settings | L P |
 
 ## Kept off the site
 

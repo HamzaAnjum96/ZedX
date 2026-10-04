@@ -1,6 +1,6 @@
 // Moving around the site: navigation, the phone menu, preserved anchors,
-// the vendor destinations, the brochure and the 404 page.
-import { test, expect, DEMO_FORM, LOGIN, isNarrow } from './fixtures';
+// the vendor destinations, the legal pages, the brochure and the 404 page.
+import { test, expect, DEMO_FORM, LOGIN, isNarrow, scrollThrough } from './fixtures';
 
 const mainNav = (page) => page.getByRole('navigation', { name: 'Main' });
 
@@ -100,6 +100,25 @@ for (const path of ['index.html', 'workstreams.html', 'agile-sprints.html']) {
   });
 }
 
+test('the footer reaches the legal notice and the privacy policy, which link to each other', async ({ page }) => {
+  await page.goto('index.html');
+  // Load the lazy screenshots first: leaving mid-load would abort them and fail the request guard.
+  await scrollThrough(page);
+  const footer = page.getByRole('navigation', { name: 'Site' });
+  await footer.getByRole('link', { name: 'Legal notice' }).click();
+  await expect(page).toHaveURL(/\/ZedX\/legal\.html$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Legal notice');
+  await expect(footer.getByRole('link', { name: 'Legal notice' })).toHaveAttribute('aria-current', 'page');
+
+  await page.locator('main').getByRole('link', { name: 'privacy policy', exact: true }).click();
+  await expect(page).toHaveURL(/\/ZedX\/privacy\.html$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Privacy policy');
+  await expect(footer.getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('aria-current', 'page');
+
+  await page.locator('main').getByRole('link', { name: 'legal notice', exact: true }).click();
+  await expect(page).toHaveURL(/\/ZedX\/legal\.html$/);
+});
+
 test('the brochure downloads as a four-page PDF', async ({ page, request }) => {
   await page.goto('index.html');
   const link = page.locator('.closing a[href="brochure.pdf"]');
@@ -122,5 +141,13 @@ test.describe('404', () => {
     await page.locator('.notfound-links').getByRole('link', { name: 'Agile Sprints', exact: true }).click();
     await expect(page).toHaveURL(/\/ZedX\/agile-sprints\.html$/);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Agile Sprints');
+  });
+
+  test('the 404 page links to the legal notice and the privacy policy', async ({ page }) => {
+    await page.goto('no/such/page.html');
+    const footer = page.getByRole('navigation', { name: 'Site' });
+    await footer.getByRole('link', { name: 'Privacy policy' }).click();
+    await expect(page).toHaveURL(/\/ZedX\/privacy\.html$/);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Privacy policy');
   });
 });

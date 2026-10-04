@@ -1,6 +1,7 @@
 // What a visitor must be able to see: the two products and their roles in
-// the hero, our promotional role, the comparison, the FAQ, and only real screens.
-import { test, expect, isNarrow } from './fixtures';
+// the hero, our promotional role, the comparison, the FAQ, only real screens,
+// and a legal notice and privacy policy that match what the site does.
+import { test, expect, isNarrow, PAGES, DOC_PAGES, WIP_NOTICE, scrollThrough } from './fixtures';
 
 test('the hero names both products, their roles and one main action', async ({ page }) => {
   await page.goto('index.html');
@@ -101,7 +102,7 @@ async function expectNoEyebrowsOrMono(page) {
 }
 
 // Mono eyebrow labels and kickers above headings read as templated design, so none are left.
-for (const path of ['index.html', 'workstreams.html', 'agile-sprints.html']) {
+for (const path of [...PAGES, ...DOC_PAGES]) {
   test(`${path} has no eyebrow labels or monospace type`, async ({ page }) => {
     await page.goto(path);
     await expectNoEyebrowsOrMono(page);
@@ -115,4 +116,53 @@ test.describe('404 page', () => {
     await page.goto('no/such/page.html');
     await expectNoEyebrowsOrMono(page);
   });
+
+  test('opens with the work-in-progress notice', async ({ page }) => {
+    await page.goto('no/such/page.html');
+    await expect(page.locator('.site-header > :first-child')).toHaveText(WIP_NOTICE);
+  });
 });
+
+test('printed pages keep the work-in-progress notice and drop the navigation', async ({ page }) => {
+  await page.goto('index.html');
+  await page.emulateMedia({ media: 'print' });
+  await expect(page.locator('.wip-notice')).toBeVisible();
+  await expect(page.locator('.header-inner')).toBeHidden();
+});
+
+test('the legal notice says who runs the site, that it is unfinished and who owns the names', async ({ page }) => {
+  await page.goto('legal.html');
+  const main = page.locator('main');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Legal notice');
+  await expect(main).toContainText('Swiftpro Corporation Ltd, the company that develops and owns ZedX, does not run this site');
+  await expect(main).toContainText('its content is not complete and may not be correct');
+  await expect(main).toContainText('Agile Sprints and Project Portfolios are products of Swiftpro Corporation Ltd');
+  await expect(main.getByRole('link', { name: 'Terms of Use' })).toHaveAttribute('href', 'https://www.zedxapps.com/WebsiteTerms.html');
+  await expect(main.getByRole('link', { name: 'github.com/HamzaAnjum96/ZedX/issues' })).toHaveAttribute('href', 'https://github.com/HamzaAnjum96/ZedX/issues');
+});
+
+test('the privacy policy names what GitHub logs and where demo requests go', async ({ page }) => {
+  await page.goto('privacy.html');
+  const main = page.locator('main');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Privacy policy');
+  await expect(main).toContainText('It sets no cookies, runs no analytics or tracking code and has no forms');
+  await expect(main).toContainText('GitHub logs and stores the IP address of everyone who visits');
+  await expect(main.getByRole('link', { name: 'GitHub General Privacy Statement' })).toHaveAttribute('href', /^https:\/\/docs\.github\.com\//);
+  await expect(main.getByRole('link', { name: 'Swiftpro’s Privacy Policy' })).toHaveAttribute('href', 'https://www.zedxapps.com/PrivacyPolicy.html');
+});
+
+// The privacy policy promises no cookies, storage, forms or calls to other services. Hold every page to it.
+for (const path of [...PAGES, ...DOC_PAGES]) {
+  test(`${path} keeps the privacy policy's promises`, async ({ page, context }) => {
+    const external: string[] = [];
+    page.on('request', (req) => {
+      if (/^https?:/.test(req.url()) && !req.url().startsWith('http://localhost')) external.push(req.url());
+    });
+    await page.goto(path);
+    await scrollThrough(page);
+    expect(external, 'requests to other sites').toEqual([]);
+    expect(await context.cookies(), 'cookies').toEqual([]);
+    expect(await page.evaluate(() => localStorage.length + sessionStorage.length), 'web storage').toBe(0);
+    await expect(page.locator('form')).toHaveCount(0);
+  });
+}

@@ -309,6 +309,23 @@ a:hover {
   }
 }
 
+/* ---------- Work-in-progress notice (top of every page) ---------- */
+.wip-notice {
+  background: var(--c-tint);
+  color: var(--c-ink);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.wip-notice p {
+  padding-block: 10px;
+  font-size: var(--fs-small);
+  line-height: 22px;
+}
+
+.wip-notice strong {
+  color: var(--c-navy);
+}
+
 /* ---------- Header ---------- */
 .site-header {
   background: var(--c-navy);
@@ -1277,6 +1294,44 @@ a:hover {
   max-width: 16ch;
 }
 
+/* ---------- Legal notice and privacy policy ---------- */
+.page-hero--doc {
+  padding-block: var(--space-7);
+}
+
+.page-hero--doc .hero-lead {
+  max-width: 40rem;
+}
+
+.doc-updated {
+  margin-top: var(--space-3);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--c-on-navy-muted);
+}
+
+.prose {
+  max-width: var(--layout-measure);
+}
+
+.prose h2 {
+  margin-top: var(--space-7);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  margin-top: var(--space-3);
+}
+
+.prose h2 + p {
+  margin-top: var(--space-2);
+}
+
 /* ---------- 404 ---------- */
 .notfound {
   background: var(--c-navy);
@@ -1484,12 +1539,16 @@ a:hover {
 }
 
 @media print {
-  .site-header,
+  .header-inner,
   .menu-toggle,
   .skip-link,
   .viewer,
   .shot-zoom {
     display: none !important;
+  }
+
+  .site-header {
+    border-bottom: 0;
   }
 
   .hero,

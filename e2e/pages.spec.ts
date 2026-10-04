@@ -1,9 +1,10 @@
 // Every page loads cleanly, is accessible, fits the screen, names its
-// promotional role, and every link, image and asset on it resolves.
+// promotional role, opens with the work-in-progress notice, and every link,
+// image and asset on it resolves.
 import AxeBuilder from '@axe-core/playwright';
-import { test, expect, PAGES, scrollThrough } from './fixtures';
+import { test, expect, PAGES, DOC_PAGES, WIP_NOTICE, scrollThrough } from './fixtures';
 
-for (const path of PAGES) {
+for (const path of [...PAGES, ...DOC_PAGES]) {
   test.describe(path, () => {
     test('loads with a title, a description, one h1 and British English', async ({ page }) => {
       await page.goto(path);
@@ -48,7 +49,7 @@ for (const path of PAGES) {
         return [...urls];
       });
       const local = refs.filter((url) => url.startsWith('http://localhost'));
-      expect(local.length).toBeGreaterThan(20);
+      expect(local.length).toBeGreaterThan(15);
 
       const bodies = new Map<string, string>();
       for (const url of local) {
@@ -62,27 +63,29 @@ for (const path of PAGES) {
       }
     });
 
-    test('screenshots load, keep their proportions and have alt text', async ({ page }) => {
-      await page.goto(path);
-      await scrollThrough(page);
-      const images = await page.$$eval('main img', (imgs) => imgs.map((img) => {
-        const el = img as HTMLImageElement;
-        const box = el.getBoundingClientRect();
-        return {
-          src: el.currentSrc,
-          alt: el.alt,
-          visible: box.width > 0,
-          natural: el.naturalWidth / el.naturalHeight,
-          shown: box.width / box.height,
-        };
-      }));
-      expect(images.length).toBeGreaterThan(1);
-      for (const img of images.filter((i) => i.visible)) {
-        expect(img.src, 'served from the real screen set').toContain('/assets/img/screens/');
-        expect(img.alt.length, `alt text for ${img.src}`).toBeGreaterThan(30);
-        expect(Math.abs(img.natural - img.shown), `not stretched: ${img.src}`).toBeLessThan(0.02);
-      }
-    });
+    if (PAGES.includes(path)) {
+      test('screenshots load, keep their proportions and have alt text', async ({ page }) => {
+        await page.goto(path);
+        await scrollThrough(page);
+        const images = await page.$$eval('main img', (imgs) => imgs.map((img) => {
+          const el = img as HTMLImageElement;
+          const box = el.getBoundingClientRect();
+          return {
+            src: el.currentSrc,
+            alt: el.alt,
+            visible: box.width > 0,
+            natural: el.naturalWidth / el.naturalHeight,
+            shown: box.width / box.height,
+          };
+        }));
+        expect(images.length).toBeGreaterThan(1);
+        for (const img of images.filter((i) => i.visible)) {
+          expect(img.src, 'served from the real screen set').toContain('/assets/img/screens/');
+          expect(img.alt.length, `alt text for ${img.src}`).toBeGreaterThan(30);
+          expect(Math.abs(img.natural - img.shown), `not stretched: ${img.src}`).toBeLessThan(0.02);
+        }
+      });
+    }
 
     test('says it is an independent promotional site, near the top and in the footer', async ({ page }) => {
       await page.goto(path);
@@ -91,11 +94,38 @@ for (const path of PAGES) {
       await expect(page.locator('.site-footer')).toContainText('Swiftpro Corporation Ltd does not run this site');
       await expect(page.locator('.site-footer')).toContainText('products of Swiftpro Corporation Ltd');
     });
+
+    test('opens with the work-in-progress notice, above the header', async ({ page }) => {
+      await page.goto(path);
+      const notice = page.locator('.wip-notice');
+      await expect(notice).toHaveCount(1);
+      await expect(notice).toBeVisible();
+      await expect(notice).toHaveText(WIP_NOTICE);
+      await expect(page.locator('.site-header > :first-child')).toHaveClass('wip-notice');
+      const box = await notice.boundingBox();
+      expect(box!.y).toBe(0);
+      expect(box!.width).toBe(await page.evaluate(() => document.documentElement.clientWidth));
+    });
+
+    test('links to the legal notice and the privacy policy from the footer', async ({ page }) => {
+      await page.goto(path);
+      const footer = page.getByRole('navigation', { name: 'Site' });
+      await expect(footer.getByRole('link', { name: 'Legal notice' })).toHaveAttribute('href', 'legal.html');
+      await expect(footer.getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', 'privacy.html');
+    });
   });
 }
 
 test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
+
+  for (const path of DOC_PAGES) {
+    test(`${path} shows its navigation and the work-in-progress notice`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page.locator('#site-nav')).toBeVisible();
+      await expect(page.locator('.wip-notice')).toBeVisible();
+    });
+  }
 
   for (const path of PAGES) {
     test(`${path} shows its navigation and links screenshots to the full image`, async ({ page, request }) => {

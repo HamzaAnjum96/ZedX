@@ -13,6 +13,9 @@ by Swiftpro.
 Every screenshot is a real screen from the public ZedX demo, cropped to one
 contiguous area, and every product claim traces to an official ZedX page.
 
+The site is a work in progress. Every page and the brochure say so in a notice
+at the top; `DEVELOPER-NOTES.md` explains how to remove it.
+
 ## What is in `docs/` (the published site)
 
 | file | what |
@@ -20,6 +23,7 @@ contiguous area, and every product claim traces to an official ZedX page.
 | `index.html` | both apps, comparison, leadership reporting, adoption (sign-in, hosting, integration, licensing), FAQ |
 | `workstreams.html`, `agile-sprints.html` | one page per app, built around its screens |
 | `brochure.html`, `brochure.pdf` | print layout and the 4-page A4 PDF made from it |
+| `legal.html`, `privacy.html` | legal notice (who runs the site, how far to rely on it, who owns the names) and privacy policy |
 | `404.html` | shown by GitHub Pages for any missing address |
 | `assets/` | `css/tokens.css` (generated), `css/site.css`, `css/brochure.css`, `js/site.js` (menu and screenshot viewer), IBM Plex fonts, icons, screenshots, favicon, social card |
 

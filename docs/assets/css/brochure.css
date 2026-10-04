@@ -77,12 +77,25 @@
 }
 
 /* Cover */
+.b-wip {
+  padding: 3mm 17mm;
+  background: var(--c-tint);
+  border-bottom: 1px solid var(--c-border);
+  font-size: 9pt;
+  line-height: 1.4;
+  color: var(--c-ink);
+}
+
+.b-wip strong {
+  color: var(--c-navy);
+}
+
 .cover {
   padding: 0;
 }
 
 .cover-top {
-  padding: 22mm 17mm 14mm;
+  padding: 14mm 17mm 11mm;
   background: var(--c-navy);
   color: var(--c-on-navy);
 }
@@ -107,8 +120,8 @@
 
 .cover-shots {
   display: grid;
-  gap: 6mm;
-  padding: 9mm 17mm 0;
+  gap: 5mm;
+  padding: 7mm 17mm 0;
 }
 
 .cover-shots .shot {

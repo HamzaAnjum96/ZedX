@@ -16,7 +16,7 @@ const VIEWS = [
   { name: 'tablet-768', width: 768, height: 1024 },
   { name: 'mobile-390', width: 390, height: 844, mobile: true },
 ];
-const PAGES = [['home', ''], ['workstreams', 'workstreams.html'], ['agile-sprints', 'agile-sprints.html']];
+const PAGES = [['home', ''], ['workstreams', 'workstreams.html'], ['agile-sprints', 'agile-sprints.html'], ['legal', 'legal.html'], ['privacy', 'privacy.html']];
 
 async function loadImages(page) {
   const imgs = page.locator('main img');

@@ -1,6 +1,9 @@
 import { test as base, expect, type Page } from '@playwright/test';
 
 export const PAGES = ['index.html', 'workstreams.html', 'agile-sprints.html'];
+// Text-only pages: no screenshots, same header and footer.
+export const DOC_PAGES = ['legal.html', 'privacy.html'];
+export const WIP_NOTICE = 'This site is a work in progress. The content is not complete and may not be correct.';
 export const DEMO_FORM = 'https://www.zedxapps.com/index.html#formContact';
 export const LOGIN = 'https://zedx.net/';
 

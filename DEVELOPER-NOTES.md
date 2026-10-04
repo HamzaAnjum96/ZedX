@@ -109,11 +109,21 @@ The items below are not on the current official pages, or only appear in the
   - the red counts in the workstreams list's Active Tasks column;
   - the "Ask Cloe" menu item.
 
+### Legal notice, privacy policy and the work-in-progress notice
+
+- **Contact address:** both pages point visitors to public GitHub issues, because the site owner has no published name or email yet. Replace it with a real contact address when there is one.
+- **Owner's name:** the legal notice says only that the site is published from the GitHub account HamzaAnjum96. Add the owner's name (and company details, if a company runs the site) when they are confirmed.
+- **Governing law:** not stated, because it depends on where the owner is based. Add it once that is known.
+- **Legal review:** both pages were written from what the site actually does (no cookies, storage, forms or third-party requests; GitHub Pages logs visitor IP addresses). They have not been reviewed by a lawyer.
+- **Keeping the privacy policy true:** `e2e/content.spec.ts` fails if any page sets a cookie, uses web storage, has a form or requests another site. Adding analytics, embeds or a form means updating `privacy.html` first.
+- **Removing the notice:** when the content has been checked, delete the `.wip-notice` block from the header of every page in `docs/` (including `404.html`), the `.b-wip` strip from `docs/brochure.html`, and the "work in progress" wording in the brochure's last footer and in the legal notice. Then remove the notice tests (`WIP_NOTICE` in `e2e/fixtures.ts`), run `npm run pdf` and `npm test`.
+
 ## Where to change things
 
 | to change | edit | then |
 | --- | --- | --- |
 | copy on a page | the page in `docs/` (header, footer and viewer markup are repeated in each page); write with the `copywriting` skill and edit with `copy-editing` (`.claude/skills/`) | `python3 tools/check_site.py docs`, `npm test` |
+| the legal notice or privacy policy | `docs/legal.html`, `docs/privacy.html`; change the "Last updated" date on the page you edit | `npm test` |
 | colours, type, spacing | `replica/design/tokens.json` | `python3 tools/build_tokens.py`, contrast gate |
 | layout or components | `docs/assets/css/site.css` (colours, fonts, spacing, radii and shadows come from tokens; the only raw colour is the viewer backdrop) | `npm test` |
 | a screenshot crop | `SHOTS` in `tools/capture_screens.mjs` | `npm run screens -- --encode-only`, update `width`/`height` in the HTML |

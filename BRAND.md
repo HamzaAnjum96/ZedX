@@ -122,6 +122,14 @@ App pages open with a navy hero:
   - The text wordmark is the two product names, plus "Independent promotional site" in small type.
   - There is no logo, because we have no verified partner identity of our own.
   - The navigation becomes a menu button below 1100px.
+- **Work-in-progress notice** (`.wip-notice`):
+  - The first thing inside `.site-header` on every page, including the 404: a full-width tint strip with ink text and the first sentence in bold navy.
+  - It stays on printed pages, when the rest of the header is hidden.
+  - The brochure carries the same notice as a strip at the top of the cover (`.b-wip`).
+- **Text pages** (`legal.html`, `privacy.html`):
+  - A short navy hero (`.page-hero--doc`) with the H1, a one-sentence lead and the "Last updated" date.
+  - The body is `.prose`: H2s at H3 size, paragraphs held to the 680px measure.
+  - They are linked from the footer "Pages" list of every page.
 
 ## Voice
 
