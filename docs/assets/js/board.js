@@ -26,6 +26,7 @@ export class Board {
     this.mount = mount;
     this.options = options;
     this.prefix = `b${uid += 1}`;
+    this.locked = false;
     this.setData(options.columns, options.cards);
     mount.addEventListener('pointerdown', (event) => this.onPointerDown(event));
     mount.addEventListener('keydown', (event) => this.onKeyDown(event));
@@ -35,6 +36,12 @@ export class Board {
     this.columns = columns;
     this.cards = cards;
     this.options.label = label;
+    this.render();
+  }
+
+  // A locked board shows its cards but cannot change (e.g. a finished sprint).
+  setLocked(locked) {
+    this.locked = locked;
     this.render();
   }
 
@@ -53,7 +60,7 @@ export class Board {
   // focus: null (leave focus alone), 'card', or a data-role inside the card ('back', 'on')
   move(id, toCol, toIndex = Infinity, { focus = null, via = 'keyboard' } = {}) {
     const card = this.cards.find((c) => c.id === id);
-    if (!card || !this.column(toCol)) return;
+    if (this.locked || !card || !this.column(toCol)) return;
     const fromCol = card.col;
 
     const rest = this.cards.filter((c) => c !== card);
@@ -124,12 +131,12 @@ export class Board {
     const tools = this.options.renderTools?.(card, this) || [];
 
     const back = el('button', {
-      type: 'button', class: 'move-btn', 'data-role': 'back', disabled: !prev, tabindex: '-1',
+      type: 'button', class: 'move-btn', 'data-role': 'back', disabled: !prev || this.locked, tabindex: '-1',
       'aria-label': prev ? `Move “${card.title}” back to ${prev.name}` : `“${card.title}” is in the first column`,
       onclick: () => this.step(card.id, -1, 'back'),
     }, icon('chevron-left'));
     const on = el('button', {
-      type: 'button', class: 'move-btn', 'data-role': 'on', disabled: !next, tabindex: '-1',
+      type: 'button', class: 'move-btn', 'data-role': 'on', disabled: !next || this.locked, tabindex: '-1',
       'aria-label': next ? `Move “${card.title}” on to ${next.name}` : `“${card.title}” is in the last column`,
       onclick: () => this.step(card.id, 1, 'on'),
     }, icon('chevron-right'));
@@ -174,7 +181,7 @@ export class Board {
   // ----- pointer dragging (mouse and pen) -----
 
   onPointerDown(event) {
-    if (event.button !== 0 || event.pointerType === 'touch') return;
+    if (this.locked || event.button !== 0 || event.pointerType === 'touch') return;
     if (event.target.closest('button, a, input')) return;
     const cardEl = event.target.closest('.task');
     if (!cardEl) return;
@@ -189,16 +196,25 @@ export class Board {
       width: rect.width,
       active: false,
     };
+    // Capture the pointer so the release is seen even outside the window.
+    try { cardEl.setPointerCapture(event.pointerId); } catch { /* not supported: fine */ }
     const move = (e) => this.onPointerMove(e);
-    const up = (e) => {
+    const done = (e) => {
       window.removeEventListener('pointermove', move);
-      window.removeEventListener('pointerup', up);
-      window.removeEventListener('pointercancel', up);
+      window.removeEventListener('pointerup', done);
+      window.removeEventListener('pointercancel', done);
+      window.removeEventListener('keydown', escape, true);
       this.onPointerUp(e);
     };
+    const escape = (e) => {
+      if (e.key !== 'Escape') return;
+      e.preventDefault();
+      done({ type: 'pointercancel' });
+    };
     window.addEventListener('pointermove', move);
-    window.addEventListener('pointerup', up);
-    window.addEventListener('pointercancel', up);
+    window.addEventListener('pointerup', done);
+    window.addEventListener('pointercancel', done);
+    window.addEventListener('keydown', escape, true);
   }
 
   onPointerMove(event) {

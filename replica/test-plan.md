@@ -46,6 +46,7 @@ flows:
 | F-B3-E2 | edge: switching tabs | moves persist per workstream | e2e x 2 | pass |
 | F-B3-E3 | edge: reset | sample data restored and announced | e2e x 2 | pass (after BUG-003) |
 | F-B3-E4 | edge: ends of board | first and last columns disable the impossible move | e2e x 2 | pass |
+| F-B3-E5 | edge: cancel | Escape during a drag leaves the card where it was, no ghost left behind | e2e desktop | pass |
 | F-B4-H1 | happy | opens on day 6, 31 of 34 planned, 10 of 31 done, 21 left | e2e x 2 | pass |
 | F-B4-H2 | happy | finishing a story updates progress, burndown and stand-up | e2e x 2 | pass |
 | F-B4-H3 | happy | blocking a story marks the card, keeps focus, appears in the stand-up | e2e x 2 | pass |
@@ -53,6 +54,7 @@ flows:
 | F-B4-E1 | edge | a blocked story reaching Done is unblocked | e2e x 2 | pass |
 | F-B4-E2 | edge | moving a story back is reported | e2e x 2 | pass |
 | F-B4-E3 | edge: reset | reset returns to day 6 | e2e x 2 | pass |
+| F-B4-E4 | edge: finished sprint | the board is locked until the sprint is run again | e2e x 2 | pass |
 | F-B5-H1 | happy: keyboard | burndown readable day by day with arrow keys | e2e x 2 | pass |
 | F-B5-H2 | happy | burndown and velocity have table views with every value | e2e x 2 | pass |
 | F-B5-H3 | happy | velocity bars explain themselves on focus | e2e x 2 | pass |
@@ -66,9 +68,9 @@ flows:
 
 ## Latest run
 
-`npm test`: **84 passed, 4 skipped** (skips are by design: mouse drag and
-the A4 layout are desktop-only; the phone menu is mobile-only; the skip
-link is checked on desktop).
+`npm test`: **87 passed, 5 skipped** (skips are by design: mouse drag, drag
+cancel and the A4 layout are desktop-only; the phone menu is mobile-only;
+the skip link is checked on desktop).
 
 ## Manual checks
 

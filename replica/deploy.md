@@ -8,7 +8,7 @@ default branch (`.github/workflows/pages.yml`). No build step: the files in
 
 ## Preflight (all must pass)
 
-- [x] e2e suite green: **84 passed, 4 skipped by design** (`npm test`, see `test-plan.md`)
+- [x] e2e suite green: **87 passed, 5 skipped by design** (`npm test`, see `test-plan.md`)
 - [x] no open S1 or S2 bugs (`bugs.md`: BUG-003, the only S2, is fixed)
 - [x] coverage: all must-haves presented (22 of 22), score 94.8 (`parity.md`)
 - [x] name sweep clean: `sweep.py docs --avoid "Jira,Trello,Atlassian"` exits 0. The usual rebrand sweep does not apply: this brochure presents the products under their own names.

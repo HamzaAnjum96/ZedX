@@ -87,3 +87,18 @@ test('F-B3-E4 first and last columns cannot move further', async ({ page }) => {
   await expect(page.getByRole('button', { name: '“Laptop and accounts for new analyst” is in the first column' })).toBeDisabled();
   await expect(page.getByRole('button', { name: '“Contract signed” is in the last column' })).toBeDisabled();
 });
+
+test('F-B3-E5 Escape cancels a drag and leaves the card where it was', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'Mouse dragging is desktop-only.');
+  const source = card(page, 'Building pass and desk');
+  await page.locator('[data-ws-demo] .board-wrap').scrollIntoViewIfNeeded();
+  const from = await source.boundingBox();
+  const to = await column(page, 'Done').boundingBox();
+  await page.mouse.move(from.x + 40, from.y + 20);
+  await page.mouse.down();
+  await page.mouse.move(to.x + to.width / 2, to.y + 60, { steps: 10 });
+  await page.keyboard.press('Escape');
+  await page.mouse.up();
+  await expect(column(page, 'Requested').getByRole('article', { name: 'Building pass and desk' })).toBeVisible();
+  await expect(page.locator('.task.is-dragging')).toHaveCount(0);
+});

@@ -181,6 +181,7 @@ export function initSprintDemo(root) {
     day = START_DAY;
     history = [...START_HISTORY];
     finished = false;
+    board.locked = false;
     board.setData(COLUMNS, clone(STORIES));
     startOfDay = snapshot(board.cards);
     refresh();
@@ -193,7 +194,7 @@ export function initSprintDemo(root) {
     history.push(left);
     if (day >= DAYS) {
       finished = true;
-      board.render();
+      board.setLocked(true);
       refresh();
       announce(`Sprint finished with ${left} points remaining. The sprint summary is ready.`);
       return;

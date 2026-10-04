@@ -99,3 +99,15 @@ test('F-B5-H3 velocity bars explain themselves on focus', async ({ page }) => {
   await bar.focus();
   await expect(page.locator('[data-velocity] .tooltip')).toContainText('27');
 });
+
+test('F-B4-E4 a finished sprint cannot be changed until it is run again', async ({ page }) => {
+  for (const day of [6, 7, 8, 9]) await page.getByRole('button', { name: `End day ${day}` }).click();
+  await page.getByRole('button', { name: 'End the sprint' }).click();
+  await expect(page.getByRole('button', { name: 'Move “Badge printing” on to In review' })).toBeDisabled();
+  const story = page.getByRole('article', { name: 'Badge printing' });
+  await story.focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(column(page, 'In progress').getByRole('article', { name: 'Badge printing' })).toBeVisible();
+  await page.getByRole('button', { name: 'Run the sprint again' }).click();
+  await expect(page.getByRole('button', { name: 'Move “Badge printing” on to In review' })).toBeEnabled();
+});

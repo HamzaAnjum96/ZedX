@@ -59,7 +59,7 @@ screenshots you can swap them in.
 
 ```bash
 python3 tools/check_site.py docs   # links, anchors, icons, titles, descriptions (no installs)
-npm install && npm test            # Playwright + axe: 84 tests at 1440px and 390px
+npm install && npm test            # Playwright + axe: 92 tests at 1440px and 390px
 ```
 
 GitHub Actions runs both on every push (`.github/workflows/pages.yml`) and
