@@ -108,29 +108,42 @@ export function initWorkStreamsDemo(root) {
     },
   });
 
-  function renderTabs(focusIndex = null) {
-    const tabs = streams.map((stream, index) => el('button', {
+  // Tabs are built once and then updated in place, so focus is never lost.
+  const tabs = SAMPLE.map((stream, index) => {
+    const count = el('span', { class: 'count' });
+    const tab = el('button', {
       type: 'button',
       class: 'tab',
       role: 'tab',
       id: `ws-tab-${stream.id}`,
-      'aria-selected': String(index === current),
       'aria-controls': boardEl.id,
-      tabindex: index === current ? '0' : '-1',
       onclick: () => select(index),
-    }, el('span', { text: stream.name }), el('span', { class: 'count', text: `${stream.cards.length}` },
-      el('span', { class: 'visually-hidden', text: ' tasks' }))));
-    tabsEl.replaceChildren(...tabs);
+    }, el('span', { text: stream.name }), count);
+    tab.count = count;
+    return tab;
+  });
+  tabsEl.replaceChildren(...tabs);
+
+  function renderTabs(focusIndex = null) {
+    tabs.forEach((tab, index) => {
+      tab.setAttribute('aria-selected', String(index === current));
+      tab.tabIndex = index === current ? 0 : -1;
+      tab.count.replaceChildren(String(streams[index].cards.length), el('span', { class: 'visually-hidden', text: ' tasks' }));
+    });
     if (focusIndex !== null) tabs[focusIndex].focus();
   }
 
-  function select(index, { focusTab = false } = {}) {
-    streams[current].cards = board.cards;
+  function show(index, { focusTab = false } = {}) {
     current = index;
     const stream = streams[index];
     boardEl.setAttribute('aria-labelledby', `ws-tab-${stream.id}`);
     board.setData(stream.columns, stream.cards, `${stream.name} board`);
     renderTabs(focusTab ? index : null);
+  }
+
+  function select(index, options) {
+    streams[current].cards = board.cards; // keep the moves made on the board we are leaving
+    show(index, options);
   }
 
   tabsEl.addEventListener('keydown', (event) => {
@@ -146,8 +159,7 @@ export function initWorkStreamsDemo(root) {
 
   resetBtn?.addEventListener('click', () => {
     streams = clone(SAMPLE);
-    current = 0;
-    select(0);
+    show(0);
     announce('The sample workstreams have been reset.');
   });
 

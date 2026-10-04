@@ -664,7 +664,7 @@ strong { font-weight: 600; }
 .timeline .th { font-size: 12px; font-weight: 600; color: var(--c-text-muted); text-align: center; padding-bottom: var(--space-2); border-bottom: 1px solid var(--c-border); }
 .timeline .row-label { font-weight: 600; }
 .timeline .span { height: 30px; border-radius: var(--radius-sm); background: var(--c-as-tint); border: 1.5px solid var(--c-chart-accent); display: flex; align-items: center; padding: 0 var(--space-2); font-size: 12px; font-weight: 600; color: var(--c-as-ink); margin-inline: 2px; overflow: hidden; white-space: nowrap; }
-.timeline .span.shipped { background: var(--c-chart-accent); color: var(--c-on-accent); border-color: var(--c-chart-accent); }
+.timeline .span.shipped { background: var(--c-as-ink); color: var(--c-on-accent); border-color: var(--c-as-ink); }
 
 /* ---------- Chooser ---------- */
 
@@ -1042,3 +1042,5 @@ body.is-dragging-card, body.is-dragging-card * { cursor: grabbing !important; us
 }
 .demo-note, .demo-help, .demo-foot, .figure-caption, .standup-stamp { line-height: 20px; }
 .demo-help { padding-block: var(--space-3); }
+
+.js .demo-noscript { display: none; }
