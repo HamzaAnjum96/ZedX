@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Brochure glyph: three board columns (coral = Group WorkStreams, cyan = Agile Sprints, blue = platform). Not the ZedX logo. -->
+  <rect width="32" height="32" rx="8" fill="#0b1b33"/>
+  <rect x="6.5" y="7" width="5" height="13" rx="2.5" fill="#f4705f"/>
+  <rect x="13.5" y="7" width="5" height="18" rx="2.5" fill="#3dd6f5"/>
+  <rect x="20.5" y="7" width="5" height="9" rx="2.5" fill="#0280ce"/>
+</svg>

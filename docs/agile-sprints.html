@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agile Sprints: Scrum delivery without the admin | ZedX Apps</title>
+  <meta name="description" content="Agile Sprints gives Scrum teams one structured place for epics, stories, sprints and releases, with real-time progress and automated stand-up reporting. Part of the ZedX Apps Platform.">
+  <meta name="theme-color" content="#0b1b33">
+  <link rel="canonical" href="https://hamzaanjum96.github.io/ZedX/agile-sprints.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Agile Sprints: Scrum delivery without the admin">
+  <meta property="og:description" content="Disciplined sprints, without the admin. Part of the ZedX Apps Platform.">
+  <meta property="og:url" content="https://hamzaanjum96.github.io/ZedX/agile-sprints.html">
+  <meta property="og:image" content="https://hamzaanjum96.github.io/ZedX/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/outfit-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+  <script type="module" src="assets/js/sprint-demo.js"></script>
+</head>
+<body class="theme-as">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="ZedX Apps: Group WorkStreams and Agile Sprints, home">
+        <svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true"><rect class="g-bg" width="32" height="32" rx="8"/><rect class="g-ws" x="6.5" y="7" width="5" height="13" rx="2.5"/><rect class="g-as" x="13.5" y="7" width="5" height="18" rx="2.5"/><rect class="g-zx" x="20.5" y="7" width="5" height="9" rx="2.5"/></svg>
+        <span class="brand-name">ZedX <span>Apps</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"/></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#i-x"/></svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
+        <ul>
+          <li><a class="nav-link" href="workstreams.html">Group WorkStreams</a></li>
+          <li><a class="nav-link" href="agile-sprints.html" aria-current="page">Agile Sprints</a></li>
+          <li><a class="nav-link" href="index.html#platform">Platform</a></li>
+          <li><a class="nav-link" href="index.html#licensing">Licensing</a></li>
+          <li><a class="nav-link" href="index.html#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="https://zedx.net/">Log in<span class="visually-hidden"> to ZedX (opens zedx.net)</span></a>
+          <a class="btn btn-primary" href="https://www.zedxapps.com/index.html#formContact">Book a demo<span class="visually-hidden"> (opens the ZedX website)</span></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Agile Sprints · Scrum delivery</p>
+          <h1 id="hero-title">Disciplined sprints, <span class="hl-as">without the admin.</span></h1>
+          <p class="hero-lead">Agile Sprints gives Scrum teams one structured place for epics, stories, sprints and releases, with real-time progress and stand-up reporting built in. It stays lightweight, so the process never gets in the way of the work.</p>
+          <div class="btn-row">
+            <a class="btn btn-light btn-lg" href="#demo">Run a sample sprint</a>
+            <a class="btn btn-on-dark btn-lg" href="https://www.zedxapps.com/index.html#formContact">Book a demo<span class="visually-hidden"> (opens the ZedX website)</span></a>
+          </div>
+          <ul class="hero-note">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-list-checks"/></svg>Backlog, sprints and releases</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-message-square-text"/></svg>Automated stand-up reporting</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-gauge"/></svg>Velocity and carried-over work</li>
+          </ul>
+        </div>
+
+        <div class="hero-art" role="img" aria-label="Illustration: an Agile Sprints sprint board with four columns, and a panel with a burndown chart and a stand-up summary.">
+          <div class="screen screen-back" aria-hidden="true">
+            <div class="screen-bar"><span class="dot"></span>Agile Sprints <span class="sep">›</span> <b>Sprint 7 · Visitor sign-in</b></div>
+            <div class="screen-body">
+              <div class="mini-board">
+                <div class="mini-col">
+                  <h5>To do</h5>
+                  <div class="mini-card">Fire roll-call export<div class="meta"><span class="tag tag-high">High</span><span class="who">3</span></div></div>
+                  <div class="mini-card">Data retention rules<div class="meta"><span class="tag tag-low">Low</span><span class="who">2</span></div></div>
+                </div>
+                <div class="mini-col">
+                  <h5>In progress</h5>
+                  <div class="mini-card">Check-in screen<div class="meta"><span class="tag tag-high">High</span><span class="who">8</span></div></div>
+                  <div class="mini-card mover">Badge printing<div class="meta"><span class="tag tag-normal">Normal</span><span class="who">5</span></div></div>
+                </div>
+                <div class="mini-col">
+                  <h5>Done</h5>
+                  <div class="mini-card">Pre-registration<div class="meta"><span class="tag tag-high">High</span><span class="who">5</span></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="screen screen-front" aria-hidden="true">
+            <div class="screen-bar"><span class="dot"></span>Agile Sprints <span class="sep">›</span> <b>Day 6 of 10</b></div>
+            <div class="screen-body">
+              <div class="mini-sprint">
+                <div class="mini-panel">
+                  <h5>Burndown</h5>
+                  <svg class="mini-burn" viewBox="0 0 200 110">
+                    <line x1="10" y1="15" x2="190" y2="15"/><line x1="10" y1="55" x2="190" y2="55"/><line x1="10" y1="95" x2="190" y2="95"/>
+                    <path class="ideal" d="M10 15 L190 95"/>
+                    <path class="actual" d="M10 15 L28 15 L46 27 L64 35 L82 35 L100 55 L118 60"/>
+                    <circle cx="118" cy="60" r="4.5"/>
+                  </svg>
+                </div>
+                <div class="mini-panel">
+                  <h5>Today's stand-up</h5>
+                  <ul class="standup-lines">
+                    <li class="done"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg>3 stories done</li>
+                    <li class="doing"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-refresh-ccw"/></svg>3 in progress</li>
+                    <li class="blocked"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-alert"/></svg>1 blocked</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="section section-as" id="demo" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Try it</p>
+          <h2 id="demo-title">Run a sample sprint</h2>
+          <p>It is day 6 of sprint 7 for a made-up visitor sign-in service. Move stories across the board, flag one as blocked, then end the day and watch the burndown and the stand-up summary follow.</p>
+        </div>
+
+        <div class="demo" data-sprint-demo>
+          <div class="sprint-head">
+            <div>
+              <h3>Sprint 7 · Visitor sign-in service</h3>
+              <p class="sprint-goal">Sprint goal: visitors can pre-register online and sign in at reception.</p>
+            </div>
+            <div class="sprint-day">
+              <span class="day-pill" data-day>Day 6 of 10</span>
+              <button class="btn btn-primary btn-small" type="button" data-end-day>End day 6</button>
+            </div>
+          </div>
+          <p class="demo-help" id="sprint-help" data-help>
+            <span>Drag a story with a mouse, or use its arrow buttons.</span>
+            <span>Keyboard: select a story, then <kbd>←</kbd> <kbd>→</kbd> moves it and <kbd>↑</kbd> <kbd>↓</kbd> moves between stories.</span>
+          </p>
+          <div class="sprint-grid">
+            <div class="board-wrap">
+              <div data-board>
+                <noscript><p class="demo-noscript">This interactive illustration needs JavaScript. It shows a sprint board with eight stories (31 points) across To do, In progress, In review and Done, a burndown chart and an automatically written stand-up summary.</p></noscript>
+              </div>
+            </div>
+            <aside class="sprint-side" aria-label="Sprint progress">
+              <div class="side-block" data-capacity></div>
+              <div class="side-block">
+                <h4>Burndown <span>points remaining by day</span></h4>
+                <div class="chart" data-burndown></div>
+              </div>
+              <div class="side-block standup-block" data-standup aria-live="polite"></div>
+            </aside>
+          </div>
+          <div class="demo-foot">
+            <span>Illustration with sample data, not the live product.</span>
+            <button class="text-btn" type="button" data-reset><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-refresh-ccw"/></svg>Reset the sprint</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan -->
+    <section class="section" aria-labelledby="plan-title">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Plan</p>
+          <h2 id="plan-title">A backlog the whole team can plan from</h2>
+          <p class="section-lead">Organise work into epics and user stories in a prioritised product backlog. Estimate stories in points, then select them into the sprint against the team's capacity, so scope and the sprint goal are clear before work begins.</p>
+          <ul class="checklist">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Epics and user stories, in priority order</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Story points and team capacity side by side</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Priorities can change as requirements evolve</span></li>
+          </ul>
+        </div>
+        <figure class="figure">
+          <div class="screen-bar"><span class="dot"></span>Agile Sprints <span class="sep">›</span> <b>Backlog · planning sprint 8</b></div>
+          <ol class="backlog">
+            <li class="in-sprint"><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Regular visitor passes</span><span class="tag tag-plain">Passes</span><span class="pts">8</span></li>
+            <li class="in-sprint"><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Visitor history search</span><span class="tag tag-plain">Reporting</span><span class="pts">5</span></li>
+            <li class="in-sprint"><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Kiosk mode for reception</span><span class="tag tag-plain">Reception</span><span class="pts">5</span></li>
+            <li class="in-sprint"><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Welsh language option</span><span class="tag tag-plain">Accessibility</span><span class="pts">3</span></li>
+            <li class="in-sprint"><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Group visits</span><span class="tag tag-plain">Passes</span><span class="pts">5</span></li>
+            <li class="in-sprint"><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Audit log export</span><span class="tag tag-plain">Reporting</span><span class="pts">2</span></li>
+            <li class="cut-line" aria-label="Sprint 8 capacity line: 30 points, 28 planned">Capacity 30 · 28 planned</li>
+            <li><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Multi-site support</span><span class="tag tag-plain">Platform</span><span class="pts">13</span></li>
+            <li><svg class="icon grip" aria-hidden="true"><use href="assets/img/icons.svg#i-grip-vertical"/></svg><span>Parking permits</span><span class="tag tag-plain">Passes</span><span class="pts">5</span></li>
+          </ol>
+          <figcaption class="figure-caption">Illustration with sample data: stories above the line fit the sprint's capacity.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Run -->
+    <section class="section section-surface" aria-labelledby="run-title">
+      <div class="container split split-reverse">
+        <div>
+          <p class="eyebrow">Run</p>
+          <h2 id="run-title">Stand-ups that start from the facts</h2>
+          <p class="section-lead">Each sprint runs on a configurable board that shows work in progress, finished work and anything blocked. Stand-up reporting is produced automatically, so the conversation starts from the facts rather than a round of status updates.</p>
+          <ul class="checklist">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Board stages configured to match your workflow</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Blocked work stands out</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Sprint progress tracked in real time</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Support for daily stand-ups and sprint reviews</span></li>
+          </ul>
+          <p class="more-link"><a class="arrow-link" href="#demo">Try it in the sample sprint <svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a></p>
+        </div>
+        <figure class="figure">
+          <div class="screen-bar"><span class="dot"></span>Agile Sprints <span class="sep">›</span> <b>Stand-up · day 7</b></div>
+          <div class="standup standup-static">
+            <ul>
+              <li class="s-done"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Done since the last stand-up: Reception check-in screen (8).</span></li>
+              <li class="s-doing"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-refresh-ccw"/></svg><span>In progress: 2 stories, 8 points. Started today: Fire roll-call export.</span></li>
+              <li class="s-blocked"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-alert"/></svg><span>Blocked: Host notified when a visitor arrives.</span></li>
+            </ul>
+            <p class="standup-stamp">Written from the board automatically.</p>
+          </div>
+          <figcaption class="figure-caption">Illustration with sample data.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Review -->
+    <section class="section" aria-labelledby="review-title">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Review</p>
+          <h2 id="review-title">Velocity that informs rather than judges</h2>
+          <p class="section-lead">See sprint completion, velocity and carried-over work for every sprint, and the trend across sprints. Teams use it to sharpen their estimates and understand how they deliver.</p>
+          <ul class="checklist">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Completion and velocity per sprint</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Carried-over work made visible</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Trends across many sprints</span></li>
+          </ul>
+        </div>
+        <figure class="figure">
+          <figcaption class="figure-title">Velocity, last six sprints <span>(sample data)</span></figcaption>
+          <div class="chart" data-velocity>
+            <noscript><p class="demo-noscript">Sample velocity: completed 18, 23, 27, 26, 29 and 30 points against 24, 26, 28, 30, 30 and 32 committed.</p></noscript>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Release -->
+    <section class="section section-surface" aria-labelledby="release-title">
+      <div class="container split split-reverse">
+        <div>
+          <p class="eyebrow">Release</p>
+          <h2 id="release-title">Releases planned across sprints</h2>
+          <p class="section-lead">Plan releases that span one or more sprints, and assign each story to the version it will ship in, so everyone can see what is coming and when.</p>
+          <ul class="checklist">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Releases across one or more sprints</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Stories assigned to planned versions</span></li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg><span>Epics laid out on a timeline</span></li>
+          </ul>
+        </div>
+        <figure class="figure">
+          <div class="screen-bar"><span class="dot"></span>Agile Sprints <span class="sep">›</span> <b>Releases</b></div>
+          <div class="timeline" role="table" aria-label="Sample release plan">
+            <div role="row" class="tl-row">
+              <span role="columnheader" class="th th-label">Version</span>
+              <span role="columnheader" class="th">S5</span><span role="columnheader" class="th">S6</span><span role="columnheader" class="th">S7</span><span role="columnheader" class="th">S8</span><span role="columnheader" class="th">S9</span><span role="columnheader" class="th">S10</span>
+            </div>
+            <div role="row" class="tl-row">
+              <span role="rowheader" class="row-label">v2.3 <small>Pre-registration</small></span>
+              <span role="cell" class="span shipped" style="grid-column: 2 / 4">Shipped</span>
+            </div>
+            <div role="row" class="tl-row">
+              <span role="rowheader" class="row-label">v2.4 <small>Reception check-in</small></span>
+              <span role="cell" class="span" style="grid-column: 4 / 6">In progress</span>
+            </div>
+            <div role="row" class="tl-row">
+              <span role="rowheader" class="row-label">v2.5 <small>Reporting and passes</small></span>
+              <span role="cell" class="span planned" style="grid-column: 6 / 8">Planned</span>
+            </div>
+          </div>
+          <figcaption class="figure-caption">Illustration with sample data: v2.3 shipped across sprints 5 and 6; v2.4 is in progress.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="section section-dark" aria-labelledby="learn-title">
+      <div class="container">
+        <p class="eyebrow">How it thinks about metrics</p>
+        <h2 id="learn-title" class="quote-free">Metrics are there to help teams learn and improve, not to police them.</h2>
+        <div class="pillars learn-pillars">
+          <div class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-trending-up"/></svg>
+            <h3>Learning, not pressure</h3>
+            <p>Completion, velocity and carried-over work are there to improve estimates and delivery, not to rank people.</p>
+          </div>
+          <div class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-shield-check"/></svg>
+            <h3>The right access</h3>
+            <p>Role-based permissions control who can see and change what.</p>
+          </div>
+          <div class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-layers"/></svg>
+            <h3>No unnecessary process</h3>
+            <p>Built around sprint execution, team capacity and flow, without extra governance overhead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works alongside -->
+    <section class="section" aria-labelledby="alongside-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Works alongside</p>
+          <h2 id="alongside-title">Use it on its own, or connected</h2>
+        </div>
+        <div class="related">
+          <article class="card theme-zx">
+            <h3><span class="dot"></span>Project Portfolios</h3>
+            <p>Link Agile Sprints to Project Portfolios when sprint work contributes to wider project and portfolio reporting. Progress is summarised through periodic updates, without exposing task-level detail.</p>
+            <a class="arrow-link" href="index.html#together">How the apps connect <svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a>
+          </article>
+          <article class="card theme-ws">
+            <h3><span class="dot"></span>Group WorkStreams</h3>
+            <p>Teams with a mixed delivery model keep their sprints focused in Agile Sprints and handle operational and ad-hoc work in Group WorkStreams.</p>
+            <a class="arrow-link" href="workstreams.html">See Group WorkStreams <svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 id="cta-title">See Agile Sprints on your next sprint</h2>
+        <p>Book a demo and walk through planning, the board and the reporting with your own backlog in mind.</p>
+        <div class="btn-row">
+          <a class="btn btn-light btn-lg" href="https://www.zedxapps.com/index.html#formContact">Book a demo<span class="visually-hidden"> (opens the ZedX website)</span></a>
+          <a class="btn btn-on-dark btn-lg" href="brochure.pdf" download><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-file-down"/></svg>Download the brochure <span class="visually-hidden">(PDF)</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="./">
+            <svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true"><rect class="g-bg" width="32" height="32" rx="8"/><rect class="g-ws" x="6.5" y="7" width="5" height="13" rx="2.5"/><rect class="g-as" x="13.5" y="7" width="5" height="18" rx="2.5"/><rect class="g-zx" x="20.5" y="7" width="5" height="9" rx="2.5"/></svg>
+            <span class="brand-name">ZedX <span>Apps</span></span>
+          </a>
+          <p>Group WorkStreams and Agile Sprints are applications on the ZedX Apps Platform from Swiftpro Corporation Ltd, London.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="workstreams.html">Group WorkStreams</a></li>
+            <li><a href="agile-sprints.html" aria-current="page">Agile Sprints</a></li>
+            <li><a href="index.html#platform">The platform</a></li>
+            <li><a href="index.html#licensing">Licensing</a></li>
+            <li><a href="brochure.pdf" download>Brochure (PDF)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>ZedX</h2>
+          <ul>
+            <li><a href="https://www.zedxapps.com/index.html">zedxapps.com</a></li>
+            <li><a href="https://www.zedxapps.com/applications/index.html">All applications</a></li>
+            <li><a href="https://www.zedxapps.com/index.html#formContact">Book a demo</a></li>
+            <li><a href="https://zedx.net/">Customer login</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-small">
+        <p>Boards, charts and summaries on this site are illustrations with sample data. This site sets no cookies and collects no data.</p>
+        <p>Fonts: Outfit and Inter (SIL OFL). Icons: Lucide (ISC).</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
