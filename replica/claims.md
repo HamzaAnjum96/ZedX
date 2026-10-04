@@ -20,6 +20,7 @@ W = workstreams.html, A = agile-sprints.html, B = brochure PDF).
 | W3 | It suits continuous-flow, operational, ad-hoc and non-Scrum work | 2, 3 | high | I W B |
 | W4 | A project workstream in Project Portfolios can link to Group WorkStreams, with progress summarised through structured project updates | 3 | high | I W B |
 | W5 | Teams with mixed delivery models can run it alongside Agile Sprints, keeping operational work out of the sprint | 2 | high | I W A B |
+| W6 | Each function's work moves through stages that make sense for it (the demo gives each sample workstream its own columns) | inferred: 1 ("create a series of workflows"), 8 ("comprehensive configuration options"), configurable stages seen in Agile Sprints (A08) | **medium: please confirm** | W |
 
 ## Agile Sprints
 
@@ -52,7 +53,7 @@ W = workstreams.html, A = agile-sprints.html, B = brochure PDF).
 | P6 | Licensing options: per app per user; per app in packs of 10 or 100 users; per app for unlimited users on your own server or Azure subscription; every current and future app, unlimited, on your own server or Azure | 4 | high | I B |
 | P7 | Editions for central and local government, arm's-length bodies and agencies, universities, colleges and schools, and businesses from SME to corporate | 5, 6 | high | I B |
 | P8 | Preconfigured for each sector, with further configuration to fit the organisation | 6, 8 | high | I W B |
-| P9 | The apps are integrated with each other | 4 | high | I |
+| P9 | The apps are integrated with each other | 4 | high | shown, not stated (Better together section) |
 | P10 | Hosted on Microsoft Azure, by Swiftpro or in the customer's own Azure subscription | 4, 8 | medium | I B |
 | P11 | Data stored and processed in the UK | 8 | medium | I B |
 | P12 | Import from CSV; export to Excel and PDF | 8 | medium | I B |
@@ -71,6 +72,19 @@ W = workstreams.html, A = agile-sprints.html, B = brochure PDF).
 | Support hours, response times, account manager | 8 | 2024 listing, not confirmed current |
 | "Corporate Workflows" is the old name of Group WorkStreams | 6, 9 | a guess |
 | Any customer name, count, quote or rating | none | none are public; no fake proof |
+
+## Framing and examples (not product claims)
+
+These are the brochure's own words around the facts above. They describe
+ways of working, or give examples, and claim nothing about features.
+
+| where | what |
+| --- | --- |
+| index.html problem section | "too heavy / too light / watched, not helped": paraphrased from the research in `fixes.md`; names no product |
+| index.html comparison, "Typical teams" | examples of teams, not customer claims |
+| workstreams.html "Ideas for workstreams" | example workstreams with example stages |
+| workstreams.html "Why a board suits operational work" | general Kanban practice |
+| chooser | a rule of thumb (flow vs time-box), not a product feature |
 
 ## Illustrations
 

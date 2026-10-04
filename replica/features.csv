@@ -1,44 +1,44 @@
 feature,area,priority,original,clone,notes,source
-Epics and user stories in a prioritised product backlog,agile-sprints,must,yes,no,,2
-Estimate stories in story points,agile-sprints,must,yes,no,,2
-Plan sprints against team capacity,agile-sprints,must,yes,no,,2
-Configurable sprint board with workflow stages,agile-sprints,must,yes,no,stages seen: Not Started / In Progress / Completed Unverified / Completed Verified / Not Required,2 A08
-Automated online stand-up reporting,agile-sprints,must,yes,no,,1 2
-Track sprint progress in real time,agile-sprints,must,yes,no,,2
-Manage releases across one or more sprints,agile-sprints,must,yes,no,,2
-Assign stories to planned release versions,agile-sprints,must,yes,no,,2
-Sprint metrics: completion velocity and carried-over work,agile-sprints,must,yes,no,,2
-Role-based permissions,agile-sprints,must,yes,no,,2
-Performance trends across multiple sprints,agile-sprints,should,yes,no,,2
-Support sprint reviews,agile-sprints,should,yes,no,,2
-Blocked work visible on the sprint board,agile-sprints,should,yes,no,,2
-Epics laid out on a week-by-week timeline,agile-sprints,should,yes,no,,2 A06
-Use on its own or linked to Project Portfolios for oversight,agile-sprints,should,yes,no,summarised periodic updates without task-level detail,2 3
-A workflow for each function of the organisation,workstreams,must,yes,no,,1
-Tasks in each workflow arranged as a Kanban board,workstreams,must,yes,no,,1
-Built for continuous-flow operational ad-hoc and non-Scrum work,workstreams,must,yes,no,,2 3
-Project workstreams link to Group WorkStreams with progress summarised in project updates,workstreams,should,yes,no,,3
-Runs alongside Agile Sprints for mixed delivery models,workstreams,should,yes,no,,2
-One login across every app,platform,must,yes,no,,4 6
-One consistent interface across every app,platform,must,yes,no,,4 6
-Microsoft Entra ID single sign-on or a ZedX ID,platform,must,yes,no,,4
-Guest logins for people outside the organisation,platform,must,yes,no,,4
-Granular access to apps and modules with hierarchical permissions,platform,must,yes,no,,4
-Licence one app or the whole suite,platform,must,yes,no,,4 6
-Licensing per user / 10 or 100 user packs / unlimited with own server or Azure,platform,must,yes,no,,4
-Editions for government education and business,platform,must,yes,no,,5 6
-Preconfigured per sector and configurable to the organisation,platform,must,yes,no,,6 8
-Apps integrated with each other,platform,should,yes,no,,4
-Hosted on Microsoft Azure or in your own Azure subscription,platform,should,yes,no,,4 8
-Data stored and processed in the UK,platform,should,yes,no,G-Cloud 2024 listing,8
-Import from CSV and export to Excel and PDF,platform,should,yes,no,G-Cloud 2024 listing,8
-Built-in dashboards and Power BI integration,platform,should,yes,no,G-Cloud 2024 listing,8
-Works in mobile browsers,platform,should,yes,no,G-Cloud 2024 listing,8
-Integration with Oracle / SAP ERP / Tribal as a service,platform,could,yes,no,when hosted on the customer's servers or Azure,4
-In-site store showing the apps relevant to the sector,platform,could,yes,no,,4
-Two-factor authentication,platform,could,yes,no,G-Cloud 2024 listing,8
-Built with React and SQL Server,platform,could,yes,no,,4
-Activity logs exportable to Power BI,platform,could,yes,no,G-Cloud 2024 listing,8
+Epics and user stories in a prioritised product backlog,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Estimate stories in story points,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Plan sprints against team capacity,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Configurable sprint board with workflow stages,agile-sprints,must,yes,yes,stages seen: Not Started / In Progress / Completed Unverified / Completed Verified / Not Required,2 A08
+Automated online stand-up reporting,agile-sprints,must,yes,yes,on agile-sprints.html,1 2
+Track sprint progress in real time,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Manage releases across one or more sprints,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Assign stories to planned release versions,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Sprint metrics: completion velocity and carried-over work,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Role-based permissions,agile-sprints,must,yes,yes,on agile-sprints.html,2
+Performance trends across multiple sprints,agile-sprints,should,yes,yes,on agile-sprints.html,2
+Support sprint reviews,agile-sprints,should,yes,yes,on agile-sprints.html,2
+Blocked work visible on the sprint board,agile-sprints,should,yes,yes,on agile-sprints.html,2
+Epics laid out on a week-by-week timeline,agile-sprints,should,yes,yes,on agile-sprints.html,2 A06
+Use on its own or linked to Project Portfolios for oversight,agile-sprints,should,yes,yes,summarised periodic updates without task-level detail,2 3
+A workflow for each function of the organisation,workstreams,must,yes,yes,on workstreams.html,1
+Tasks in each workflow arranged as a Kanban board,workstreams,must,yes,yes,on workstreams.html,1
+Built for continuous-flow operational ad-hoc and non-Scrum work,workstreams,must,yes,yes,on workstreams.html,2 3
+Project workstreams link to Group WorkStreams with progress summarised in project updates,workstreams,should,yes,yes,on workstreams.html,3
+Runs alongside Agile Sprints for mixed delivery models,workstreams,should,yes,yes,on workstreams.html,2
+One login across every app,platform,must,yes,yes,on index.html#platform,4 6
+One consistent interface across every app,platform,must,yes,yes,on index.html#platform,4 6
+Microsoft Entra ID single sign-on or a ZedX ID,platform,must,yes,yes,on index.html#platform,4
+Guest logins for people outside the organisation,platform,must,yes,yes,on index.html#platform,4
+Granular access to apps and modules with hierarchical permissions,platform,must,yes,yes,on index.html#platform,4
+Licence one app or the whole suite,platform,must,yes,yes,on index.html#platform,4 6
+Licensing per user / 10 or 100 user packs / unlimited with own server or Azure,platform,must,yes,yes,on index.html#platform,4
+Editions for government education and business,platform,must,yes,yes,on index.html#platform,5 6
+Preconfigured per sector and configurable to the organisation,platform,must,yes,yes,on index.html#platform,6 8
+Apps integrated with each other,platform,should,yes,partial,shown through the Better together section; 'inherently integrated' is not stated,4
+Hosted on Microsoft Azure or in your own Azure subscription,platform,should,yes,yes,on index.html#platform,4 8
+Data stored and processed in the UK,platform,should,yes,yes,G-Cloud 2024 listing,8
+Import from CSV and export to Excel and PDF,platform,should,yes,yes,G-Cloud 2024 listing,8
+Built-in dashboards and Power BI integration,platform,should,yes,yes,G-Cloud 2024 listing,8
+Works in mobile browsers,platform,should,yes,yes,G-Cloud 2024 listing,8
+Integration with Oracle / SAP ERP / Tribal as a service,platform,could,yes,yes,when hosted on the customer's servers or Azure,4
+In-site store showing the apps relevant to the sector,platform,could,yes,no,not presented: minor platform detail,4
+Two-factor authentication,platform,could,yes,no,not presented: 2024 listing only,8
+Built with React and SQL Server,platform,could,yes,no,not presented: not a buyer benefit,4
+Activity logs exportable to Power BI,platform,could,yes,no,not presented: 2024 listing only,8
 Published prices,commercial,should,yes,skip,G-Cloud 14 prices from May 2024 may be out of date; brochure asks for a quote (see launch/pricing.md),9
 Free four-week trial account,commercial,could,yes,skip,2024 listing; not confirmed current,8
 Cyber Essentials certification,commercial,could,yes,skip,annual certification; not confirmed current,8
