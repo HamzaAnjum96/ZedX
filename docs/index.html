@@ -246,22 +246,22 @@
 
         <h3 class="table-title" id="glance-title">At a glance</h3>
         <div class="table-scroll" role="region" aria-labelledby="glance-title" tabindex="0">
-          <table class="compare">
-            <thead>
-              <tr>
-                <th scope="col"><span class="visually-hidden">Question</span></th>
-                <th scope="col" class="theme-ws"><span class="dot dot-ws"></span>Group WorkStreams</th>
-                <th scope="col" class="theme-as"><span class="dot dot-as"></span>Agile Sprints</th>
+          <table class="compare" role="table">
+            <thead role="rowgroup">
+              <tr role="row">
+                <th role="columnheader" scope="col"><span class="visually-hidden">Question</span></th>
+                <th role="columnheader" scope="col"><span class="dot dot-ws"></span>Group WorkStreams</th>
+                <th role="columnheader" scope="col"><span class="dot dot-as"></span>Agile Sprints</th>
               </tr>
             </thead>
-            <tbody>
-              <tr><th scope="row">Best for</th><td>Operational, ongoing and ad-hoc work</td><td>Planned delivery using Scrum</td></tr>
-              <tr><th scope="row">How work moves</th><td>Continuously, across a Kanban board</td><td>In time-boxed sprints</td></tr>
-              <tr><th scope="row">How it is organised</th><td>A workflow for each function of the organisation</td><td>Epics, user stories, sprints and releases</td></tr>
-              <tr><th scope="row">Planning</th><td>Tasks are added to the board as they come in</td><td>Stories estimated in points and planned against team capacity</td></tr>
-              <tr><th scope="row">Progress</th><td>The board shows where every task stands</td><td>Real-time sprint progress, stand-up reporting and velocity</td></tr>
-              <tr><th scope="row">Reporting up</th><td colspan="2">Either app can link to Project Portfolios, which receives periodic summaries rather than task-level detail</td></tr>
-              <tr><th scope="row">Typical teams</th><td>HR, finance, IT support, estates, governance</td><td>Software, digital and change teams</td></tr>
+            <tbody role="rowgroup">
+              <tr role="row"><th role="rowheader" scope="row">Best for</th><td role="cell" data-label="Group WorkStreams">Operational, ongoing and ad-hoc work</td><td role="cell" data-label="Agile Sprints">Planned delivery using Scrum</td></tr>
+              <tr role="row"><th role="rowheader" scope="row">How work moves</th><td role="cell" data-label="Group WorkStreams">Continuously, across a Kanban board</td><td role="cell" data-label="Agile Sprints">In time-boxed sprints</td></tr>
+              <tr role="row"><th role="rowheader" scope="row">How it is organised</th><td role="cell" data-label="Group WorkStreams">A workflow for each function of the organisation</td><td role="cell" data-label="Agile Sprints">Epics, user stories, sprints and releases</td></tr>
+              <tr role="row"><th role="rowheader" scope="row">Planning</th><td role="cell" data-label="Group WorkStreams">Tasks are added to the board as they come in</td><td role="cell" data-label="Agile Sprints">Stories estimated in points and planned against team capacity</td></tr>
+              <tr role="row"><th role="rowheader" scope="row">Progress</th><td role="cell" data-label="Group WorkStreams">The board shows where every task stands</td><td role="cell" data-label="Agile Sprints">Real-time sprint progress, stand-up reporting and velocity</td></tr>
+              <tr role="row"><th role="rowheader" scope="row">Reporting up</th><td role="cell" colspan="2" data-label="Both apps">Either app can link to Project Portfolios, which receives periodic summaries rather than task-level detail</td></tr>
+              <tr role="row"><th role="rowheader" scope="row">Typical teams</th><td role="cell" data-label="Group WorkStreams">HR, finance, IT support, estates, governance</td><td role="cell" data-label="Agile Sprints">Software, digital and change teams</td></tr>
             </tbody>
           </table>
         </div>

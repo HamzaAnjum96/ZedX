@@ -59,6 +59,7 @@ h4 { font-size: var(--fs-base); line-height: var(--lh-base); font-weight: 600; l
 p { margin: 0; text-wrap: pretty; }
 p + p { margin-top: var(--space-4); }
 ul, ol { margin: 0; padding: 0; }
+figure { margin: 0; }
 strong { font-weight: 600; }
 
 :focus-visible {
@@ -1009,3 +1010,35 @@ body.is-dragging-card, body.is-dragging-card * { cursor: grabbing !important; us
 .timeline .row-label { display: flex; flex-direction: column; line-height: 18px; }
 .timeline .row-label small { font-size: 12px; font-weight: 500; color: var(--c-text-muted); }
 .timeline .span { justify-content: center; }
+
+.screen-bar { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.screen-bar b { overflow: hidden; text-overflow: ellipsis; }
+
+@media (max-width: 600px) {
+  /* hero illustrations stack instead of overlapping */
+  .hero-art { min-height: 0; display: grid; }
+  .hero-art .screen { position: relative; top: auto; right: auto; bottom: auto; left: auto; transform: none; }
+  .hero-art .screen-back { width: 100%; }
+  .hero-art .screen-front { width: 88%; margin: calc(-1 * var(--space-6)) 0 0 auto; }
+  .fan .fan-1, .fan .fan-2 { display: none; }
+  .fan .fan-3 { width: 100%; }
+  .mini-col { min-height: 0; }
+
+  /* comparison table becomes one labelled card per row */
+  .table-scroll { overflow: visible; }
+  .compare { min-width: 0; }
+  .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .compare tr { display: block; padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--c-border); }
+  .compare tbody tr:last-child { border-bottom: 0; }
+  .compare tbody th, .compare td { display: block; width: auto; padding: 0; border: 0; }
+  .compare tbody th { margin-bottom: var(--space-2); font-size: 12px; line-height: 16px; letter-spacing: .08em; text-transform: uppercase; }
+  .compare td { margin-top: var(--space-3); padding-left: var(--space-3); border-left: 3px solid var(--c-ws); font-size: 15px; line-height: 22px; }
+  .compare td + td { border-left-color: var(--c-as); }
+  .compare td[colspan] { border-left-color: var(--c-accent-bright); }
+  .compare td::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 700; color: var(--c-text-muted); }
+
+  .backlog li { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .backlog li .tag { display: none; }
+}
+.demo-note, .demo-help, .demo-foot, .figure-caption, .standup-stamp { line-height: 20px; }
+.demo-help { padding-block: var(--space-3); }
