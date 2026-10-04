@@ -91,3 +91,17 @@ test.describe('404', () => {
     await expect(page.getByRole('heading', { level: 1 })).toContainText('flow of work');
   });
 });
+
+test.describe('brochure.html (print layout)', () => {
+  test('F-B8-E1 has no axe violations and its links resolve', async ({ page, request, isMobile }) => {
+    test.skip(isMobile, 'A4 print layout; checked at desktop width.');
+    await page.goto('brochure.html');
+    await page.waitForFunction(() => document.documentElement.dataset.ready === 'true');
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
+    expect(results.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(' | ')}`)).toEqual([]);
+    await expect(page.locator('section.sheet')).toHaveCount(4);
+    for (const href of ['brochure.pdf', 'assets/css/brochure.css', 'assets/img/apple-touch-icon.png', 'assets/img/og-image.png']) {
+      expect((await request.get(href)).status(), href).toBe(200);
+    }
+  });
+});
