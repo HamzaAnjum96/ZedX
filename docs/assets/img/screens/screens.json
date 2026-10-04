@@ -1,0 +1,134 @@
+{
+  "source": "https://demo.zedx.net/",
+  "captured": "2026-10-04",
+  "screens": [
+    {
+      "name": "gw-board",
+      "alt": "Group Workstreams board for the Complaints & Compliments Log workstream, with stages Outstanding, In Progress, Escalated, Response Issued and Closed",
+      "sizes": [
+        {
+          "file": "gw-board-1200.webp",
+          "width": 1200,
+          "height": 750
+        },
+        {
+          "file": "gw-board-2000.webp",
+          "width": 2000,
+          "height": 1250
+        }
+      ]
+    },
+    {
+      "name": "gw-board-catering",
+      "alt": "Group Workstreams board for Catering & Vending Machine Issues, with its own stages: New Issue, In Progress and Completed",
+      "sizes": [
+        {
+          "file": "gw-board-catering-1200.webp",
+          "width": 1200,
+          "height": 750
+        },
+        {
+          "file": "gw-board-catering-2000.webp",
+          "width": 2000,
+          "height": 1250
+        }
+      ]
+    },
+    {
+      "name": "gw-workstreams",
+      "alt": "Group Workstreams list showing each workstream with its portfolio, active tasks, type and owners",
+      "sizes": [
+        {
+          "file": "gw-workstreams-1200.webp",
+          "width": 1200,
+          "height": 750
+        },
+        {
+          "file": "gw-workstreams-2000.webp",
+          "width": 2000,
+          "height": 1250
+        }
+      ]
+    },
+    {
+      "name": "gw-portfolios",
+      "alt": "Group Workstreams portfolios by function, such as HR, Accounts & Finance and Campus Operations, with workstream and task counts",
+      "sizes": [
+        {
+          "file": "gw-portfolios-1200.webp",
+          "width": 1200,
+          "height": 615
+        },
+        {
+          "file": "gw-portfolios-2000.webp",
+          "width": 2000,
+          "height": 1025
+        }
+      ]
+    },
+    {
+      "name": "gw-insights",
+      "alt": "Group Workstreams dashboard charting work items per workstream, split into critical and non-critical",
+      "sizes": [
+        {
+          "file": "gw-insights-1200.webp",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "file": "gw-insights-1920.webp",
+          "width": 1920,
+          "height": 1280
+        }
+      ]
+    },
+    {
+      "name": "as-sprint",
+      "alt": "Agile Sprints current sprint board with stories in On Hold, Not Started, In Progress and Completed columns, each with epic, priority and story points",
+      "sizes": [
+        {
+          "file": "as-sprint-1200.webp",
+          "width": 1200,
+          "height": 750
+        },
+        {
+          "file": "as-sprint-2000.webp",
+          "width": 2000,
+          "height": 1250
+        }
+      ]
+    },
+    {
+      "name": "as-backlog",
+      "alt": "Agile Sprints backlog with stories moving from Ideas & Intake through Refinement Needed to Ready for Sprint",
+      "sizes": [
+        {
+          "file": "as-backlog-1200.webp",
+          "width": 1200,
+          "height": 750
+        },
+        {
+          "file": "as-backlog-2000.webp",
+          "width": 2000,
+          "height": 1250
+        }
+      ]
+    },
+    {
+      "name": "as-epics",
+      "alt": "Agile Sprints epics timeline laying out epics week by week from January to March",
+      "sizes": [
+        {
+          "file": "as-epics-1200.webp",
+          "width": 1200,
+          "height": 450
+        },
+        {
+          "file": "as-epics-2000.webp",
+          "width": 2000,
+          "height": 750
+        }
+      ]
+    }
+  ]
+}

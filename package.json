@@ -7,7 +7,8 @@
     "serve": "node tools/serve.mjs",
     "test": "playwright test",
     "check": "python3 tools/check_site.py docs && python3 tools/build_tokens.py --check && python3 .claude/skills/replica-design/contrast.py replica/design/tokens.json",
-    "pdf": "node tools/build_pdf.mjs"
+    "pdf": "node tools/build_pdf.mjs",
+    "screens": "node tools/capture_screens.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.0",

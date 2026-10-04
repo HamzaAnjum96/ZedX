@@ -17,3 +17,6 @@ Thumbs.db
 # Replica: reference screenshots of the original are research only.
 # They are never shipped or committed (see .claude/skills/replica-recon).
 replica/screens/
+
+# Raw demo captures (tools/capture_screens.mjs); only the WebP output is committed
+tools/.screens-src/
