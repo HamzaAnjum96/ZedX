@@ -1,134 +1,624 @@
 {
   "source": "https://demo.zedx.net/",
   "captured": "2026-10-04",
+  "view": {
+    "width": 1600,
+    "height": 1000
+  },
   "screens": [
     {
       "name": "gw-board",
-      "alt": "Group Workstreams board for the Complaints & Compliments Log workstream, with stages Outstanding, In Progress, Escalated, Response Issued and Closed",
-      "sizes": [
-        {
-          "file": "gw-board-1200.webp",
-          "width": 1200,
-          "height": 750
+      "app": "Group WorkStreams",
+      "view": "Complaints & Compliments Log workstream board (Current Stages)",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a1/workflow-tasks/emVkeGFwcHNfNTJfemVkeGFwcHM=",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "gw-board-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 108
+            },
+            {
+              "file": "gw-board-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 177
+            }
+          ]
         },
-        {
-          "file": "gw-board-2000.webp",
-          "width": 2000,
-          "height": 1250
+        "wide": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 1362,
+            "h": 508
+          },
+          "files": [
+            {
+              "file": "gw-board-wide-1362.webp",
+              "width": 1362,
+              "height": 508,
+              "kb": 59
+            },
+            {
+              "file": "gw-board-wide-2724.webp",
+              "width": 2724,
+              "height": 1016,
+              "kb": 133
+            }
+          ]
+        },
+        "sm": {
+          "area": {
+            "x": 238,
+            "y": 150,
+            "w": 302,
+            "h": 186
+          },
+          "files": [
+            {
+              "file": "gw-board-sm-302.webp",
+              "width": 302,
+              "height": 186,
+              "kb": 5
+            },
+            {
+              "file": "gw-board-sm-604.webp",
+              "width": 604,
+              "height": 372,
+              "kb": 12
+            }
+          ]
         }
-      ]
+      }
     },
     {
       "name": "gw-board-catering",
-      "alt": "Group Workstreams board for Catering & Vending Machine Issues, with its own stages: New Issue, In Progress and Completed",
-      "sizes": [
-        {
-          "file": "gw-board-catering-1200.webp",
-          "width": 1200,
-          "height": 750
+      "app": "Group WorkStreams",
+      "view": "Catering & Vending Machine Issues workstream board (Current Stages)",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a1/workflow-tasks/emVkeGFwcHNfNDdfemVkeGFwcHM=",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "gw-board-catering-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 73
+            },
+            {
+              "file": "gw-board-catering-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 120
+            }
+          ]
         },
-        {
-          "file": "gw-board-catering-2000.webp",
-          "width": 2000,
-          "height": 1250
+        "strip": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 772,
+            "h": 274
+          },
+          "files": [
+            {
+              "file": "gw-board-catering-strip-772.webp",
+              "width": 772,
+              "height": 274,
+              "kb": 19
+            },
+            {
+              "file": "gw-board-catering-strip-1544.webp",
+              "width": 1544,
+              "height": 548,
+              "kb": 43
+            }
+          ]
+        },
+        "board": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 893,
+            "h": 545
+          },
+          "files": [
+            {
+              "file": "gw-board-catering-board-893.webp",
+              "width": 893,
+              "height": 545,
+              "kb": 40
+            },
+            {
+              "file": "gw-board-catering-board-1786.webp",
+              "width": 1786,
+              "height": 1090,
+              "kb": 90
+            }
+          ]
+        },
+        "sm": {
+          "area": {
+            "x": 238,
+            "y": 150,
+            "w": 302,
+            "h": 180
+          },
+          "files": [
+            {
+              "file": "gw-board-catering-sm-302.webp",
+              "width": 302,
+              "height": 180,
+              "kb": 5
+            },
+            {
+              "file": "gw-board-catering-sm-604.webp",
+              "width": 604,
+              "height": 360,
+              "kb": 10
+            }
+          ]
         }
-      ]
+      }
     },
     {
       "name": "gw-workstreams",
-      "alt": "Group Workstreams list showing each workstream with its portfolio, active tasks, type and owners",
-      "sizes": [
-        {
-          "file": "gw-workstreams-1200.webp",
-          "width": 1200,
-          "height": 750
+      "app": "Group WorkStreams",
+      "view": "Workstreams list",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a1/workflows",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "gw-workstreams-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 73
+            },
+            {
+              "file": "gw-workstreams-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 129
+            }
+          ]
         },
-        {
-          "file": "gw-workstreams-2000.webp",
-          "width": 2000,
-          "height": 1250
-        }
-      ]
-    },
-    {
-      "name": "gw-portfolios",
-      "alt": "Group Workstreams portfolios by function, such as HR, Accounts & Finance and Campus Operations, with workstream and task counts",
-      "sizes": [
-        {
-          "file": "gw-portfolios-1200.webp",
-          "width": 1200,
-          "height": 615
+        "list": {
+          "area": {
+            "x": 240,
+            "y": 52,
+            "w": 840,
+            "h": 452
+          },
+          "files": [
+            {
+              "file": "gw-workstreams-list-840.webp",
+              "width": 840,
+              "height": 452,
+              "kb": 25
+            },
+            {
+              "file": "gw-workstreams-list-1680.webp",
+              "width": 1680,
+              "height": 904,
+              "kb": 62
+            }
+          ]
         },
-        {
-          "file": "gw-portfolios-2000.webp",
-          "width": 2000,
-          "height": 1025
+        "sm": {
+          "area": {
+            "x": 240,
+            "y": 52,
+            "w": 370,
+            "h": 452
+          },
+          "files": [
+            {
+              "file": "gw-workstreams-sm-370.webp",
+              "width": 370,
+              "height": 452,
+              "kb": 15
+            },
+            {
+              "file": "gw-workstreams-sm-740.webp",
+              "width": 740,
+              "height": 904,
+              "kb": 35
+            }
+          ]
         }
-      ]
+      }
     },
     {
       "name": "gw-insights",
-      "alt": "Group Workstreams dashboard charting work items per workstream, split into critical and non-critical",
-      "sizes": [
-        {
-          "file": "gw-insights-1200.webp",
-          "width": 1200,
-          "height": 800
+      "app": "Group WorkStreams",
+      "view": "Insights: Group Workstreams Dashboard",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a1/insights",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "gw-insights-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 34
+            },
+            {
+              "file": "gw-insights-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 61
+            }
+          ]
         },
-        {
-          "file": "gw-insights-1920.webp",
-          "width": 1920,
-          "height": 1280
+        "chart": {
+          "area": {
+            "x": 236,
+            "y": 56,
+            "w": 708,
+            "h": 562
+          },
+          "files": [
+            {
+              "file": "gw-insights-chart-708.webp",
+              "width": 708,
+              "height": 562,
+              "kb": 19
+            },
+            {
+              "file": "gw-insights-chart-1416.webp",
+              "width": 1416,
+              "height": 1124,
+              "kb": 49
+            }
+          ]
         }
-      ]
+      }
     },
     {
       "name": "as-sprint",
-      "alt": "Agile Sprints current sprint board with stories in On Hold, Not Started, In Progress and Completed columns, each with epic, priority and story points",
-      "sizes": [
-        {
-          "file": "as-sprint-1200.webp",
-          "width": 1200,
-          "height": 750
+      "app": "Agile Sprints",
+      "view": "Current Sprint board (sprint 3, Attendance Capture)",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a10/workflow-tasks/emVkeGFwcHNfNzVfemVkeGFwcHM=",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "as-sprint-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 95
+            },
+            {
+              "file": "as-sprint-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 152
+            }
+          ]
         },
-        {
-          "file": "as-sprint-2000.webp",
-          "width": 2000,
-          "height": 1250
+        "strip": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 772,
+            "h": 274
+          },
+          "files": [
+            {
+              "file": "as-sprint-strip-772.webp",
+              "width": 772,
+              "height": 274,
+              "kb": 20
+            },
+            {
+              "file": "as-sprint-strip-1544.webp",
+              "width": 1544,
+              "height": 548,
+              "kb": 45
+            }
+          ]
+        },
+        "wide": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 1362,
+            "h": 508
+          },
+          "files": [
+            {
+              "file": "as-sprint-wide-1362.webp",
+              "width": 1362,
+              "height": 508,
+              "kb": 59
+            },
+            {
+              "file": "as-sprint-wide-2724.webp",
+              "width": 2724,
+              "height": 1016,
+              "kb": 133
+            }
+          ]
+        },
+        "sm": {
+          "area": {
+            "x": 845,
+            "y": 150,
+            "w": 288,
+            "h": 172
+          },
+          "files": [
+            {
+              "file": "as-sprint-sm-288.webp",
+              "width": 288,
+              "height": 172,
+              "kb": 5
+            },
+            {
+              "file": "as-sprint-sm-576.webp",
+              "width": 576,
+              "height": 344,
+              "kb": 10
+            }
+          ]
         }
-      ]
+      }
     },
     {
       "name": "as-backlog",
-      "alt": "Agile Sprints backlog with stories moving from Ideas & Intake through Refinement Needed to Ready for Sprint",
-      "sizes": [
-        {
-          "file": "as-backlog-1200.webp",
-          "width": 1200,
-          "height": 750
+      "app": "Agile Sprints",
+      "view": "Backlogs board",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a10/workflow-tasks/emVkeGFwcHNfNzVfemVkeGFwcHM=",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "as-backlog-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 85
+            },
+            {
+              "file": "as-backlog-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 140
+            }
+          ]
         },
-        {
-          "file": "as-backlog-2000.webp",
-          "width": 2000,
-          "height": 1250
+        "board": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 893,
+            "h": 378
+          },
+          "files": [
+            {
+              "file": "as-backlog-board-893.webp",
+              "width": 893,
+              "height": 378,
+              "kb": 30
+            },
+            {
+              "file": "as-backlog-board-1786.webp",
+              "width": 1786,
+              "height": 756,
+              "kb": 67
+            }
+          ]
+        },
+        "refine": {
+          "area": {
+            "x": 540,
+            "y": 150,
+            "w": 597,
+            "h": 280
+          },
+          "files": [
+            {
+              "file": "as-backlog-refine-597.webp",
+              "width": 597,
+              "height": 280,
+              "kb": 16
+            },
+            {
+              "file": "as-backlog-refine-1194.webp",
+              "width": 1194,
+              "height": 560,
+              "kb": 37
+            }
+          ]
+        },
+        "sm": {
+          "area": {
+            "x": 845,
+            "y": 150,
+            "w": 292,
+            "h": 280
+          },
+          "files": [
+            {
+              "file": "as-backlog-sm-292.webp",
+              "width": 292,
+              "height": 280,
+              "kb": 8
+            },
+            {
+              "file": "as-backlog-sm-584.webp",
+              "width": 584,
+              "height": 560,
+              "kb": 18
+            }
+          ]
         }
-      ]
+      }
     },
     {
       "name": "as-epics",
-      "alt": "Agile Sprints epics timeline laying out epics week by week from January to March",
-      "sizes": [
-        {
-          "file": "as-epics-1200.webp",
-          "width": 1200,
-          "height": 450
+      "app": "Agile Sprints",
+      "view": "Epics timeline (Gantt)",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a10/epics/emVkeGFwcHNfNzVfemVkeGFwcHM=",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "as-epics-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 32
+            },
+            {
+              "file": "as-epics-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 54
+            }
+          ]
         },
-        {
-          "file": "as-epics-2000.webp",
-          "width": 2000,
-          "height": 750
+        "timeline": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 1362,
+            "h": 388
+          },
+          "files": [
+            {
+              "file": "as-epics-timeline-1362.webp",
+              "width": 1362,
+              "height": 388,
+              "kb": 22
+            },
+            {
+              "file": "as-epics-timeline-2724.webp",
+              "width": 2724,
+              "height": 776,
+              "kb": 52
+            }
+          ]
+        },
+        "start": {
+          "area": {
+            "x": 238,
+            "y": 52,
+            "w": 662,
+            "h": 310
+          },
+          "files": [
+            {
+              "file": "as-epics-start-662.webp",
+              "width": 662,
+              "height": 310,
+              "kb": 12
+            },
+            {
+              "file": "as-epics-start-1324.webp",
+              "width": 1324,
+              "height": 620,
+              "kb": 27
+            }
+          ]
         }
-      ]
+      }
+    },
+    {
+      "name": "pp-insights",
+      "app": "Project Portfolios",
+      "view": "Insights: Project Portfolios Dashboard A",
+      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a2/insights",
+      "crops": {
+        "full": {
+          "area": {
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000
+          },
+          "files": [
+            {
+              "file": "pp-insights-full-1600.webp",
+              "width": 1600,
+              "height": 1000,
+              "kb": 34
+            },
+            {
+              "file": "pp-insights-full-2400.webp",
+              "width": 2400,
+              "height": 1500,
+              "kb": 58
+            }
+          ]
+        },
+        "chart": {
+          "area": {
+            "x": 234,
+            "y": 60,
+            "w": 562,
+            "h": 568
+          },
+          "files": [
+            {
+              "file": "pp-insights-chart-562.webp",
+              "width": 562,
+              "height": 568,
+              "kb": 13
+            },
+            {
+              "file": "pp-insights-chart-1124.webp",
+              "width": 1124,
+              "height": 1136,
+              "kb": 28
+            }
+          ]
+        }
+      }
     }
   ]
 }

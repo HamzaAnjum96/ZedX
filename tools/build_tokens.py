@@ -46,7 +46,7 @@ def render(tokens):
     for name, value in tokens["motion"].items():
         lines.append("  --motion-%s: %s;" % (name, value))
     layout = tokens["layout"]
-    for name in ("max", "gutter", "gutter-mobile", "header"):
+    for name in ("max", "gutter", "gutter-mobile", "header", "measure"):
         lines.append("  --layout-%s: %s;" % (name, px(layout[name])))
     lines.append("}")
     return "\n".join(lines) + "\n"

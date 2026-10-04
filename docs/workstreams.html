@@ -4,378 +4,221 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>document.documentElement.classList.add('js')</script>
-  <title>Group WorkStreams: Kanban workflows for every team | ZedX Apps</title>
-  <meta name="description" content="Group WorkStreams gives each function in your organisation its own workflow, with every task on a Kanban board. Part of the ZedX Apps Platform.">
-  <meta name="theme-color" content="#0b1b33">
+  <title>Group WorkStreams: Kanban workflows for continuous work | Independent ZedX promotional site</title>
+  <meta name="description" content="Group WorkStreams gives each function its own workstream: a Kanban board with stages that fit the work. Real screens from the ZedX demo, explained by an independent promotional site.">
+  <meta name="theme-color" content="#0E3562">
   <link rel="canonical" href="https://hamzaanjum96.github.io/ZedX/workstreams.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Group WorkStreams: Kanban workflows for every team">
-  <meta property="og:description" content="Give every team its own flow of work. Part of the ZedX Apps Platform.">
+  <meta property="og:title" content="Group WorkStreams: Kanban workflows for continuous work">
+  <meta property="og:description" content="A workstream for each function, each with its own board and stages. Real screens from the ZedX demo.">
   <meta property="og:url" content="https://hamzaanjum96.github.io/ZedX/workstreams.html">
   <meta property="og:image" content="https://hamzaanjum96.github.io/ZedX/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/outfit-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <script type="module" src="assets/js/site.js"></script>
-  <script type="module" src="assets/js/workstreams-demo.js"></script>
 </head>
-<body class="theme-ws">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" data-header>
+  <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="./" aria-label="ZedX Apps: Group WorkStreams and Agile Sprints, home">
-        <svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true"><rect class="g-bg" width="32" height="32" rx="8"/><rect class="g-ws" x="6.5" y="7" width="5" height="13" rx="2.5"/><rect class="g-as" x="13.5" y="7" width="5" height="18" rx="2.5"/><rect class="g-zx" x="20.5" y="7" width="5" height="9" rx="2.5"/></svg>
-        <span class="brand-name">ZedX <span>Apps</span></span>
+      <a class="brand" href="./">
+        <span class="brand-name">Group WorkStreams <span class="brand-amp">&amp;</span> Agile Sprints</span>
+        <span class="brand-note">Independent promotional site</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
         <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"/></svg>
         <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#i-x"/></svg>
         <span class="visually-hidden">Menu</span>
       </button>
-      <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
-        <ul>
-          <li><a class="nav-link" href="workstreams.html" aria-current="page">Group WorkStreams</a></li>
-          <li><a class="nav-link" href="agile-sprints.html">Agile Sprints</a></li>
-          <li><a class="nav-link" href="index.html#platform">Platform</a></li>
-          <li><a class="nav-link" href="index.html#licensing">Licensing</a></li>
-          <li><a class="nav-link" href="index.html#faq">FAQ</a></li>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="workstreams.html" aria-current="page">Group WorkStreams</a></li>
+          <li><a href="agile-sprints.html">Agile Sprints</a></li>
+          <li><a href="./#compare">Compare</a></li>
+          <li><a href="./#adoption">Adoption</a></li>
         </ul>
-        <div class="nav-actions">
-          <a class="btn btn-ghost" href="https://zedx.net/">Log in<span class="visually-hidden"> to ZedX (opens zedx.net)</span></a>
-          <a class="btn btn-primary" href="https://www.zedxapps.com/index.html#formContact">Book a demo<span class="visually-hidden"> (opens the ZedX website)</span></a>
-        </div>
+        <ul class="nav-actions">
+          <li><a class="nav-login" href="https://zedx.net/">Log in to ZedX<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-log-in"/></svg></a></li>
+          <li><a class="btn btn-outline" href="https://www.zedxapps.com/index.html#formContact">Request a demo</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Group WorkStreams · Kanban workflows</p>
-          <h1 id="hero-title">Give every team its own <span class="hl-ws">flow of work.</span></h1>
-          <p class="hero-lead">Set up a workstream for each function of your organisation, from HR and finance to IT, estates and governance. Every workstream's tasks sit on a Kanban board, so anyone who needs to can see where things stand.</p>
-          <div class="btn-row">
-            <a class="btn btn-light btn-lg" href="#demo">Try the board</a>
-            <a class="btn btn-on-dark btn-lg" href="https://www.zedxapps.com/index.html#formContact">Book a demo<span class="visually-hidden"> (opens the ZedX website)</span></a>
-          </div>
-          <ul class="hero-note">
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-square-kanban"/></svg>A workflow per function</li>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-user-plus"/></svg>Guest logins for partners</li>
-            <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-log-in"/></svg>One login with every ZedX app</li>
-          </ul>
-        </div>
-
-        <div class="hero-art fan" role="img" aria-label="Illustration: three workstream boards fanned out, for staff onboarding, IT requests and estates jobs.">
-          <div class="screen fan-1" aria-hidden="true">
-            <div class="screen-bar"><span class="dot"></span>Group WorkStreams <span class="sep">›</span> <b>Estates and facilities</b></div>
-            <div class="screen-body">
-              <div class="mini-board">
-                <div class="mini-col"><h5>Reported</h5><div class="mini-card">Leaking radiator<div class="meta"><span class="tag tag-plain">Repairs</span><span class="who">GF</span></div></div></div>
-                <div class="mini-col"><h5>Scheduled</h5><div class="mini-card">Fire doors<div class="meta"><span class="tag tag-plain">Safety</span><span class="who">NS</span></div></div></div>
-                <div class="mini-col"><h5>Complete</h5><div class="mini-card">Cleaning contract<div class="meta"><span class="tag tag-plain">Contracts</span><span class="who">BL</span></div></div></div>
-              </div>
-            </div>
-          </div>
-          <div class="screen fan-2" aria-hidden="true">
-            <div class="screen-bar"><span class="dot"></span>Group WorkStreams <span class="sep">›</span> <b>IT requests</b></div>
-            <div class="screen-body">
-              <div class="mini-board">
-                <div class="mini-col"><h5>New</h5><div class="mini-card">Projector fault<div class="meta"><span class="tag tag-plain">Hardware</span><span class="who">DN</span></div></div></div>
-                <div class="mini-col"><h5>Triage</h5><div class="mini-card">Remote access<div class="meta"><span class="tag tag-guest">Guest</span><span class="who">CP</span></div></div></div>
-                <div class="mini-col"><h5>Resolved</h5><div class="mini-card">Printer offline<div class="meta"><span class="tag tag-plain">Hardware</span><span class="who">MW</span></div></div></div>
-              </div>
-            </div>
-          </div>
-          <div class="screen fan-3" aria-hidden="true">
-            <div class="screen-bar"><span class="dot"></span>Group WorkStreams <span class="sep">›</span> <b>Staff onboarding</b></div>
-            <div class="screen-body">
-              <div class="mini-board">
-                <div class="mini-col">
-                  <h5>Requested</h5>
-                  <div class="mini-card">Building pass<div class="meta"><span class="tag tag-plain">Estates</span><span class="who">JO</span></div></div>
-                  <div class="mini-card">Payroll set-up<div class="meta"><span class="tag tag-plain">Finance</span><span class="who">RK</span></div></div>
-                </div>
-                <div class="mini-col">
-                  <h5>In progress</h5>
-                  <div class="mini-card">Induction plan<div class="meta"><span class="tag tag-plain">HR</span><span class="who">AM</span></div></div>
-                  <div class="mini-card mover">Laptop and accounts<div class="meta"><span class="tag tag-plain">IT</span><span class="who">SB</span></div></div>
-                </div>
-                <div class="mini-col">
-                  <h5>Done</h5>
-                  <div class="mini-card">Contract signed<div class="meta"><span class="tag tag-plain">HR</span><span class="who">AM</span></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Demo -->
-    <section class="section section-ws" id="demo" aria-labelledby="demo-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Try it</p>
-          <h2 id="demo-title">Four workstreams, one platform</h2>
-          <p>Each function's work moves through stages that make sense for it. Switch between the sample workstreams and move a few cards along.</p>
+        <div class="page-hero-head">
+          <div>
+            <p class="eyebrow">ZedX app for continuous work</p>
+            <h1 id="page-title">Group WorkStreams</h1>
+            <p class="hero-lead">Kanban workflows for the work that arrives every day. Each function gets its own workstream, and each workstream gets a board with stages that fit the work.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-cyan" href="https://www.zedxapps.com/index.html#formContact">Request a demo</a>
+            <a class="link-quiet" href="./#compare">Compare with Agile Sprints<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a>
+          </div>
         </div>
 
-        <div class="demo" data-ws-demo>
-          <div class="demo-top">
-            <p class="demo-title"><span class="dot"></span>Group WorkStreams</p>
-            <p class="demo-note">Illustration with sample data, not the live product</p>
+        <figure class="shot shot--navy">
+          <div class="shot-frame">
+            <picture>
+              <source media="(max-width: 640px)" srcset="assets/img/screens/gw-board-sm-302.webp 302w, assets/img/screens/gw-board-sm-604.webp 604w" sizes="calc(100vw - 40px)" width="302" height="186">
+              <img src="assets/img/screens/gw-board-wide-1362.webp" srcset="assets/img/screens/gw-board-wide-1362.webp 1362w, assets/img/screens/gw-board-wide-2724.webp 2724w" sizes="(min-width: 641px) min(1240px, 100vw - 64px), calc(100vw - 40px)" width="1362" height="508" fetchpriority="high" alt="Group WorkStreams board for the Complaints &amp; Compliments Log workstream, with work items in the stages Outstanding, In Progress, Escalated, Response Issued and Closed - Ready for Archive">
+            </picture>
           </div>
-          <div class="tabs" role="tablist" aria-label="Sample workstreams" data-tabs></div>
-          <p class="demo-help" id="ws-help" data-help>
-            <span>Drag a card with a mouse, or use its arrow buttons.</span>
-            <span>Keyboard: select a card, then <kbd>←</kbd> <kbd>→</kbd> moves it and <kbd>↑</kbd> <kbd>↓</kbd> moves between cards.</span>
-          </p>
-          <div class="board-wrap">
-            <div id="ws-board" role="tabpanel" data-board>
-              <p class="demo-noscript">This interactive illustration needs JavaScript. It shows four sample workstreams (staff onboarding, IT requests, estates and facilities, policy approvals), each a Kanban board with its own stages.</p>
-            </div>
-          </div>
-          <div class="demo-foot">
-            <span>Cards marked <span class="tag tag-guest">Guest</span> belong to people from outside the organisation.</span>
-            <button class="text-btn" type="button" data-reset><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-refresh-ccw"/></svg>Reset the sample</button>
-          </div>
-        </div>
+          <figcaption class="shot-cap">
+            <span class="shot-text"><span class="shot-app">Group WorkStreams</span> Complaints &amp; Compliments Log: five stages, from Outstanding through Escalated and Response Issued to Closed. Items show their reference and priority, and the assignee where one is set.</span>
+            <a class="shot-zoom" href="assets/img/screens/gw-board-full-2400.webp" data-viewer="gw-board" data-title="Group WorkStreams: Complaints &amp; Compliments Log board" data-alt="Full Group WorkStreams screen showing the Complaints &amp; Compliments Log board with five stages and the app's side navigation: Backlog, Current Stages, Epic and Archived">View full screen<span class="visually-hidden">: complaints board</span><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-maximize-2"/></svg></a>
+          </figcaption>
+        </figure>
+        <p class="shots-source shots-source--page">Real screens from the ZedX demo environment, showing its sample college data.</p>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section class="section" aria-labelledby="how-title">
-      <div class="container split">
-        <div>
-          <div class="section-head">
-            <p class="eyebrow">How it works</p>
-            <h2 id="how-title">From one-off requests to a steady flow</h2>
-          </div>
-          <ol class="steps">
-            <li>
-              <h3>Set up a workstream for each function</h3>
-              <p>Staff onboarding, IT requests, estates jobs, policy approvals: each part of the organisation gets a workflow of its own.</p>
-            </li>
-            <li>
-              <h3>Put its tasks on a Kanban board</h3>
-              <p>Every task sits in a column showing its stage, so the state of the work is clear at a glance.</p>
-            </li>
-            <li>
-              <h3>Work the board together</h3>
-              <p>Add tasks as they come in and move them on as they progress. Colleagues and outside partners with guest logins work on the same board.</p>
-            </li>
-            <li>
-              <h3>Keep leaders informed</h3>
-              <p>Link a project's workstream to Project Portfolios and its progress is summarised in structured updates. Export to Excel whenever someone needs a list.</p>
-            </li>
-          </ol>
+    <section class="section" id="functions" aria-labelledby="functions-title">
+      <div class="container step">
+        <div class="step-text">
+          <h2 id="functions-title">A workstream for each function</h2>
+          <p>Each workstream serves one function of the organisation. The demo college runs workstreams from catering and vending issues to CPD and training requests, each filed under a portfolio such as Campus Operations, HR or Accounts &amp; Finance.</p>
+          <p>The list shows every workstream with its portfolio, active epics, active tasks, type and owners, so it is clear who looks after what.</p>
         </div>
-        <figure class="figure">
-          <div class="screen-bar"><span class="dot"></span>Group WorkStreams <span class="sep">›</span> <b>Workstreams</b></div>
-          <ul class="stream-list">
-            <li><span class="dot dot-ws"></span><span class="stream-name">Staff onboarding</span><span class="tag tag-plain">HR</span><span class="stream-count">7 tasks</span></li>
-            <li><span class="dot dot-ws"></span><span class="stream-name">IT requests</span><span class="tag tag-plain">IT</span><span class="stream-count">5 tasks</span></li>
-            <li><span class="dot dot-ws"></span><span class="stream-name">Estates and facilities</span><span class="tag tag-plain">Estates</span><span class="stream-count">5 tasks</span></li>
-            <li><span class="dot dot-ws"></span><span class="stream-name">Policy approvals</span><span class="tag tag-plain">Governance</span><span class="stream-count">5 tasks</span></li>
-            <li><span class="dot dot-ws"></span><span class="stream-name">Supplier onboarding</span><span class="tag tag-plain">Procurement</span><span class="stream-count">3 tasks</span></li>
-            <li class="stream-new"><svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-plus"/></svg>New workstream</li>
-          </ul>
-          <figcaption class="figure-caption">Illustration with sample data: one workstream per function.</figcaption>
+        <figure class="shot step-figure">
+          <div class="shot-frame">
+            <picture>
+              <source media="(max-width: 640px)" srcset="assets/img/screens/gw-workstreams-sm-370.webp 370w, assets/img/screens/gw-workstreams-sm-740.webp 740w" sizes="calc(100vw - 40px)" width="370" height="452">
+              <img src="assets/img/screens/gw-workstreams-list-840.webp" srcset="assets/img/screens/gw-workstreams-list-840.webp 840w, assets/img/screens/gw-workstreams-list-1680.webp 1680w" sizes="(min-width: 1200px) calc((min(1240px, 100vw - 64px) - 64px) * 0.66), (min-width: 641px) min(860px, 100vw - 64px), calc(100vw - 40px)" width="840" height="452" loading="lazy" decoding="async" alt="Group WorkStreams list of workstreams, including Catering &amp; Vending Machine Issues under Campus Operations and Complaints &amp; Compliments Log under Quality Assurance, with active epics and active tasks">
+            </picture>
+          </div>
+          <figcaption class="shot-cap">
+            <span class="shot-text"><span class="shot-app">Group WorkStreams</span> The workstreams list, with each workstream’s portfolio, active epics and active tasks.</span>
+            <a class="shot-zoom" href="assets/img/screens/gw-workstreams-full-2400.webp" data-viewer="gw-workstreams" data-title="Group WorkStreams: workstreams list" data-alt="Full Group WorkStreams screen listing workstreams with their portfolio, active epics, active tasks, type and owners">View full screen<span class="visually-hidden">: workstreams list</span><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-maximize-2"/></svg></a>
+          </figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Ideas -->
-    <section class="section section-surface" aria-labelledby="ideas-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Ideas for workstreams</p>
-          <h2 id="ideas-title">Where a workstream earns its keep</h2>
-          <p>A few examples of work that arrives as a steady stream and benefits from a board of its own. Each shows the stages its work might move through.</p>
+    <section class="section section--white" id="stages" aria-labelledby="stages-title">
+      <div class="container step step--flip">
+        <div class="step-text">
+          <h2 id="stages-title">Stages that fit the work</h2>
+          <p>Stages are set for each workstream, from the New Stage and Edit Stage controls on its board. The complaints log above needs five stages to track escalations and responses; catering issues need three: New Issue, In Progress and Completed.</p>
+          <p>Work items carry a reference and a priority from Low to Critical, plus the assignee where one is set, so the board shows at a glance what is urgent and who has it.</p>
         </div>
-        <div class="idea-grid">
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Government</span>
-            <h3>Freedom of Information requests</h3>
-            <ol aria-label="Stages"><li>Received</li><li>Assigned</li><li>Drafting</li><li>Approved</li><li>Sent</li></ol>
-          </article>
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Government</span>
-            <h3>Complaints handling</h3>
-            <ol aria-label="Stages"><li>Logged</li><li>Investigating</li><li>Reply drafted</li><li>Closed</li></ol>
-          </article>
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Education</span>
-            <h3>Student support cases</h3>
-            <ol aria-label="Stages"><li>Referred</li><li>Assessing</li><li>Support in place</li><li>Closed</li></ol>
-          </article>
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Education</span>
-            <h3>Course approvals</h3>
-            <ol aria-label="Stages"><li>Proposal</li><li>Panel review</li><li>Changes</li><li>Approved</li></ol>
-          </article>
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Business</span>
-            <h3>Supplier onboarding</h3>
-            <ol aria-label="Stages"><li>Request</li><li>Checks</li><li>Contract</li><li>Live</li></ol>
-          </article>
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Business</span>
-            <h3>Marketing requests</h3>
-            <ol aria-label="Stages"><li>Brief</li><li>In production</li><li>Review</li><li>Live</li></ol>
-          </article>
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Any sector</span>
-            <h3>Recruitment campaigns</h3>
-            <ol aria-label="Stages"><li>Vacancy</li><li>Advertised</li><li>Interviews</li><li>Offer</li></ol>
-          </article>
-          <article class="idea">
-            <span class="tag tag-plain sector-tag">Any sector</span>
-            <h3>Health and safety actions</h3>
-            <ol aria-label="Stages"><li>Raised</li><li>Assigned</li><li>In hand</li><li>Closed</li></ol>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Kanban -->
-    <section class="section section-dark" aria-labelledby="why-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Why Kanban</p>
-          <h2 id="why-title">Why a board suits operational work</h2>
-          <p>Operational work rarely fits a two-week plan. It arrives when it arrives. A Kanban board handles that well.</p>
-        </div>
-        <div class="pillars">
-          <div class="pillar">
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-eye"/></svg>
-            <h3>See the whole flow</h3>
-            <p>Every request is on the board, so nobody has to ask where something has got to.</p>
+        <figure class="shot step-figure">
+          <div class="shot-frame">
+            <picture>
+              <source media="(max-width: 640px)" srcset="assets/img/screens/gw-board-catering-sm-302.webp 302w, assets/img/screens/gw-board-catering-sm-604.webp 604w" sizes="calc(100vw - 40px)" width="302" height="180">
+              <img src="assets/img/screens/gw-board-catering-board-893.webp" srcset="assets/img/screens/gw-board-catering-board-893.webp 893w, assets/img/screens/gw-board-catering-board-1786.webp 1786w" sizes="(min-width: 1200px) calc((min(1240px, 100vw - 64px) - 64px) * 0.66), (min-width: 641px) min(860px, 100vw - 64px), calc(100vw - 40px)" width="893" height="545" loading="lazy" decoding="async" alt="Group WorkStreams board for Catering &amp; Vending Machine Issues with three stages, New Issue, In Progress and Completed, each holding work items with a reference and a priority">
+            </picture>
           </div>
-          <div class="pillar">
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-timer"/></svg>
-            <h3>Spot where work waits</h3>
-            <p>When cards pile up in one column, the bottleneck is visible and the team can act on it.</p>
+          <figcaption class="shot-cap">
+            <span class="shot-text"><span class="shot-app">Group WorkStreams</span> Catering &amp; Vending Machine Issues: the same board, with three stages instead of five.</span>
+            <a class="shot-zoom" href="assets/img/screens/gw-board-catering-full-2400.webp" data-viewer="gw-board-catering" data-title="Group WorkStreams: Catering &amp; Vending Machine Issues board" data-alt="Full Group WorkStreams screen showing the Catering &amp; Vending Machine Issues board with three stages, New Issue, In Progress and Completed, and the app's side navigation">View full screen<span class="visually-hidden">: catering board</span><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-maximize-2"/></svg></a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard" aria-labelledby="dashboard-title">
+      <div class="container step step--half">
+        <div class="step-text">
+          <h2 id="dashboard-title">See where the work is piling up</h2>
+          <p>The Insights dashboard charts the total work items in each workstream a user can access, split into critical and non-critical. It shows which functions carry the most work, and where the critical items sit, without opening every board.</p>
+        </div>
+        <figure class="shot step-figure">
+          <div class="shot-frame">
+            <img src="assets/img/screens/gw-insights-chart-708.webp" srcset="assets/img/screens/gw-insights-chart-708.webp 708w, assets/img/screens/gw-insights-chart-1416.webp 1416w" sizes="(min-width: 1200px) calc((min(1240px, 100vw - 64px) - 64px) / 2), (min-width: 641px) min(708px, 100vw - 64px), calc(100vw - 40px)" width="708" height="562" loading="lazy" decoding="async" alt="Group Workstreams Dashboard bar chart of total work items per workstream, split into non-critical and critical, with Attendance Management Application highest at 146">
           </div>
-          <div class="pillar">
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-circle-check"/></svg>
-            <h3>Finish before starting more</h3>
-            <p>Teams pull new work in when they have room, instead of juggling everything at once.</p>
+          <figcaption class="shot-cap">
+            <span class="shot-text"><span class="shot-app">Group WorkStreams</span> Insights: work items per workstream, critical in red.</span>
+            <a class="shot-zoom" href="assets/img/screens/gw-insights-full-2400.webp" data-viewer="gw-insights" data-title="Group WorkStreams: Insights dashboard" data-alt="Full Group WorkStreams screen showing the Group Workstreams Dashboard with a work items chart and counts of the user's critical and non-critical tasks">View full screen<span class="visually-hidden">: Insights dashboard</span><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-maximize-2"/></svg></a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--white" id="alongside" aria-labelledby="alongside-title">
+      <div class="container split">
+        <h2 id="alongside-title">Alongside other ZedX apps</h2>
+        <dl class="rows">
+          <div>
+            <dt>Agile Sprints</dt>
+            <dd>Teams running mixed delivery models can use Group WorkStreams alongside Agile Sprints, keeping sprint delivery focused while operational and ad-hoc work is managed separately. <a href="agile-sprints.html">About Agile Sprints</a></dd>
           </div>
-        </div>
+          <div>
+            <dt>Project Portfolios</dt>
+            <dd>Project workstreams in Project Portfolios can be linked to Group WorkStreams, with progress summarised for leadership through structured project updates rather than task-level detail. <a href="./#leadership">What leadership sees</a></dd>
+          </div>
+          <div>
+            <dt>Sign-in, hosting and licensing</dt>
+            <dd>Group WorkStreams runs on the ZedX Apps Platform: single sign-on with Microsoft Entra ID or a ZedX ID, per-app permissions, and per-user or unlimited licences. <a href="./#adoption">What adoption involves</a></dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <!-- Works alongside -->
-    <section class="section" aria-labelledby="alongside-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Works alongside</p>
-          <h2 id="alongside-title">Part of a bigger picture</h2>
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="container closing-grid">
+        <div>
+          <p class="eyebrow">Next step</p>
+          <h2 id="closing-title">See Group WorkStreams with your own workflows in mind</h2>
+          <p>Demo requests go through the contact form on zedxapps.com, straight to Swiftpro, the company that develops ZedX. Tell them which functions you want to run as workstreams; they will get back to you.</p>
         </div>
-        <div class="related">
-          <article class="card theme-as">
-            <h3><span class="dot"></span>Agile Sprints</h3>
-            <p>Teams running a mixed delivery model use Agile Sprints for their Scrum work and Group WorkStreams for operational and ad-hoc work. Sprints stay focused; nothing gets lost.</p>
-            <a class="arrow-link" href="agile-sprints.html">See Agile Sprints <svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a>
-          </article>
-          <article class="card theme-zx">
-            <h3><span class="dot"></span>Project Portfolios</h3>
-            <p>Where a project includes continuous-flow or operational work, its workstreams can be linked to Group WorkStreams, with progress summarised through structured project updates.</p>
-            <a class="arrow-link" href="index.html#together">How the apps connect <svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a>
-          </article>
+        <div class="closing-actions">
+          <a class="btn btn-cyan" href="https://www.zedxapps.com/index.html#formContact">Request a demo<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-external-link"/></svg><span class="visually-hidden">(opens the contact form on zedxapps.com)</span></a>
+          <a class="link-quiet" href="brochure.pdf" download>Download the brochure (PDF, 4 pages)<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-file-down"/></svg></a>
+          <a class="link-quiet" href="https://zedx.net/">Already a customer? Log in to ZedX<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-log-in"/></svg></a>
         </div>
       </div>
     </section>
-
-    <!-- Platform strip -->
-    <section class="section section-surface section-tight" aria-labelledby="platform-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">On the ZedX Apps Platform</p>
-          <h2 id="platform-title">The platform comes with it</h2>
-        </div>
-        <div class="grid grid-4">
-          <article class="tile">
-            <div class="tile-icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-key-round"/></svg></div>
-            <h3>One login</h3>
-            <p>Microsoft Entra ID single sign-on or a ZedX ID, and the same interface in every app.</p>
-          </article>
-          <article class="tile">
-            <div class="tile-icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-user-plus"/></svg></div>
-            <h3>Guests welcome</h3>
-            <p>Contractors and partners join with their own Entra ID or a guest login.</p>
-          </article>
-          <article class="tile">
-            <div class="tile-icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-shield-check"/></svg></div>
-            <h3>The right access</h3>
-            <p>Access by app and by module, with a full hierarchy of permissions.</p>
-          </article>
-          <article class="tile">
-            <div class="tile-icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-settings-2"/></svg></div>
-            <h3>Fits your sector</h3>
-            <p>Preconfigured for government, education or business, then configured to fit.</p>
-          </article>
-        </div>
-        <p class="more-link"><a class="arrow-link" href="index.html#platform">More about the platform <svg class="icon icon-sm" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a></p>
-      </div>
-    </section>
-
-    <section class="cta-band" aria-labelledby="cta-title">
-      <div class="container">
-        <h2 id="cta-title">Put your own workstreams on a board</h2>
-        <p>Book a demo and see Group WorkStreams set up around your organisation's functions.</p>
-        <div class="btn-row">
-          <a class="btn btn-light btn-lg" href="https://www.zedxapps.com/index.html#formContact">Book a demo<span class="visually-hidden"> (opens the ZedX website)</span></a>
-          <a class="btn btn-on-dark btn-lg" href="brochure.pdf" download><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-file-down"/></svg>Download the brochure <span class="visually-hidden">(PDF)</span></a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <a class="brand" href="./">
-            <svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true"><rect class="g-bg" width="32" height="32" rx="8"/><rect class="g-ws" x="6.5" y="7" width="5" height="13" rx="2.5"/><rect class="g-as" x="13.5" y="7" width="5" height="18" rx="2.5"/><rect class="g-zx" x="20.5" y="7" width="5" height="9" rx="2.5"/></svg>
-            <span class="brand-name">ZedX <span>Apps</span></span>
-          </a>
-          <p>Group WorkStreams and Agile Sprints are applications on the ZedX Apps Platform from Swiftpro Corporation Ltd, London.</p>
-        </div>
-        <div>
-          <h2>Explore</h2>
-          <ul>
-            <li><a href="workstreams.html" aria-current="page">Group WorkStreams</a></li>
-            <li><a href="agile-sprints.html">Agile Sprints</a></li>
-            <li><a href="index.html#platform">The platform</a></li>
-            <li><a href="index.html#licensing">Licensing</a></li>
-            <li><a href="brochure.pdf" download>Brochure (PDF)</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>ZedX</h2>
-          <ul>
-            <li><a href="https://www.zedxapps.com/index.html">zedxapps.com</a></li>
-            <li><a href="https://www.zedxapps.com/applications/index.html">All applications</a></li>
-            <li><a href="https://www.zedxapps.com/index.html#formContact">Book a demo</a></li>
-            <li><a href="https://zedx.net/">Customer login</a></li>
-          </ul>
-        </div>
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-title">About this site</p>
+        <p>An independent promotional website for two ZedX apps. It is not run by Swiftpro Corporation Ltd. ZedX, ZedX Apps, Group WorkStreams, Agile Sprints and Project Portfolios are products of Swiftpro Corporation Ltd, London.</p>
+        <p>Screens: ZedX demo environment, sample data, October 2026. This site sets no cookies and loads nothing from third parties.</p>
       </div>
-      <div class="footer-small">
-        <p>Boards, charts and summaries on this site are illustrations with sample data. This site sets no cookies and collects no data.</p>
-        <p>Fonts: Outfit and Inter (SIL OFL). Icons: Lucide (ISC).</p>
-      </div>
+      <nav class="footer-nav" aria-label="Site">
+        <p class="footer-title">Pages</p>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="workstreams.html" aria-current="page">Group WorkStreams</a></li>
+          <li><a href="agile-sprints.html">Agile Sprints</a></li>
+          <li><a href="brochure.pdf">Brochure (PDF)</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav" aria-label="Official ZedX sources">
+        <p class="footer-title">Official sources</p>
+        <ul>
+          <li><a href="https://www.zedxapps.com/Applications/index.html">ZedX applications</a></li>
+          <li><a href="https://www.zedxapps.com/AgileSprints/Index.html">Agile Sprints</a></li>
+          <li><a href="https://www.zedxapps.com/ProjectPortfolios/Index.html">Project Portfolios</a></li>
+          <li><a href="https://www.zedxapps.com/Platform/index.html">ZedX Apps Platform</a></li>
+          <li><a href="https://zedx.net/">ZedX login</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
+
+  <dialog class="viewer" aria-labelledby="viewer-title" data-viewer-dialog>
+    <div class="viewer-bar">
+      <h2 class="viewer-title" id="viewer-title">Screenshot</h2>
+      <button class="viewer-btn" type="button" data-viewer-zoom><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-zoom-in"/></svg><span>Actual size</span></button>
+      <button class="viewer-btn viewer-close" type="button" data-viewer-close><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-x"/></svg><span>Close</span></button>
+    </div>
+    <div class="viewer-stage" tabindex="0" role="region" aria-label="Full screen image. Scroll to pan when shown at actual size.">
+      <img alt="" data-viewer-img>
+    </div>
+    <p class="viewer-caption" data-viewer-caption></p>
+  </dialog>
 </body>
 </html>
