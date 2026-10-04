@@ -19,7 +19,7 @@ Source: `replica/design/tokens.json`. Generated CSS: `docs/assets/css/tokens.css
 | `ink` | #172A3A | body text |
 | `paper` | #F8F7F4 | page background (the site is mostly light) |
 | `white` | #FFFFFF | screenshot frames, comparison table, alternate bands |
-| `cyan` | #18CEE6 | short markers; primary button on navy (navy text); focus ring on navy |
+| `cyan` | #18CEE6 | primary button on navy (navy text); focus ring and link underline on navy; the ampersand in the wordmark |
 | `link` | #165A96 | links and focus ring on light |
 | `border` | #D7E0E7 | fine rules and frames (decorative only) |
 | `ink-muted` | #4A5866 | captions and secondary text |
@@ -39,12 +39,12 @@ runs in CI and currently reports 27 pairs, 0 AA failures. Key results:
 
 Rules:
 
-- **Cyan is never text on a light background** (1.6:1). On light it appears only as a 3–4px marker.
+- **Cyan never appears on a light background.** It fails as text there (1.6:1) and adds nothing as decoration.
 - **No red, amber or green in the site's own design.** RAG colours appear only inside product screenshots, where they are genuine statuses.
 
 ## Typography
 
-- **IBM Plex Sans** 400/500/600 for everything, plus **IBM Plex Mono** 500 for labels only.
+- **IBM Plex Sans** 400/500/600 for everything. There is no second typeface.
   - Fonts are self-hosted, Latin subset (`docs/assets/fonts`, SIL OFL).
   - System fallbacks are in the token.
 - **Body:** 18/30px on desktop, 17/28px on phones. Lead text 20/32px.
@@ -52,11 +52,9 @@ Rules:
   - Weight 600, tracking −0.01em.
   - Sizes: H1 35–50px, H2 27–34px, H3 22px.
   - Line lengths are capped (H1 15ch, H2 18–30ch) and wrapping is balanced.
-- **Mono is reserved for:**
-  - the eyebrow and kicker labels;
-  - app names in screenshot captions and in the stacked comparison;
-  - footer column titles.
-- **Not used:** uppercase labels, slogans above H1 size, and text under 13px.
+- **Not used:**
+  - eyebrow labels or kickers above headings, and monospace "technical" labels (a test fails if either comes back);
+  - uppercase labels, slogans above H1 size, and text under 13px.
 
 ## Spacing and shape
 
@@ -68,29 +66,27 @@ Rules:
 
 ## Signature
 
-Four elements, used consistently and sparingly:
+Three elements, used consistently. The site gets its character from the real screens and plain writing, not from ornaments.
 
 1. **Aligned edges.**
    - Copy and screenshots share grid lines.
-   - Kickers align with the top edge of the screenshot beside them.
-   - On wide screens, a product's "More about" link lines up with the bottom of its screenshot caption.
+   - Headings start level with the top edge of the screenshot beside them.
+   - On wide screens, a product's "See how…" link lines up with the bottom of its screenshot caption.
 2. **Fine horizontal rules.**
-   - 1px rules separate sections, facts, specification rows and FAQ items.
-   - A 2px navy rule opens each adoption group.
-3. **Precise captions.**
-   - Every screenshot has the app name in mono, then one sentence on what is visible, then "View full screen".
-4. **Short cyan markers.**
-   - These appear only on the hero eyebrow, the two product kickers, the leadership lead paragraph and the closing band.
-   - Other headings stay plain.
+   - 1px rules separate sections, specification rows and FAQ items.
+   - A 2px navy rule opens each sign-in, hosting and licensing group.
+3. **Plain captions.**
+   - Every caption is one or two ordinary sentences that name the app and say what is visible, followed by "View full screen".
+   - Captions carry no separate label.
 
 ## Composition
 
 | section | layout | why |
 | --- | --- | --- |
 | hero (navy) | left-aligned copy (5/12) beside two stacked board strips, one per app (7/12); on phones, copy and CTA first, then single-stage detail crops | both products and their difference visible at once, with real evidence |
-| Group WorkStreams | intro (4/12) beside the workstreams list (8/12), then three facts in a row | the evidence is a list of workstreams by function |
-| Agile Sprints | heading and lead side by side, then two screenshots as a pair (backlog, epics timeline), then three facts | the evidence is a planning sequence |
-| comparison | white table: criterion, then the two apps; on phones each row stacks with mono app labels | a compact answer to "which fits?" |
+| Group WorkStreams | heading, two short paragraphs and a link (4/12) beside the workstreams list (8/12) | the evidence is a list of workstreams by function |
+| Agile Sprints | heading beside two short paragraphs and a link, then two screenshots as a pair (backlog, epics timeline) | the evidence is a planning sequence |
+| comparison | white table: criterion, then the two apps; on phones each row stacks with small app labels | a compact answer to "which fits?" |
 | leadership | editorial text (7/12) with the Project Portfolios dashboard as a supporting figure (5/12) | reporting is explained, not sold as a third product |
 | adoption | three spec columns (sign-in, hosting, licensing) of label and detail rows | reference information, scannable |
 | FAQ, closing, footer | question list beside its heading; navy closing band with one cyan action; navy footer with the attribution | the main action at the end, and who runs the site |
@@ -119,26 +115,34 @@ App pages open with a navy hero:
   - Escape closes it, and focus returns to the trigger.
   - Fit and actual size: phones start at actual size, so the screen can be panned.
   - Without JavaScript, the link opens the image file.
-- **Facts** (`dl.facts`): a bold navy term over plain text, separated by rules.
 - **Comparison table:** real table semantics, plus explicit roles so they survive the stacked layout on phones.
 - **Spec rows** (`dl.spec-rows`, `dl.rows`): label and detail, separated by rules.
 - **FAQ:** native `<details>`, with a chevron that turns on open.
 - **Header:**
-  - The text wordmark is the two product names, plus "Independent promotional site" in mono.
+  - The text wordmark is the two product names, plus "Independent promotional site" in small type.
   - There is no logo, because we have no verified partner identity of our own.
   - The navigation becomes a menu button below 1100px.
 
 ## Voice
 
+Copy is written and edited with the `copywriting` and `copy-editing` skills in `.claude/skills/`. Their product context is `.claude/product-marketing.md`.
+
 - **Plain British English:** organisation, prioritised, licence (noun).
 - **Name products and actions:** say "Group WorkStreams", "Agile Sprints", "request a demo", not "the solution".
-- **Banned words:** unlock, revolutionise, seamless, all-in-one, and competitor names. The site checker fails the build on them.
+- **Banned words:** unlock, revolutionise, seamless, all-in-one, competitor names, and the common AI-tell words (delve, leverage, empower, streamline, robust and similar). The site checker fails the build on them, and on em dashes.
+- **No AI-tell sentence shapes:**
+  - "not X, but Y" reveals;
+  - negation lists;
+  - sentences that trail off into extra comma clauses;
+  - self-answered questions and colon reveals.
+  - Write the fact instead; see `.claude/skills/copywriting/references/ai-tells.md`.
+- **Headings name the product and make a claim** (for example "Group WorkStreams gives each kind of work its own board"). Questions are fine when they are the reader's own ("Which app fits your work?").
 - **Never** say "our software", "our platform" or "we built". ZedX is Swiftpro's.
   - "We" means the promotional partner, and appears only where the site explains who runs it.
 - **Keep claims to the source:**
   - App features stay attached to their app.
   - Hosting conditions stay attached to their licence.
   - Integration is "a separate service from Swiftpro Digital".
-  - Leadership reporting is "periodic updates, not task-level detail".
+  - Leadership reporting arrives as periodic updates; the tasks stay on the team's board.
 - **No invented numbers:** no prices, customers, testimonials, outcomes or adoption figures.
-- **The demo button opens a vendor enquiry form,** so say that the request goes to Swiftpro and that nothing is booked automatically.
+- **The demo button opens a vendor enquiry form,** so say that the request goes to Swiftpro and that the form doesn't book a time.

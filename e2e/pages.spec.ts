@@ -88,7 +88,7 @@ for (const path of PAGES) {
       await page.goto(path);
       await expect(page.locator('.brand-note')).toHaveText('Independent promotional site');
       await expect(page.locator('.brand-note')).toBeVisible();
-      await expect(page.locator('.site-footer')).toContainText('not run by Swiftpro Corporation Ltd');
+      await expect(page.locator('.site-footer')).toContainText('Swiftpro Corporation Ltd does not run this site');
       await expect(page.locator('.site-footer')).toContainText('products of Swiftpro Corporation Ltd');
     });
   });

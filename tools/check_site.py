@@ -24,9 +24,14 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 
-# Words and claims the brief rules out (case-insensitive, visible text only).
+# Words and claims the brief rules out (case-insensitive, visible text only),
+# plus common AI tells from .claude/skills/copywriting/references/ai-tells.md.
 BANNED = ['unlock', 'revolutionis', 'seamless', 'all-in-one', 'our software',
-          'our platform', 'we built', 'jira', 'trello', 'atlassian']
+          'our platform', 'we built', 'jira', 'trello', 'atlassian',
+          'delve', 'leverage', 'empower', 'streamline', 'robust', 'cutting-edge',
+          'world-class', 'best-in-class', 'game-changer', 'game changer', 'effortless',
+          'say goodbye', 'reimagined', 'next level', 'in today\u2019s', "in today's",
+          'whether you\u2019re', "whether you're", '\u2014']
 
 
 class Page(HTMLParser):

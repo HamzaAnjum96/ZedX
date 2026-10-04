@@ -32,7 +32,7 @@ Static checks run before the browser tests:
 | `e2e/viewer.spec.ts` | "View full screen" opens a named modal: focus on Close, full screen loaded, caption cites the demo. Escape and Close both return focus to the trigger. Tabbing never reaches the page behind. Zoom switches between fitted and actual size (phones start at actual size). Clicking the screenshot opens the viewer. There is no sideways scroll behind the viewer. |
 | `e2e/content.spec.ts` | The hero names both apps, gives one primary action and states our role. Phones get the explanation and action first, then a detail crop. The comparison has two app columns and four criteria, with app labels when stacked. The FAQ answers who runs the site and what a demo request does. Leadership reporting is periodic and never "real time". Licensing lists four options, with no prices. Every figure is captioned with its app, and there is no drawn UI (no inline SVG beyond icons, no canvas). |
 
-Last run: **146 passed, 1 skipped**. The skip is the "no sideways scroll behind
+Last run: **158 passed, 1 skipped**. The skip is the "no sideways scroll behind
 the viewer" check, which runs on small screens only.
 
 ## Manual and visual checks
@@ -45,7 +45,7 @@ the viewer" check, which runs on small screens only.
   - The comparison table got fixed column widths.
   - Adoption moved into three columns.
   - The leadership heading was shortened.
-  - Stacked comparison labels were changed to mono.
+  - Stacked comparison labels were given a smaller size and weight.
   - "More about" links were aligned to the bottom of the caption.
   - The extra gap above app-page hero buttons was removed.
 - **PDF:** read page by page. All four pages fit, and the epics figure was dropped from page 3 to stop it overflowing.

@@ -43,11 +43,6 @@
   max-width: 28ch;
 }
 
-.sheet .kicker {
-  margin-bottom: 3mm;
-  font-size: 9.5pt;
-}
-
 .sheet-lead {
   margin-top: 4mm;
   max-width: 150mm;
@@ -63,10 +58,6 @@
   padding-top: 2mm;
   font-size: 8.5pt;
   line-height: 1.45;
-}
-
-.sheet .shot-app {
-  font-size: 8pt;
 }
 
 .sheet .shot-frame {
@@ -91,7 +82,7 @@
 }
 
 .cover-top {
-  padding: 18mm 17mm 14mm;
+  padding: 22mm 17mm 14mm;
   background: var(--c-navy);
   color: var(--c-on-navy);
 }
@@ -101,11 +92,6 @@
   font-size: 32pt;
   line-height: 1.12;
   max-width: 15ch;
-}
-
-.cover-top .eyebrow {
-  margin-bottom: 7mm;
-  font-size: 9.5pt;
 }
 
 .cover-lead {
@@ -134,31 +120,25 @@
 }
 
 /* Facts and rows */
-.b-facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 8mm;
+.b-cols {
   margin-top: 7mm;
+  column-count: 2;
+  column-gap: 8mm;
 }
 
-.b-facts > div {
-  padding-block: 3mm;
-  border-top: 1px solid var(--c-border);
+.b-cols p {
+  margin: 0 0 3mm;
+  break-inside: avoid;
 }
 
-.b-facts dt,
 .b-rows dt {
   font-weight: 600;
   color: var(--c-navy);
 }
 
-.b-facts dd {
-  margin-top: 1mm;
-}
-
 .b-h2 {
-  margin-top: 8mm;
-  margin-bottom: 3mm;
+  margin-top: 6mm;
+  margin-bottom: 2.5mm;
 }
 
 .sheet .b-h2 {
@@ -207,16 +187,16 @@
   display: grid;
   grid-template-columns: 38mm 1fr;
   gap: 4mm;
-  padding-block: 2mm;
+  padding-block: 1.5mm;
   border-top: 1px solid var(--c-border);
 }
 
 .b-next {
-  margin-top: 6mm;
+  margin-top: 5mm;
   padding: 4mm 5mm;
   background: var(--c-navy);
   color: var(--c-on-navy);
-  border-left: 4px solid var(--c-cyan);
+  border-radius: var(--radius-md);
 }
 
 .b-next strong {

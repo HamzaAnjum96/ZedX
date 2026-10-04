@@ -113,7 +113,7 @@ The items below are not on the current official pages, or only appear in the
 
 | to change | edit | then |
 | --- | --- | --- |
-| copy on a page | the page in `docs/` (header, footer and viewer markup are repeated in each page) | `python3 tools/check_site.py docs`, `npm test` |
+| copy on a page | the page in `docs/` (header, footer and viewer markup are repeated in each page); write with the `copywriting` skill and edit with `copy-editing` (`.claude/skills/`) | `python3 tools/check_site.py docs`, `npm test` |
 | colours, type, spacing | `replica/design/tokens.json` | `python3 tools/build_tokens.py`, contrast gate |
 | layout or components | `docs/assets/css/site.css` (colours, fonts, spacing, radii and shadows come from tokens; the only raw colour is the viewer backdrop) | `npm test` |
 | a screenshot crop | `SHOTS` in `tools/capture_screens.mjs` | `npm run screens -- --encode-only`, update `width`/`height` in the HTML |

@@ -21,7 +21,7 @@ into `main`. It is a fast-forward of `main`'s current head, 237e2ae.
   - banned copy.
 - [x] **Tokens:** `python3 tools/build_tokens.py --check` reports `tokens.css` up to date.
 - [x] **Contrast:** `contrast.py replica/design/tokens.json` reports 27 pairs, 0 AA failures.
-- [x] **e2e suite:** 146 passed, 1 skipped by design, at 1440, 768 and 390px (see `test-plan.md`).
+- [x] **e2e suite:** 158 passed, 1 skipped by design, at 1440, 768 and 390px (see `test-plan.md`).
 - [x] **Open bugs:** none at S1 or S2 (`bugs.md`; BUG-005 to BUG-007 are fixed).
 - [x] **Claims:** every published claim is in `claims.md`. Items needing Swiftpro's confirmation are listed in `DEVELOPER-NOTES.md`.
 - [x] **Attribution:**

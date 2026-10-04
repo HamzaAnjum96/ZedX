@@ -25,7 +25,7 @@ test('the main navigation reaches both app pages and back home', async ({ page }
   await expect(page).toHaveURL(/\/ZedX\/$/);
 });
 
-test('Compare and Adoption in the menu land on their sections from an app page', async ({ page }) => {
+test('Compare and Licensing in the menu land on their sections from an app page', async ({ page }) => {
   await page.goto('agile-sprints.html');
   await openMenuIfNeeded(page);
   await mainNav(page).getByRole('link', { name: 'Compare' }).click();
@@ -33,7 +33,7 @@ test('Compare and Adoption in the menu land on their sections from an app page',
   await expect(page.locator('#compare')).toBeInViewport();
 
   await openMenuIfNeeded(page);
-  await mainNav(page).getByRole('link', { name: 'Adoption' }).click();
+  await mainNav(page).getByRole('link', { name: 'Licensing' }).click();
   await expect(page).toHaveURL(/#adoption$/);
   await expect(page.locator('#adoption')).toBeInViewport();
 });
@@ -45,11 +45,11 @@ test('anchors used by earlier links still exist', async ({ page }) => {
   }
 });
 
-test('"Explore the apps" scrolls to the two products', async ({ page }) => {
+test('"See both apps" scrolls to the two products', async ({ page }) => {
   await page.goto('index.html');
-  await page.getByRole('link', { name: 'Explore the apps' }).click();
+  await page.getByRole('link', { name: 'See both apps' }).click();
   await expect(page).toHaveURL(/#apps$/);
-  await expect(page.getByRole('heading', { name: 'Continuous work, organised by function' })).toBeInViewport();
+  await expect(page.getByRole('heading', { name: 'Group WorkStreams gives each kind of work its own board' })).toBeInViewport();
 });
 
 test('the phone and tablet menu opens, closes with Escape and returns focus', async ({ page }) => {
@@ -95,7 +95,8 @@ for (const path of ['index.html', 'workstreams.html', 'agile-sprints.html']) {
     }
     // The page explains where a demo request goes: to the vendor, not a calendar.
     await expect(page.locator('main')).toContainText('Swiftpro');
-    await expect(page.locator('main')).not.toContainText(/book(ed)? (a|your) (slot|time)|calendar/i);
+    // (The FAQ says outright that the form doesn't book a time, so only promises are checked here.)
+    await expect(page.locator('main')).not.toContainText(/calendar|book a demo|book your|booked in/i);
   });
 }
 

@@ -57,6 +57,11 @@ October 2026 redesign:
 - **replica-design:** the token file and contrast gate;
 - **replica-test:** the e2e and axe suite, and the bug log format.
 
+The copy was then rewritten with the `copywriting` and `copy-editing` skills
+from [marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT),
+also in `.claude/skills/`. Their product context is `.claude/product-marketing.md`,
+and the before-and-after audit is in `replica/copy-review.md`.
+
 Files under `replica/` from the first build that describe the earlier site are
 kept for history and marked as superseded:
 
@@ -68,7 +73,8 @@ kept for history and marked as superseded:
 
 ## Credits and licences
 
-- Fonts: [IBM Plex Sans and Plex Mono](https://github.com/IBM/plex), SIL Open Font License (`docs/assets/fonts/OFL-*.txt`).
+- Font: [IBM Plex Sans](https://github.com/IBM/plex), SIL Open Font License (`docs/assets/fonts/OFL-IBM-Plex-Sans.txt`).
+- Copywriting skills: `copywriting` and `copy-editing` from [marketingskills](https://github.com/coreyhaines31/marketingskills), MIT, Corey Haines (`.claude/skills/MARKETINGSKILLS-LICENSE`).
 - Icons: [Lucide](https://lucide.dev), ISC License (`docs/assets/img/LICENSE-lucide.txt`).
 - Replica skill pack: MIT, Jake Schincariol (`.claude/skills/REPLICA-LICENSE`).
 - ZedX, ZedX Apps, Group WorkStreams, Agile Sprints and Project Portfolios are products of Swiftpro Corporation Ltd. Screenshots show the ZedX demo environment with its sample data.
