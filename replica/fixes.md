@@ -1,5 +1,7 @@
 # Fixes and angle
 
+> **Not used on the redesigned site.** This research into what users of other tools dislike shaped the first build's angle. The redesign makes no competitor comparisons; it is kept as background only.
+
 From `feedback.md`. Read 2026-10-04.
 
 ## The sample, honestly

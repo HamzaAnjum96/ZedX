@@ -1,5 +1,7 @@
 # Components
 
+> **Superseded.** This describes the first build's components (coral and cyan app colours, sample boards and charts), which the October 2026 redesign removed. The current components and rules are in [`BRAND.md`](../../BRAND.md).
+
 Specs for every component on the brochure. Tokens only (`--c-*`, `--space-*`,
 `--radius-*` ...), from `tokens.json` via `tools/build_tokens.py`. Primitives
 are shown together in `replica/design/primitives.html`.

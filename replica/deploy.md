@@ -1,49 +1,64 @@
-# Deploy checklist: Group WorkStreams + Agile Sprints brochure
+# Deploy checklist: independent promotional site
 
-Date: 2026-10-04  Commit: see `git log -1`  Go from user: yes ("Plan and build. Push as you go. Don't ask me.")
+- **Date:** 2026-10-04.
+- **Commit:** see `git log -1`.
+- **Go-ahead from the site owner:** yes. The redesign brief ended "Go".
 
-Host: **GitHub Pages**, published by GitHub Actions from `docs/` on the
-default branch (`.github/workflows/pages.yml`). No build step: the files in
-`docs/` are the site.
+**Host:** GitHub Pages. GitHub Actions publishes `docs/` from the default
+branch (`ccr-ab1de275-d2wjpb`) using `.github/workflows/pages.yml`. There is
+no build step: the files in `docs/` are the site.
+
+**Live:** https://hamzaanjum96.github.io/ZedX/ (returns 200).
 
 ## Preflight (all must pass)
 
-- [x] e2e suite green: **87 passed, 5 skipped by design** (`npm test`, see `test-plan.md`)
-- [x] no open S1 or S2 bugs (`bugs.md`: BUG-003, the only S2, is fixed)
-- [x] coverage: all must-haves presented (22 of 22), score 94.8 (`parity.md`)
-- [x] name sweep clean: `sweep.py docs --avoid "Jira,Trello,Atlassian"` exits 0. The usual rebrand sweep does not apply: this brochure presents the products under their own names.
-- [ ] store listing: not applicable (web platform, no app store listing)
-- [x] production build: none needed; `python3 tools/check_site.py docs` passes (links, anchors, icons, titles, descriptions, one h1 per page)
-- [x] contrast: `contrast.py replica/design/tokens.json`, 0 AA failures
-- [x] privacy: the site sets no cookies, loads nothing from third parties (fonts and icons are self-hosted) and has no forms. Every call to action goes to the official ZedX site or login.
-- [ ] account deletion: not applicable (no accounts)
-- [x] favicon, titles, OG image are original artwork, not the ZedX logo
+- [x] **Static checks:** `python3 tools/check_site.py docs` passes. It covers:
+  - links, anchors, icons, `srcset` and viewer images;
+  - alt text and dimensions;
+  - one H1 per page;
+  - banned copy.
+- [x] **Tokens:** `python3 tools/build_tokens.py --check` reports `tokens.css` up to date.
+- [x] **Contrast:** `contrast.py replica/design/tokens.json` reports 27 pairs, 0 AA failures.
+- [x] **e2e suite:** 146 passed, 1 skipped by design, at 1440, 768 and 390px (see `test-plan.md`).
+- [x] **Open bugs:** none at S1 or S2 (`bugs.md`; BUG-005 to BUG-007 are fixed).
+- [x] **Claims:** every published claim is in `claims.md`. Items needing Swiftpro's confirmation are listed in `DEVELOPER-NOTES.md`.
+- [x] **Attribution:**
+  - "Independent promotional site" appears in the header of every page.
+  - Our role is stated in the hero, the FAQ and the footer.
+  - No invented logo, partner name or badge is used.
+- [x] **Destinations:**
+  - "Request a demo" opens `https://www.zedxapps.com/index.html#formContact`; the form is present.
+  - Login goes to `https://zedx.net/` (200).
+- [x] **Privacy:**
+  - No cookies.
+  - No third-party requests: fonts, icons and images are self-hosted.
+  - No forms.
+- [x] **Favicon, titles and social card:**
+  - The favicon is a neutral navy and cyan mark, not a logo.
+  - The social card uses real demo screens.
 
 ## Production
 
-- [x] workflow: `check` (site checks) on every push and pull request; `e2e` (Playwright + axe) after it; `deploy` on the default branch only
-- [x] deploy skips with a notice, instead of failing, until Pages is switched on
-- [ ] **switch Pages on (one time, by the repository owner):** Settings > Pages > Build and deployment > Source: **GitHub Actions**. Then Actions > Brochure site > Run workflow.
-- Expected address: **https://hamzaanjum96.github.io/ZedX/**
-
-Alternative without Actions: Settings > Pages > Deploy from a branch >
-`ccr-ab1de275-d2wjpb` (or `main` once merged) > folder `/docs`. `docs/.nojekyll`
-is already there.
+- [x] **Workflow:**
+  - `check` runs on every push and pull request.
+  - `e2e` (Playwright and axe) runs after it.
+  - `deploy` runs on the default branch only.
+- [x] **Pages:** switched on (Source: GitHub Actions).
 
 ## Domain (optional)
 
-To serve it from a subdomain such as `boards.example.com`:
+To serve the site from a subdomain such as `boards.example.com`:
 
 | record | name | value |
 | --- | --- | --- |
 | CNAME | boards | hamzaanjum96.github.io |
 
-Then Settings > Pages > Custom domain, tick Enforce HTTPS, and update:
-the `canonical` and `og:` URLs in the four pages, and `<base href="/ZedX/">`
-in `docs/404.html` to `<base href="/">`.
+1. Go to Settings > Pages > Custom domain and tick Enforce HTTPS.
+2. Update the `canonical` and `og:` URLs in the pages.
+3. In `docs/404.html`, change `<base href="/ZedX/">` to `<base href="/">`.
 
 ## Watch
 
-- [x] every push runs the checks and the e2e suite; failures keep a Playwright report for 7 days
-- [ ] analytics: none on purpose (no cookies, nothing to consent to). If wanted later, use a cookieless, privacy-friendly service and update the footer line "collects no data".
-- [ ] before promoting the site, someone at Swiftpro reads `claims.md` once (every product statement with its source and confidence)
+- [ ] **Before promoting:** someone at Swiftpro reads `replica/claims.md` and the open questions in `DEVELOPER-NOTES.md`. Those cover UK data residency, mobile support, Power BI, export formats, a public demo link and logos.
+- [ ] **Partner name:** when the promotional partner's verified name exists, add it to the footer attribution.
+- [ ] **Screenshots:** if the demo changes, recapture with `npm run screens`, check each crop, then run `npm test`.

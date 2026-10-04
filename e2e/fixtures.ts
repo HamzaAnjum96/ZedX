@@ -39,7 +39,7 @@ export async function scrollThrough(page: Page) {
     await img.scrollIntoViewIfNeeded();
     await expect.poll(() => img.evaluate((el) => (el as HTMLImageElement).complete && (el as HTMLImageElement).naturalWidth > 0)).toBe(true);
   }
-  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
 }
 
 export const isNarrow = (page: Page) => (page.viewportSize()?.width ?? 1440) < 1100;

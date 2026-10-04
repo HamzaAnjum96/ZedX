@@ -1,115 +1,74 @@
-# ZedX boards brochure: Group WorkStreams & Agile Sprints
+# Group WorkStreams & Agile Sprints: independent promotional site
 
-A GitHub Pages brochure for the two board-based apps on the
-[ZedX Apps Platform](https://www.zedxapps.com/index.html):
+A GitHub Pages site promoting two ZedX apps. Both come from Swiftpro
+Corporation Ltd; this site is run by an independent promotional partner, not
+by Swiftpro.
 
-- **Group WorkStreams**: a Kanban workflow for each function of an organisation.
-- **Agile Sprints**: Scrum delivery with backlog, sprints, releases, velocity and automated stand-up reporting.
+- **Group WorkStreams:** continuous operational work, organised as workflows on Kanban boards.
+- **Agile Sprints:** planned Scrum delivery, organised through backlogs and sprints.
+- **Project Portfolios** appears in a supporting role, as the place where leadership follows delivery through periodic updates.
 
-Three pages with working illustrations (move cards on a sample board, run
-a sample sprint and watch the burndown and stand-up update), a "which app
-fits" chooser, and a four-page PDF brochure.
+**Live:** https://hamzaanjum96.github.io/ZedX/
 
-**Address once Pages is on:** https://hamzaanjum96.github.io/ZedX/
+Every screenshot is a real screen from the public ZedX demo, cropped to one
+contiguous area, and every product claim traces to an official ZedX page.
 
-## Switch on GitHub Pages (one time)
-
-1. In this repository: **Settings > Pages > Build and deployment > Source: GitHub Actions**.
-2. **Actions > Brochure site > Run workflow** (or push any commit to the default branch).
-
-Until step 1 is done, the deploy job skips with a notice rather than
-failing. If you prefer not to use Actions: Source "Deploy from a branch",
-branch `ccr-ab1de275-d2wjpb` (or `main` once merged), folder `/docs`.
-
-## What is in `docs/` (the site)
+## What is in `docs/` (the published site)
 
 | file | what |
 | --- | --- |
-| `index.html` | both apps, the problem they answer, the chooser, a comparison, how they feed Project Portfolios, platform, editions, licensing, FAQ |
-| `workstreams.html` | Group WorkStreams: interactive board with four sample workstreams, how it works, ideas by sector |
-| `agile-sprints.html` | Agile Sprints: a runnable sample sprint, backlog, velocity, releases, the approach to metrics |
-| `brochure.html`, `brochure.pdf` | the print layout and the PDF made from it (A4, 4 pages, tagged) |
+| `index.html` | both apps, comparison, leadership reporting, adoption (sign-in, hosting, integration, licensing), FAQ |
+| `workstreams.html`, `agile-sprints.html` | one page per app, built around its screens |
+| `brochure.html`, `brochure.pdf` | print layout and the 4-page A4 PDF made from it |
 | `404.html` | shown by GitHub Pages for any missing address |
-| `assets/` | `css/tokens.css` (generated), `css/site.css`, `css/brochure.css`, `js/` (no frameworks), self-hosted fonts and icons, favicon, social card |
+| `assets/` | `css/tokens.css` (generated), `css/site.css`, `css/brochure.css`, `js/site.js` (menu and screenshot viewer), IBM Plex fonts, icons, screenshots, favicon, social card |
 
-No build step and no third-party requests: the files are the site.
+## Read next
 
-## Preview locally
+- **[BRAND.md](BRAND.md):** tokens, typography, composition, components and voice.
+- **[DEVELOPER-NOTES.md](DEVELOPER-NOTES.md):**
+  - commands and official source URLs;
+  - the screenshot-to-app mapping;
+  - claims and assets that still need confirming.
+- **[replica/claims.md](replica/claims.md):** every published claim with its source.
+- **Test notes:**
+  - [replica/test-plan.md](replica/test-plan.md) lists what is tested and how;
+  - [replica/bugs.md](replica/bugs.md) is the bug log.
 
-```bash
-node tools/serve.mjs          # http://localhost:4173/ZedX/ (same paths and 404 behaviour as GitHub Pages)
-```
-
-## Change things
-
-| to change | edit | then |
-| --- | --- | --- |
-| words on a page | the page in `docs/` (header and footer are repeated in each page: change all of them) | `python3 tools/check_site.py docs` |
-| colours, type, spacing | `replica/design/tokens.json` | `python3 tools/build_tokens.py` and `python3 .claude/skills/replica-design/contrast.py replica/design/tokens.json` |
-| sample boards and sprint | `docs/assets/js/workstreams-demo.js`, `docs/assets/js/sprint-demo.js` | `npm test` |
-| the PDF, social card, touch icon | `docs/brochure.html`, `tools/og-template.html` | `npm run pdf` |
-| "Book a demo" target | links to `https://www.zedxapps.com/index.html#formContact` in every page | search and replace |
-
-Using official ZedX assets? The header mark is an original glyph, not the
-ZedX logo, and every board and chart is an illustration with invented
-sample data (the pages say so). If you own the official logo and product
-screenshots you can swap them in.
-
-## Checks and tests
+## Run and check
 
 ```bash
-python3 tools/check_site.py docs   # links, anchors, icons, titles, descriptions (no installs)
-npm install && npm test            # Playwright + axe: 92 tests at 1440px and 390px
+node tools/serve.mjs               # http://localhost:4173/ZedX/ (same paths and 404 as Pages)
+python3 tools/check_site.py docs   # links, images, anchors, copy rules (no installs)
+npm install && npm test            # Playwright + axe at 1440, 768 and 390 px
+npm run pdf                        # rebuild brochure.pdf, social card, touch icon
 ```
 
-GitHub Actions runs both on every push (`.github/workflows/pages.yml`) and
-publishes from the default branch.
-
-## Before you promote it
-
-- **Read `replica/claims.md` once.** Every product statement on the site
-  traces to a public source with a confidence level. One is a reading rather
-  than a quote (W6: each workstream has its own stages): please confirm it.
-- **Prices are deliberately left off.** The only public figures are G-Cloud
-  14 prices from May 2024 (`replica/launch/pricing.md`); the site asks for a
-  quote instead.
-- **Check it is yours to publish.** The site presents Swiftpro's products
-  under their own names and sends every call to action to the official ZedX
-  site and login. Make sure Swiftpro is happy for it to go out.
+GitHub Actions (`.github/workflows/pages.yml`) runs the checks and tests on
+every push and publishes `docs/` from the default branch.
 
 ## How it was made
 
-Planned and built with the [Replica skill pack](https://github.com/Jakeschincariol/replica-skill)
-(MIT), installed in `.claude/skills/`. Replica is made for cloning apps;
-here it was used for a brochure of the real products, so the clean-room
-rules applied to the brochure itself (no copied text, images, logos or code)
-and the rebrand step did not.
+The site was built with the [Replica skill pack](https://github.com/Jakeschincariol/replica-skill)
+(MIT), installed in `.claude/skills/`. Three of its skills were used for the
+October 2026 redesign:
 
-| step | skill | output |
-| --- | --- | --- |
-| map the two apps from public sources | replica-recon | `replica/recon.md`, `features.csv`, `claims.md` |
-| design system and contrast gate | replica-design | `replica/design/tokens.json`, `components.md`, `docs/assets/css/` |
-| what users of the category leaders dislike (453 public rows, official feeds only) | replica-entrepreneur | `replica/reviews.csv`, `feedback.md`, `fixes.md` (the angle) |
-| copy deck, voice and pricing research | replica-launch, replica-brand (voice only) | `replica/launch/landing.md`, `pricing.md` |
-| build | replica-build | `docs/` |
-| tests and bug log | replica-test | `e2e/`, `replica/test-plan.md`, `bugs.md` |
-| coverage of the product's features | replica-diff | `replica/parity.md` (94.8, all must-haves) |
-| preflight and publishing | replica-deploy | `replica/deploy.md`, `.github/workflows/pages.yml` |
+- **replica-recon:** sources and the claims register;
+- **replica-design:** the token file and contrast gate;
+- **replica-test:** the e2e and axe suite, and the bug log format.
 
-## Repository layout
+Files under `replica/` from the first build that describe the earlier site are
+kept for history and marked as superseded:
 
-```
-docs/                 the site (published)
-e2e/                  Playwright specs
-tools/                serve.mjs, check_site.py, build_tokens.py, build_pdf.mjs, og-template.html
-replica/              research, plans and reports behind the site
-.claude/skills/       the Replica skill pack
-.github/workflows/    checks, tests and Pages deployment
-```
+- `fixes.md`
+- `feedback.md`
+- `launch/landing.md`
+- `parity.md`
+- `design/components.md`
 
 ## Credits and licences
 
-- Fonts: [Outfit](https://github.com/Outfitio/Outfit-Fonts) and [Inter](https://github.com/rsms/inter), SIL Open Font License (`docs/assets/fonts/OFL-*.txt`).
+- Fonts: [IBM Plex Sans and Plex Mono](https://github.com/IBM/plex), SIL Open Font License (`docs/assets/fonts/OFL-*.txt`).
 - Icons: [Lucide](https://lucide.dev), ISC License (`docs/assets/img/LICENSE-lucide.txt`).
 - Replica skill pack: MIT, Jake Schincariol (`.claude/skills/REPLICA-LICENSE`).
-- ZedX, ZedX Apps, Group WorkStreams, Agile Sprints and Project Portfolios are products of Swiftpro Corporation Ltd.
+- ZedX, ZedX Apps, Group WorkStreams, Agile Sprints and Project Portfolios are products of Swiftpro Corporation Ltd. Screenshots show the ZedX demo environment with its sample data.

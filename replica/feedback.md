@@ -1,5 +1,7 @@
 # What users of the original hate and want
 
+> **Not used on the redesigned site.** Background research only; see the note in [`fixes.md`](fixes.md).
+
 314 reviews from 3 sources (app-store-jira-cloud-ios, app-store-trello-ios, hacker-news). 217 had star ratings.
 
 ## What they hate

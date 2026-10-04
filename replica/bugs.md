@@ -4,6 +4,11 @@ Found by the e2e suite (`e2e/`, `npm test`) and by screenshot review at
 1440px and 390px. Format from `.claude/skills/replica-test/bug-report.md`.
 Only reproduced bugs are listed.
 
+BUG-001 to BUG-004 belong to the first build. The components they affected
+(sample boards, sprint demo, release bars) were removed in the October 2026
+redesign. BUG-005 onwards were found while testing the redesign at 1440, 768
+and 390px.
+
 ### BUG-001: "Shipped" release bar text fails contrast
 
 - Severity: S3
@@ -87,3 +92,49 @@ Status: fixed (the fallback is a normal paragraph hidden by a `.js` class that a
   `F-B3-H4`; touch deliberately scrolls instead (buttons move cards).
 - Screen reader pass with NVDA and VoiceOver on the two demos. The suite
   checks roles, names, live-region text and focus, not the spoken output.
+
+### BUG-005: Closing the screenshot viewer started a new image download
+
+- Severity: S4
+- Flow / case: viewer.spec.ts / "View full screen opens the full screenshot in a modal"
+- Screen: every page, screenshot viewer
+- Build: 839434e  Browser / device: Chromium 141, all three widths
+
+Steps
+1. Open a page and select "View full screen" on any screenshot.
+2. Wait for the full screen to load, then press Escape.
+
+Expected: the viewer closes; no network activity.
+Actual: a new request for the same `-full-1600.webp` started and was aborted (`net::ERR_ABORTED`), failing the request guard.
+Suspected cause: clearing `src` while `srcset` was set made the browser pick a new candidate before `srcset` was cleared.
+Status: fixed (the viewer now leaves the loaded image alone on close and swaps in a fresh `<img>` only when a different screen opens).
+
+### BUG-006: Comparison table columns sized from the empty corner cell
+
+- Severity: S3
+- Flow / case: visual review at 1440px
+- Screen: index.html, comparison
+- Build: 839434e  Browser / device: Chromium 141, 1440px
+
+Steps
+1. Open index.html at 1440px and scroll to "Continuous workflow or sprints?".
+
+Expected: a narrow criterion column and two equal app columns.
+Actual: the criterion column took 39% and the Agile Sprints column was squeezed.
+Suspected cause: the width rule for answer cells also matched the empty corner cell in the header row.
+Status: fixed (`table-layout: fixed`, explicit header widths of 22% / 39% / 39%).
+
+### BUG-007: Product sections left large empty areas beside short screenshots
+
+- Severity: S3 (composition)
+- Flow / case: visual review at 1440px
+- Screen: index.html, Group WorkStreams and Agile Sprints sections
+- Build: 839434e  Browser / device: Chromium 141, 1440px
+
+Steps
+1. Open index.html at 1440px and scroll through both product sections.
+
+Expected: text and evidence balanced side by side.
+Actual: the three facts made the text column twice the height of the screenshot, leaving about 400px of empty space beside each.
+Status: fixed (facts moved into a three-column row below; Agile Sprints shows its backlog and epics timeline as a pair).
+

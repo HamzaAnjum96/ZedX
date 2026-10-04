@@ -1,14 +1,15 @@
 {
   "name": "zedx-boards-brochure",
   "private": true,
-  "description": "GitHub Pages brochure for Group WorkStreams and Agile Sprints on the ZedX Apps Platform",
+  "description": "Independent promotional site for Group WorkStreams and Agile Sprints, two ZedX apps",
   "type": "module",
   "scripts": {
     "serve": "node tools/serve.mjs",
     "test": "playwright test",
     "check": "python3 tools/check_site.py docs && python3 tools/build_tokens.py --check && python3 .claude/skills/replica-design/contrast.py replica/design/tokens.json",
     "pdf": "node tools/build_pdf.mjs",
-    "screens": "node tools/capture_screens.mjs"
+    "screens": "node tools/capture_screens.mjs",
+    "previews": "node tools/previews.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.0",

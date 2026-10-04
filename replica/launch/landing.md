@@ -1,5 +1,7 @@
 # Landing pages: copy deck
 
+> **Superseded.** The copy deck of the first build. The redesigned site's copy follows [`BRAND.md`](../../BRAND.md) (voice) and [`claims.md`](../claims.md) (sources). It no longer uses the competitor-complaint angle below.
+
 The angle (from `fixes.md`, option A): **each kind of work gets the board it
 needs, on one platform, and leaders get summaries instead of task-level
 policing.** Every product statement traces to `claims.md`. No proof section:

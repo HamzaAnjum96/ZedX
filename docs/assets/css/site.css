@@ -813,7 +813,21 @@ a:hover {
   .product-grid {
     grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
     gap: var(--space-8);
-    align-items: start;
+  }
+
+  /* The link to the app page lines up with the bottom of the screenshot's caption. */
+  .product-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-intro .more {
+    margin-top: auto;
+  }
+
+  .product-intro .lead {
+    margin-bottom: var(--space-5);
   }
 
   .product-figure {
@@ -924,11 +938,18 @@ a:hover {
     padding: var(--space-2) 0 0;
   }
 
+  .compare-table tbody th {
+    font-size: 19px;
+  }
+
   .compare-table td::before {
     content: attr(data-label);
     display: block;
-    font-weight: var(--fw-h3);
-    color: var(--c-navy);
+    margin-bottom: 2px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    font-weight: var(--fw-label);
+    color: var(--c-ink-muted);
   }
 }
 
@@ -947,7 +968,7 @@ a:hover {
 }
 
 .editorial-text h2 {
-  max-width: 20ch;
+  max-width: 24ch;
 }
 
 .editorial-lead {
@@ -1234,7 +1255,7 @@ a:hover {
 }
 
 .page-hero .actions {
-  margin-top: var(--space-5);
+  margin-top: 0;
 }
 
 @media (min-width: 1000px) {
@@ -1245,7 +1266,6 @@ a:hover {
 
   .page-hero .actions {
     justify-content: flex-end;
-    margin-top: 0;
   }
 }
 
