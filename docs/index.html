@@ -93,7 +93,7 @@
               <a class="shot-zoom" href="assets/img/screens/as-sprint-full-2400.webp" data-viewer="as-sprint" data-title="Agile Sprints: current sprint board" data-alt="Full Agile Sprints screen showing the current sprint board for sprint 3, Attendance Capture, with stages from On Hold to Completed Verified, and the app's side navigation including Backlog, Planned Sprints and Historic Sprints">View full screen<span class="visually-hidden">: Agile Sprints sprint board</span><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-maximize-2"/></svg></a>
             </figcaption>
           </figure>
-          <p class="shots-source">Screens from the ZedX demo, which uses sample data for a college group.</p>
+          <p class="shots-source">Screens from the ZedX demo, which uses sample data for a college group. Anyone can open the demo without registering. <a class="link-quiet" href="https://demo.zedx.net/">Try the demo yourself<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-external-link"/></svg></a></p>
         </div>
       </div>
     </section>
@@ -105,7 +105,7 @@
             <div class="product-intro">
               <h2 id="ws-title">Group WorkStreams gives each kind of work its own board</h2>
               <p class="lead">Complaints, catering faults, HR requests and finance queries can each become a workstream. Every workstream has its own Kanban board, with stages set for that work. In the demo, the complaints log has five stages and catering issues have three.</p>
-              <p>It suits operational teams that handle a steady flow of requests and cases. The workstreams list shows who owns each workstream and how many tasks are active. A dashboard counts the work items in each one and shows how many are critical.</p>
+              <p>It suits operational, administrative and service teams with a steady flow of requests and cases. They get structure and visibility without the overhead of a project plan or sprints. The workstreams list shows who owns each workstream and how many tasks are active, and dashboards show workload, progress and bottlenecks.</p>
               <a class="more" href="workstreams.html">See how Group WorkStreams works<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a>
             </div>
 
@@ -181,6 +181,11 @@
           </thead>
           <tbody role="rowgroup">
             <tr role="row">
+              <th scope="row" role="rowheader">Who it suits</th>
+              <td role="cell" data-label="Group WorkStreams">Operational, administrative and service teams with a steady flow of requests and cases.</td>
+              <td role="cell" data-label="Agile Sprints">Delivery teams that work in Scrum or other sprint-based Agile methods.</td>
+            </tr>
+            <tr role="row">
               <th scope="row" role="rowheader">How work arrives</th>
               <td role="cell" data-label="Group WorkStreams">All the time, as requests, cases, issues and jobs.</td>
               <td role="cell" data-label="Agile Sprints">As epics and user stories in a prioritised backlog, planned in advance.</td>
@@ -192,17 +197,17 @@
             </tr>
             <tr role="row">
               <th scope="row" role="rowheader">The board</th>
-              <td role="cell" data-label="Group WorkStreams">One board per workstream, with stages chosen for that work.</td>
+              <td role="cell" data-label="Group WorkStreams">One Kanban board per workstream, with stages chosen for that work. A workstream can also be shown as a simple list or a timeline.</td>
               <td role="cell" data-label="Agile Sprints">One board for the current sprint, with stages you can configure.</td>
             </tr>
             <tr role="row">
               <th scope="row" role="rowheader">How progress is reviewed</th>
-              <td role="cell" data-label="Group WorkStreams">Active tasks per workstream, and a dashboard of work items split into critical and non-critical.</td>
+              <td role="cell" data-label="Group WorkStreams">On dashboards of workload, progress and bottlenecks across workstreams, including how many items are critical.</td>
               <td role="cell" data-label="Agile Sprints">In daily stand-ups and sprint reviews, using completion, velocity and carried-over work.</td>
             </tr>
           </tbody>
         </table>
-        <p class="compare-note"><strong>Need both?</strong> The official Agile Sprints page suggests running Group WorkStreams alongside it, so operational and ad-hoc work stays out of the sprint.</p>
+        <p class="compare-note"><strong>Need both?</strong> Run Group WorkStreams alongside Agile Sprints, so operational and ad-hoc work stays out of the sprint. When work in a workstream needs sprints, the workstream can be linked to Agile Sprints without entering the data twice.</p>
       </div>
     </section>
 
@@ -231,7 +236,7 @@
       <div class="container">
         <div class="section-head">
           <h2 id="adoption-title">Sign-in, hosting and licensing</h2>
-          <p class="lead">Both apps run on the ZedX Apps Platform with the other ZedX apps. These details come from the official platform page.</p>
+          <p class="lead">Both apps run on the ZedX Apps Platform with the other ZedX apps. These details come from the official ZedX website, checked on 8 October 2026.</p>
         </div>
 
         <div class="spec-grid">
@@ -240,19 +245,15 @@
             <dl class="spec-rows">
               <div>
                 <dt>Sign-in</dt>
-                <dd>Single sign-on with Microsoft Entra ID. Organisations without Entra ID can use ZedX’s own sign-in instead.</dd>
-              </div>
-              <div>
-                <dt>External users</dt>
-                <dd>People outside your organisation can use their own Entra ID or a guest login.</dd>
+                <dd>Single sign-on with Microsoft Entra ID.</dd>
               </div>
               <div>
                 <dt>Permissions</dt>
-                <dd>You can give people access to single apps or to modules within an app, and manage permissions in a hierarchy.</dd>
+                <dd>Permissions follow your organisation’s structure. Teams work in their own areas, and authorised users can see across departments, business units or the whole organisation.</dd>
               </div>
               <div>
                 <dt>One platform</dt>
-                <dd>All ZedX apps share one login and one interface, and they work with each other. Your administrator adds apps from a store inside ZedX that lists the ones for your sector.</dd>
+                <dd>Every ZedX app is built on the same platform, with one login and one interface. You can start with one app and add others later.</dd>
               </div>
             </dl>
           </div>
@@ -262,40 +263,48 @@
             <dl class="spec-rows">
               <div>
                 <dt>Hosting</dt>
-                <dd>Per-user and per-block licences include hosting. With an unlimited-user licence, ZedX runs on your own server or Azure subscription.</dd>
+                <dd>The Enterprise edition can run in your organisation’s own Microsoft Azure environment, which gives you more control over infrastructure, integration and data.</dd>
               </div>
               <div>
                 <dt>Integration</dt>
-                <dd>If ZedX runs on your own servers or Azure, Swiftpro Digital can connect it to other systems as a separate service. That includes Oracle, SAP ERP and, for education, Tribal.</dd>
+                <dd>Enterprise deployments can connect ZedX to the systems and data sources you already use, so information can move between them and ZedX.</dd>
+              </div>
+              <div>
+                <dt>Apps on Demand</dt>
+                <dd>If you need a workflow app that ZedX doesn’t have yet, Swiftpro can build one from ZedX’s reusable components.</dd>
               </div>
               <div>
                 <dt>Technology</dt>
-                <dd>A React front end and API, with a SQL Server database.</dd>
+                <dd>React, APIs, Microsoft SQL Server and Microsoft Azure.</dd>
               </div>
             </dl>
           </div>
 
           <div class="spec" id="licensing">
-            <h3 class="spec-title">Licensing</h3>
+            <h3 class="spec-title">Editions and licensing</h3>
             <dl class="spec-rows">
               <div>
-                <dt>Per app, per user</dt>
-                <dd>Software, support and hosting.</dd>
+                <dt>Home</dt>
+                <dd>For individual use.</dd>
               </div>
               <div>
-                <dt>Per app, in blocks of 10 or 100 users</dt>
-                <dd>Software, support and hosting, at a lower cost per user.</dd>
+                <dt>Professional</dt>
+                <dd>For SMEs.</dd>
               </div>
               <div>
-                <dt>Per app, unlimited users</dt>
-                <dd>Software and support, on your own server or Azure subscription.</dd>
+                <dt>Group</dt>
+                <dd>For unrelated teams.</dd>
               </div>
               <div>
-                <dt>All current and future apps, unlimited users</dt>
-                <dd>On your own server or Azure subscription.</dd>
+                <dt>Corporate</dt>
+                <dd>For medium-sized businesses.</dd>
+              </div>
+              <div>
+                <dt>Enterprise</dt>
+                <dd>For government, education and larger organisations. Unlimited users, and it can be deployed in your own Microsoft Azure account.</dd>
               </div>
             </dl>
-            <p class="spec-note">Prices aren’t published. Ask Swiftpro through the contact form.</p>
+            <p class="spec-note">SaaS editions are licensed per user. This site doesn’t show prices. Swiftpro has pricing in several currencies, so ask them through the contact form.</p>
           </div>
         </div>
       </div>
@@ -311,15 +320,19 @@
           </details>
           <details>
             <summary>What happens when I request a demo?<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-chevron-down"/></svg></summary>
-            <p>The button opens the contact form on zedxapps.com. Your message goes to Swiftpro, and their form says they will get back to you. The form doesn’t book a time for you.</p>
+            <p>The button opens the contact form on zedxapps.com, which Swiftpro uses for demo requests and questions. Your message goes to Swiftpro, and their form says they will get back to you.</p>
+          </details>
+          <details>
+            <summary>Can I try ZedX on my own first?<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-chevron-down"/></svg></summary>
+            <p>Yes. The <a href="https://demo.zedx.net/">ZedX demo</a> is open to everyone, and you don’t have to register. It uses the same sample college data as the screenshots on this site. Swiftpro also offers a free trial account with no credit card needed. Ask them about it through the contact form.</p>
           </details>
           <details>
             <summary>Can we use both apps?<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-chevron-down"/></svg></summary>
-            <p>Yes. They share a login and run on the same platform. The official Agile Sprints page suggests using Group WorkStreams alongside it when a team mixes sprint work with operational and ad-hoc requests.</p>
+            <p>Yes. They share a login and run on the same platform. Teams that mix sprint work with operational and ad-hoc requests can run Group WorkStreams alongside Agile Sprints. A workstream can also be linked to Agile Sprints when its work needs sprints.</p>
           </details>
           <details>
             <summary>How much does it cost?<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-chevron-down"/></svg></summary>
-            <p>Prices aren’t published here. You can license each app per user or in blocks of users, or take an unlimited licence (see <a href="#licensing">Licensing</a>). Ask Swiftpro for prices.</p>
+            <p>This site doesn’t show prices. SaaS editions are licensed per user, and the Enterprise edition covers unlimited users (see <a href="#licensing">Editions and licensing</a>). Swiftpro has pricing in several currencies, so ask them for figures.</p>
           </details>
         </div>
       </div>
@@ -329,10 +342,11 @@
       <div class="container closing-grid">
         <div>
           <h2 id="closing-title">Ask Swiftpro for a demo</h2>
-          <p>Use the contact form on zedxapps.com. Tell Swiftpro which app you’re interested in and what work you want to run on it, and they’ll get back to you.</p>
+          <p>Use the contact form on zedxapps.com. Tell Swiftpro which app you’re interested in and what work you want to run on it, and they’ll get back to you. If you’d like to look around first, the ZedX demo is open to everyone.</p>
         </div>
         <div class="closing-actions">
           <a class="btn btn-cyan" href="https://www.zedxapps.com/index.html#formContact">Request a demo<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-external-link"/></svg><span class="visually-hidden">(opens the contact form on zedxapps.com)</span></a>
+          <a class="link-quiet" href="https://demo.zedx.net/">Try the demo yourself<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-external-link"/></svg></a>
           <a class="link-quiet" href="brochure.pdf" download>Download the brochure (PDF, 4 pages)<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-file-down"/></svg></a>
           <a class="link-quiet" href="https://zedx.net/">Already a customer? Log in to ZedX<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-log-in"/></svg></a>
         </div>
@@ -345,7 +359,7 @@
       <div class="footer-about">
         <p class="footer-title">About this site</p>
         <p>An independent promotional website for two ZedX apps. Swiftpro Corporation Ltd does not run this site. ZedX, ZedX Apps, Group WorkStreams, Agile Sprints and Project Portfolios are products of Swiftpro Corporation Ltd, London.</p>
-        <p>Screenshots: ZedX demo, sample data, October 2026. This site sets no cookies and loads nothing from other websites.</p>
+        <p>Product details checked against zedxapps.com on 8 October 2026. Screenshots: ZedX demo, sample data, October 2026. This site sets no cookies and loads nothing from other websites.</p>
       </div>
       <nav class="footer-nav" aria-label="Site">
         <p class="footer-title">Pages</p>
@@ -362,9 +376,11 @@
         <p class="footer-title">Official sources</p>
         <ul>
           <li><a href="https://www.zedxapps.com/Applications/index.html">ZedX applications</a></li>
+          <li><a href="https://www.zedxapps.com/GroupWorkStreams/Index.html">Group WorkStreams</a></li>
           <li><a href="https://www.zedxapps.com/AgileSprints/Index.html">Agile Sprints</a></li>
           <li><a href="https://www.zedxapps.com/ProjectPortfolios/Index.html">Project Portfolios</a></li>
           <li><a href="https://www.zedxapps.com/Platform/index.html">ZedX Apps Platform</a></li>
+          <li><a href="https://demo.zedx.net/">ZedX demo</a></li>
           <li><a href="https://zedx.net/">ZedX login</a></li>
         </ul>
       </nav>

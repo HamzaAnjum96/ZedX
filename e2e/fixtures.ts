@@ -6,6 +6,8 @@ export const DOC_PAGES = ['legal.html', 'privacy.html'];
 export const WIP_NOTICE = 'This site is a work in progress. The content is not complete and may not be correct.';
 export const DEMO_FORM = 'https://www.zedxapps.com/index.html#formContact';
 export const LOGIN = 'https://zedx.net/';
+// The public, self-guided ZedX demo. Swiftpro promotes it on zedxapps.com and the login page.
+export const DEMO_SITE = 'https://demo.zedx.net/';
 
 // Every test fails on console errors or warnings, uncaught exceptions,
 // 5xx responses and failed requests to the local site.

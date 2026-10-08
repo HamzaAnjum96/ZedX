@@ -15,6 +15,7 @@ writing rules are in `BRAND.md`.
 | contrast gate | `python3 .claude/skills/replica-design/contrast.py replica/design/tokens.json` |
 | e2e + axe at 1440, 768 and 390px | `npm install` then `npm test` |
 | PDF brochure, social card, touch icon | `npm run pdf` |
+| check the official pages still back every claim | `python3 tools/check_sources.py` (`--verbose` lists each phrase) |
 | recapture or re-crop screenshots | `npm run screens` (all), `npm run screens -- --only pp-insights`, `npm run screens -- --encode-only` |
 | preview images of the site (`previews/`, not published) | `npm run previews` |
 
@@ -27,20 +28,33 @@ The `check_site.py` checks are:
 
 CI runs `check_site.py`, the token check and the contrast gate, then the e2e suite, then deploys from the default branch.
 
+A second workflow, `.github/workflows/sources.yml`, runs `check_sources.py`
+every Monday (and on demand from the Actions tab). It fetches the official
+ZedX pages and fails when a phrase that a claim in `replica/claims.md` relies
+on has gone, so a change on zedxapps.com shows up as a failed run. It is kept
+out of the push checks so that an outage on zedxapps.com never blocks a deploy.
+
 ## Official sources
 
-Product claims come only from these pages (read on 4 October 2026). The earlier site's copy was treated as material to review, not as proof.
+Product claims come only from these pages. They were first read on 4 October
+2026 and re-read on 8 October 2026, after Swiftpro updated zedxapps.com. The
+earlier site's copy was treated as material to review, not as proof.
 
 | source | URL | supports |
 | --- | --- | --- |
 | Applications overview | https://www.zedxapps.com/Applications/index.html | Group WorkStreams one-liner ("a series of workflows… each serves a dedicated and specific function… Kanban boards"); Agile Sprints "online automated stand-ups reporting" |
+| Group WorkStreams (new in October 2026) | https://www.zedxapps.com/GroupWorkStreams/Index.html | who it suits and "without the overhead of formal project management or Agile ceremonies"; lists, Kanban boards or timeline views; adaptable stages, fields and priorities; dashboards of workload, progress and bottlenecks; role-based permissions; linking a workstream to Agile Sprints without duplicating data; audit and governance work; ZedX Study Planner for education |
 | Agile Sprints | https://www.zedxapps.com/AgileSprints/Index.html | the full Agile Sprints feature list. Also: periodic updates to Project Portfolios "without exposing task-level detail", and Group WorkStreams alongside for mixed delivery |
 | Project Portfolios | https://www.zedxapps.com/ProjectPortfolios/Index.html | the leadership section: structured periodic updates (monthly or quarterly) and their contents, dashboards and trends, Gantt view, Excel export, reminders, benefits. Also: project workstreams can link to Group WorkStreams or Agile Sprints |
-| Platform | https://www.zedxapps.com/Platform/index.html | the adoption section: sign-in, external users, permissions, in-site store, React/API/SQL Server, Swiftpro Digital integration as a service (with its hosting condition), the four licence options |
-| Home (contact form) | https://www.zedxapps.com/index.html#formContact | demo destination. The form says "To book a demo or request further information, please send us a message", and confirms with "we will get back to you soon" |
-| Customer login | https://zedx.net/ | login destination |
+| Platform (rewritten in October 2026) | https://www.zedxapps.com/Platform/index.html | the adoption section: Entra ID single sign-on, permissions that follow the organisation's hierarchy, one login and interface, start with one app, React/APIs/SQL Server/Azure, SaaS per user and Enterprise in the customer's own Azure, Enterprise integration, Apps on Demand, self-service demo and trial account |
+| Home | https://www.zedxapps.com/index.html | the five editions, SaaS per user and Enterprise unlimited users, pricing in several currencies, the self-guided demo and the free trial. The contact form (`#formContact`) is the demo destination: "To book a demo or request further information, please send us a message", confirmed with "we will get back to you soon" |
+| Customer login | https://zedx.net/ | login destination. Its "Try Demo Account" card ("No registration required") opens the demo |
+| ZedX demo | https://demo.zedx.net/ | the "Try the demo yourself" links, and every screenshot |
 
-The detailed claim-by-claim register is `replica/claims.md`.
+The detailed claim-by-claim register is `replica/claims.md`. Its "Withdrawn"
+table lists what the October 2026 update removed (ZedX's own sign-in, guest
+logins, app modules, the in-app store, licence blocks and own-server hosting,
+and the Swiftpro Digital integration service).
 
 ## Screenshots
 
@@ -85,8 +99,9 @@ The items below are not on the current official pages, or only appear in the
   - Power BI integration.
   - CSV import and Excel/PDF export as platform-wide features. Excel export is stated only for Project Portfolios, and is described there as such.
 - **Security:** two-factor authentication and Cyber Essentials.
-- **Commercial terms:** free trial, support hours and response times.
-- **Prices:** the only public figures are G-Cloud 14 prices from May 2024.
+- **Commercial terms:** support hours and response times. (The free trial is now on zedxapps.com, so the site mentions it.)
+- **Prices:** zedxapps.com says pricing is available in several currencies but shows no figures. The only public figures are G-Cloud 14 prices from May 2024.
+- **SaaS hosting details:** the official pages say where Enterprise can run (the customer's own Azure) but not where the SaaS editions are hosted, so the site doesn't say either.
 
 ### Reporting claims
 
@@ -95,7 +110,8 @@ The items below are not on the current official pages, or only appear in the
 
 ### Demo and assets
 
-- **Self-service demo:** demo.zedx.net is public, but it is not linked from the site, because we don't know whether Swiftpro wants that. Confirm it before adding a "Try the demo" link.
+- **Self-service demo:** resolved in October 2026. Swiftpro now promotes the demo on zedxapps.com ("self-guided demo, with no registration required") and on the login page ("Try Demo Account"), so the site links to https://demo.zedx.net/ as a secondary action.
+- **Free trial:** zedxapps.com offers a free trial account ("registering your details, with no credit card required") but links no sign-up page. The site mentions the trial and tells visitors to ask Swiftpro. Link the sign-up page if one appears.
 - **Logos:**
   - No official logo files are in the repository, and none are used outside the screenshots.
   - The product logos inside screenshots are untouched.

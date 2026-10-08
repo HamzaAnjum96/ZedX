@@ -149,8 +149,9 @@ Copy is written and edited with the `copywriting` and `copy-editing` skills in `
   - "We" means the promotional partner, and appears only where the site explains who runs it.
 - **Keep claims to the source:**
   - App features stay attached to their app.
-  - Hosting conditions stay attached to their licence.
-  - Integration is "a separate service from Swiftpro Digital".
+  - Hosting and integration stay attached to their edition: Enterprise can run in the customer's own Azure and integrate with existing systems; SaaS editions are licensed per user.
+  - Nothing Swiftpro has withdrawn comes back (see "Withdrawn" in `replica/claims.md`).
   - Leadership reporting arrives as periodic updates; the tasks stay on the team's board.
 - **No invented numbers:** no prices, customers, testimonials, outcomes or adoption figures.
-- **The demo button opens a vendor enquiry form,** so say that the request goes to Swiftpro and that the form doesn't book a time.
+- **The demo button opens a vendor enquiry form,** so say that the request goes to Swiftpro and that they get back to you. Never promise a booking or a calendar.
+- **"Try the demo yourself"** is the secondary action. It opens the public ZedX demo (demo.zedx.net), which needs no registration. Keep the two apart: "Request a demo" asks Swiftpro, "Try the demo yourself" opens the demo.

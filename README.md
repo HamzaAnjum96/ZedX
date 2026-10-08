@@ -46,10 +46,13 @@ node tools/serve.mjs               # http://localhost:4173/ZedX/ (same paths and
 python3 tools/check_site.py docs   # links, images, anchors, copy rules (no installs)
 npm install && npm test            # Playwright + axe at 1440, 768 and 390 px
 npm run pdf                        # rebuild brochure.pdf, social card, touch icon
+python3 tools/check_sources.py     # do the official ZedX pages still back every claim?
 ```
 
 GitHub Actions (`.github/workflows/pages.yml`) runs the checks and tests on
-every push and publishes `docs/` from the default branch.
+every push and publishes `docs/` from the default branch. A second workflow
+(`.github/workflows/sources.yml`) runs `check_sources.py` every Monday, so a
+change on zedxapps.com shows up as a failed run.
 
 ## How it was made
 

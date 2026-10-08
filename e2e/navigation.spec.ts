@@ -1,6 +1,6 @@
 // Moving around the site: navigation, the phone menu, preserved anchors,
 // the vendor destinations, the legal pages, the brochure and the 404 page.
-import { test, expect, DEMO_FORM, LOGIN, isNarrow, scrollThrough } from './fixtures';
+import { test, expect, DEMO_FORM, DEMO_SITE, LOGIN, isNarrow, scrollThrough } from './fixtures';
 
 const mainNav = (page) => page.getByRole('navigation', { name: 'Main' });
 
@@ -82,7 +82,7 @@ test('the skip link jumps to the content', async ({ page }) => {
 });
 
 for (const path of ['index.html', 'workstreams.html', 'agile-sprints.html']) {
-  test(`${path}: every demo button opens the vendor's contact form, login goes to ZedX`, async ({ page }) => {
+  test(`${path}: demo requests go to the vendor's form, the demo link to the ZedX demo, login to ZedX`, async ({ page }) => {
     await page.goto(path);
     const demo = page.locator('a', { hasText: 'Request a demo' });
     expect(await demo.count()).toBeGreaterThanOrEqual(3);
@@ -92,6 +92,12 @@ for (const path of ['index.html', 'workstreams.html', 'agile-sprints.html']) {
     const login = page.locator('a', { hasText: /Log in to ZedX/ });
     for (const href of await login.evaluateAll((links) => links.map((a) => a.getAttribute('href')))) {
       expect(href).toBe(LOGIN);
+    }
+    // The self-guided demo is offered under the screenshots and again at the end of the page.
+    const tryDemo = page.locator('main a', { hasText: 'Try the demo yourself' });
+    expect(await tryDemo.count()).toBeGreaterThanOrEqual(2);
+    for (const href of await tryDemo.evaluateAll((links) => links.map((a) => a.getAttribute('href')))) {
+      expect(href).toBe(DEMO_SITE);
     }
     // The page explains where a demo request goes: to the vendor, not a calendar.
     await expect(page.locator('main')).toContainText('Swiftpro');

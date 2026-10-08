@@ -1,7 +1,7 @@
 // What a visitor must be able to see: the two products and their roles in
 // the hero, our promotional role, the comparison, the FAQ, only real screens,
 // and a legal notice and privacy policy that match what the site does.
-import { test, expect, isNarrow, PAGES, DOC_PAGES, WIP_NOTICE, scrollThrough } from './fixtures';
+import { test, expect, isNarrow, PAGES, DOC_PAGES, WIP_NOTICE, DEMO_SITE, scrollThrough } from './fixtures';
 
 test('the hero names both products, their roles and one main action', async ({ page }) => {
   await page.goto('index.html');
@@ -33,12 +33,12 @@ test('phones get a readable detail crop instead of the whole board', async ({ pa
   else expect(src).toMatch(/-strip-\d+\.webp$/);
 });
 
-test('the comparison covers four buyer questions for both apps', async ({ page }) => {
+test('the comparison covers five buyer questions for both apps', async ({ page }) => {
   await page.goto('index.html');
   const table = page.getByRole('table', { name: 'Group WorkStreams and Agile Sprints compared' });
   await expect(table.getByRole('columnheader')).toHaveText(['Group WorkStreams', 'Agile Sprints']);
-  await expect(table.getByRole('rowheader')).toHaveText(['How work arrives', 'How it is planned', 'The board', 'How progress is reviewed']);
-  await expect(table.getByRole('cell').filter({ hasText: /\w/ })).toHaveCount(8);
+  await expect(table.getByRole('rowheader')).toHaveText(['Who it suits', 'How work arrives', 'How it is planned', 'The board', 'How progress is reviewed']);
+  await expect(table.getByRole('cell').filter({ hasText: /\w/ })).toHaveCount(10);
   const overflow = await table.evaluate((el) => el.scrollWidth - el.clientWidth);
   expect(overflow).toBeLessThanOrEqual(0);
   if ((page.viewportSize()?.width ?? 1440) <= 760) {
@@ -48,10 +48,10 @@ test('the comparison covers four buyer questions for both apps', async ({ page }
   }
 });
 
-test('the FAQ answers who runs the site and what a demo request does', async ({ page }) => {
+test('the FAQ answers who runs the site, what a demo request does and how to try ZedX', async ({ page }) => {
   await page.goto('index.html');
   const faq = page.locator('#faq');
-  await expect(faq.locator('details')).toHaveCount(4);
+  await expect(faq.locator('details')).toHaveCount(5);
   const who = faq.locator('details', { hasText: 'Who runs this website?' });
   await who.locator('summary').click();
   await expect(who).toHaveAttribute('open', '');
@@ -59,7 +59,11 @@ test('the FAQ answers who runs the site and what a demo request does', async ({ 
   await expect(who.locator('p')).toContainText('Swiftpro Corporation Ltd develops and owns ZedX');
   const demo = faq.locator('details', { hasText: 'What happens when I request a demo?' });
   await demo.locator('summary').click();
-  await expect(demo.locator('p')).toContainText('doesn’t book a time');
+  await expect(demo.locator('p')).toContainText('their form says they will get back to you');
+  const tryIt = faq.locator('details', { hasText: 'Can I try ZedX on my own first?' });
+  await tryIt.locator('summary').click();
+  await expect(tryIt.getByRole('link', { name: 'ZedX demo' })).toHaveAttribute('href', DEMO_SITE);
+  await expect(tryIt.locator('p')).toContainText('you don’t have to register');
 });
 
 test('leadership reporting is explained as periodic updates, not live task data', async ({ page }) => {
@@ -70,12 +74,22 @@ test('leadership reporting is explained as periodic updates, not live task data'
   await expect(section).not.toContainText(/real[- ]time/i);
 });
 
-test('licensing lists the four official options without prices', async ({ page }) => {
+test('licensing lists the five official editions without prices', async ({ page }) => {
   await page.goto('index.html');
   const licensing = page.locator('#licensing');
-  await expect(licensing.locator('dt')).toHaveCount(4);
-  await expect(licensing).not.toContainText('£');
+  await expect(licensing.locator('dt')).toHaveText(['Home', 'Professional', 'Group', 'Corporate', 'Enterprise']);
+  await expect(licensing).toContainText('SaaS editions are licensed per user');
+  await expect(licensing).not.toContainText(/[£$€]/);
 });
+
+// Claims Swiftpro withdrew in its October 2026 site update (see "Withdrawn" in replica/claims.md).
+const WITHDRAWN = /guest login|ZedX’s own sign-in|or a ZedX login|modules within|store inside ZedX|blocks of 10|own server|Swiftpro Digital|Oracle|SAP ERP|Tribal/i;
+for (const path of [...PAGES, 'brochure.html']) {
+  test(`${path} repeats no claim that Swiftpro has withdrawn`, async ({ page }) => {
+    await page.goto(path);
+    await expect(page.locator('main')).not.toContainText(WITHDRAWN);
+  });
+}
 
 for (const path of ['index.html', 'workstreams.html', 'agile-sprints.html']) {
   test(`${path} shows only real screens, each captioned with its app`, async ({ page }) => {

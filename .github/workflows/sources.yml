@@ -1,0 +1,26 @@
+# Weekly check that the official ZedX pages still say what this site repeats.
+# A failed run means Swiftpro has changed a page: re-read it, then update
+# replica/claims.md and the site copy (tools/check_sources.py names the claim).
+#
+# To stop the weekly run, delete this file or disable the workflow in the
+# Actions tab. "Run workflow" runs it on demand.
+
+name: Official sources
+
+on:
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Claims still match zedxapps.com
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every phrase behind replica/claims.md is on the official pages
+        run: python3 tools/check_sources.py
