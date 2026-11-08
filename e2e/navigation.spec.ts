@@ -25,7 +25,7 @@ test('the main navigation reaches both app pages and back home', async ({ page }
   await expect(page).toHaveURL(/\/ZedX\/$/);
 });
 
-test('Compare and Licensing in the menu land on their sections from an app page', async ({ page }) => {
+test('Compare and Editions in the menu land on their sections from an app page', async ({ page }) => {
   await page.goto('agile-sprints.html');
   await openMenuIfNeeded(page);
   await mainNav(page).getByRole('link', { name: 'Compare' }).click();
@@ -33,7 +33,7 @@ test('Compare and Licensing in the menu land on their sections from an app page'
   await expect(page.locator('#compare')).toBeInViewport();
 
   await openMenuIfNeeded(page);
-  await mainNav(page).getByRole('link', { name: 'Licensing' }).click();
+  await mainNav(page).getByRole('link', { name: 'Editions' }).click();
   await expect(page).toHaveURL(/#adoption$/);
   await expect(page.locator('#adoption')).toBeInViewport();
 });
@@ -49,7 +49,7 @@ test('"See both apps" scrolls to the two products', async ({ page }) => {
   await page.goto('index.html');
   await page.getByRole('link', { name: 'See both apps' }).click();
   await expect(page).toHaveURL(/#apps$/);
-  await expect(page.getByRole('heading', { name: 'Group WorkStreams gives each kind of work its own board' })).toBeInViewport();
+  await expect(page.getByRole('heading', { name: 'Group WorkStreams takes everyday work out of spreadsheets' })).toBeInViewport();
 });
 
 test('the phone and tablet menu opens, closes with Escape and returns focus', async ({ page }) => {

@@ -20,8 +20,8 @@ at the top; `DEVELOPER-NOTES.md` explains how to remove it.
 
 | file | what |
 | --- | --- |
-| `index.html` | both apps, comparison, leadership reporting, adoption (sign-in, hosting, integration, licensing), FAQ |
-| `workstreams.html`, `agile-sprints.html` | one page per app, built around its screens |
+| `index.html` | both apps, comparison, leadership reporting, editions, sign-in and hosting, FAQ |
+| `workstreams.html`, `agile-sprints.html` | one page per app, built around its screens, ending with an FAQ |
 | `brochure.html`, `brochure.pdf` | print layout and the 4-page A4 PDF made from it |
 | `legal.html`, `privacy.html` | legal notice (who runs the site, how far to rely on it, who owns the names) and privacy policy |
 | `404.html` | shown by GitHub Pages for any missing address |
@@ -67,7 +67,9 @@ October 2026 redesign:
 The copy was then rewritten with the `copywriting` and `copy-editing` skills
 from [marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT),
 also in `.claude/skills/`. Their product context is `.claude/product-marketing.md`,
-and the before-and-after audit is in `replica/copy-review.md`.
+and the before-and-after audit is in `replica/copy-review.md`. All of the text
+was rewritten again in November 2026, after Swiftpro's second update to
+zedxapps.com (new Editions and Demo/Trial pages, modules tables and FAQs).
 
 Files under `replica/` from the first build that describe the earlier site are
 kept for history and marked as superseded:

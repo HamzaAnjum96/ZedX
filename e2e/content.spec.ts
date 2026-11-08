@@ -6,7 +6,7 @@ import { test, expect, isNarrow, PAGES, DOC_PAGES, WIP_NOTICE, DEMO_SITE, scroll
 test('the hero names both products, their roles and one main action', async ({ page }) => {
   await page.goto('index.html');
   const hero = page.locator('.hero');
-  await expect(hero.getByRole('heading', { level: 1 })).toHaveText('Workflows for everyday work. Sprints for planned delivery.');
+  await expect(hero.getByRole('heading', { level: 1 })).toHaveText('Kanban boards for everyday work. Sprints for delivery teams.');
   await expect(hero.locator('.hero-lead')).toContainText('Group WorkStreams');
   await expect(hero.locator('.hero-lead')).toContainText('Agile Sprints');
   await expect(hero.locator('.btn')).toHaveCount(1);
@@ -33,12 +33,12 @@ test('phones get a readable detail crop instead of the whole board', async ({ pa
   else expect(src).toMatch(/-strip-\d+\.webp$/);
 });
 
-test('the comparison covers five buyer questions for both apps', async ({ page }) => {
+test('the comparison covers six buyer questions for both apps', async ({ page }) => {
   await page.goto('index.html');
   const table = page.getByRole('table', { name: 'Group WorkStreams and Agile Sprints compared' });
   await expect(table.getByRole('columnheader')).toHaveText(['Group WorkStreams', 'Agile Sprints']);
-  await expect(table.getByRole('rowheader')).toHaveText(['Who it suits', 'How work arrives', 'How it is planned', 'The board', 'How progress is reviewed']);
-  await expect(table.getByRole('cell').filter({ hasText: /\w/ })).toHaveCount(10);
+  await expect(table.getByRole('rowheader')).toHaveText(['Who it suits', 'How work arrives', 'How it is planned', 'Board views', 'How progress is reviewed', 'Editions']);
+  await expect(table.getByRole('cell').filter({ hasText: /\w/ })).toHaveCount(12);
   const overflow = await table.evaluate((el) => el.scrollWidth - el.clientWidth);
   expect(overflow).toBeLessThanOrEqual(0);
   if ((page.viewportSize()?.width ?? 1440) <= 760) {
@@ -51,7 +51,7 @@ test('the comparison covers five buyer questions for both apps', async ({ page }
 test('the FAQ answers who runs the site, what a demo request does and how to try ZedX', async ({ page }) => {
   await page.goto('index.html');
   const faq = page.locator('#faq');
-  await expect(faq.locator('details')).toHaveCount(5);
+  await expect(faq.locator('details')).toHaveCount(7);
   const who = faq.locator('details', { hasText: 'Who runs this website?' });
   await who.locator('summary').click();
   await expect(who).toHaveAttribute('open', '');
@@ -63,7 +63,17 @@ test('the FAQ answers who runs the site, what a demo request does and how to try
   const tryIt = faq.locator('details', { hasText: 'Can I try ZedX on my own first?' });
   await tryIt.locator('summary').click();
   await expect(tryIt.getByRole('link', { name: 'ZedX demo' })).toHaveAttribute('href', DEMO_SITE);
-  await expect(tryIt.locator('p')).toContainText('you don’t have to register');
+  await expect(tryIt.locator('p')).toContainText('creates an account for you automatically');
+  await expect(tryIt.locator('p')).toContainText('No credit card is needed');
+  // The trial has no public sign-up page yet, so the answer must not pretend to link one.
+  await expect(tryIt.getByRole('link')).toHaveCount(1);
+  const editions = faq.locator('details', { hasText: 'Which edition includes both apps?' });
+  await editions.locator('summary').click();
+  await expect(editions.locator('p')).toContainText('Professional and Group currently include Group WorkStreams, Agile Sprints and Cloe AI');
+  await expect(editions.locator('p')).toContainText('Home includes Group WorkStreams but not Agile Sprints');
+  const ai = faq.locator('details', { hasText: 'Do the apps include AI?' });
+  await ai.locator('summary').click();
+  await expect(ai.locator('p')).toContainText('OpenAI technology');
 });
 
 test('leadership reporting is explained as periodic updates, not live task data', async ({ page }) => {
@@ -74,16 +84,34 @@ test('leadership reporting is explained as periodic updates, not live task data'
   await expect(section).not.toContainText(/real[- ]time/i);
 });
 
-test('licensing lists the five official editions without prices', async ({ page }) => {
+test('licensing lists the six official editions without prices', async ({ page }) => {
   await page.goto('index.html');
   const licensing = page.locator('#licensing');
-  await expect(licensing.locator('dt')).toHaveText(['Home', 'Professional', 'Group', 'Corporate', 'Enterprise']);
-  await expect(licensing).toContainText('SaaS editions are licensed per user');
+  await expect(licensing.locator('dt')).toHaveText(['Home', 'Professional', 'Group', 'Corporate', 'Enterprise', 'Enterprise Plus']);
+  await expect(licensing.locator('dd').filter({ hasText: 'Licensed per user' })).toHaveCount(3);
+  await expect(licensing.locator('div', { hasText: 'Enterprise Plus' }).locator('dd')).toContainText('no usage limits');
   await expect(licensing).not.toContainText(/[£$€]/);
 });
 
-// Claims Swiftpro withdrew in its October 2026 site update (see "Withdrawn" in replica/claims.md).
-const WITHDRAWN = /guest login|ZedX’s own sign-in|or a ZedX login|modules within|store inside ZedX|blocks of 10|own server|Swiftpro Digital|Oracle|SAP ERP|Tribal/i;
+// Which editions include each app comes from the official Editions page (claims W21 and A19).
+for (const [path, included, excluded] of [
+  ['workstreams.html', 'Home, Professional and Group editions', null],
+  ['agile-sprints.html', 'Professional and Group editions', 'The Home edition doesn’t include it'],
+] as const) {
+  test(`${path} answers which editions include the app, and links to the comparison`, async ({ page }) => {
+    await page.goto(path);
+    const answer = page.locator('#faq details', { hasText: 'Which editions include it?' });
+    await answer.locator('summary').click();
+    await expect(answer.locator('p')).toContainText(included);
+    if (excluded) await expect(answer.locator('p')).toContainText(excluded);
+    await expect(answer.getByRole('link', { name: 'Compare the editions' })).toHaveAttribute('href', './#licensing');
+    await expect(page.locator('#faq details', { hasText: 'include AI?' })).toHaveCount(1);
+  });
+}
+
+// Claims Swiftpro withdrew or replaced in its 2026 site updates (see "Withdrawn or replaced" in replica/claims.md).
+// "Five editions" was replaced in November 2026, when Swiftpro added Enterprise Plus.
+const WITHDRAWN = /guest login|ZedX’s own sign-in|or a ZedX login|modules within|store inside ZedX|blocks of 10|own server|Swiftpro Digital|Oracle|SAP ERP|Tribal|five editions/i;
 for (const path of [...PAGES, 'brochure.html']) {
   test(`${path} repeats no claim that Swiftpro has withdrawn`, async ({ page }) => {
     await page.goto(path);

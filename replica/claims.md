@@ -1,18 +1,20 @@
-# Claims register (redesign, October 2026)
+# Claims register (copy rewrite, November 2026)
 
-Every product statement on the site traces to a row here. Official pages were
-re-read on 2026-10-08, after Swiftpro updated zedxapps.com (a new Group
-WorkStreams page, a rewritten Platform page, and editions, pricing, demo and
-trial details on the home page). `python3 tools/check_sources.py` checks that
-the key phrases behind these rows are still on the official pages. Sources:
+Every product statement on the site traces to a row here. The official pages
+were re-read on 2026-11-08, after Swiftpro expanded zedxapps.com again (see
+"What changed on 8 November 2026" below). `python3 tools/check_sources.py`
+checks that the key phrases behind these rows are still on the official pages.
+Sources:
 
 | # | source |
 | --- | --- |
-| APP | https://www.zedxapps.com/Applications/index.html |
-| GW | https://www.zedxapps.com/GroupWorkStreams/Index.html (new in October 2026) |
-| AS | https://www.zedxapps.com/AgileSprints/Index.html |
-| PP | https://www.zedxapps.com/ProjectPortfolios/Index.html |
-| PLAT | https://www.zedxapps.com/Platform/index.html |
+| APP | https://www.zedxapps.com/Applications/index.html (rewritten in November 2026, with an FAQ) |
+| GW | https://www.zedxapps.com/GroupWorkStreams/Index.html (modules table and FAQ added in November 2026) |
+| AS | https://www.zedxapps.com/AgileSprints/Index.html (modules table and FAQ added in November 2026) |
+| PP | https://www.zedxapps.com/ProjectPortfolios/Index.html (modules table and FAQ added in November 2026) |
+| PLAT | https://www.zedxapps.com/Platform/index.html (FAQ added in November 2026) |
+| ED | https://www.zedxapps.com/Editions/index.html (new in November 2026) |
+| TRY | https://www.zedxapps.com/Try/index.html, the "Demo/Trial" page (new in November 2026) |
 | HOME | https://www.zedxapps.com/index.html (contact form `#formContact`) |
 | LOGIN | https://www.zedx.net/ (its "Try Demo Account" card opens demo.zedx.net) |
 | DEMO | what is visible in the public ZedX demo (demo.zedx.net), sample data. Used only to describe what a screenshot shows. |
@@ -21,44 +23,67 @@ Pages: I = index, W = workstreams.html, A = agile-sprints.html, B = brochure PDF
 
 Confidence is **high** for every published row: each is stated on the official page, or visible on the screen it describes. Nothing below high is published.
 
+## What changed on 8 November 2026
+
+- **Applications page rewritten.** Its old one-liners ("each workflow serves a dedicated and specific function", "tasks within each workflow are arranged as Kanban boards", "online automated stand-ups reporting") are gone. W1 and W2 now rest on the Group WorkStreams page, and A5 on the new wording "automated stand-up reporting". The page adds an FAQ comparing Project Portfolios, Agile Sprints and Group WorkStreams, and says each app works on its own or with the others.
+- **Modules tables and FAQs** on the Group WorkStreams, Agile Sprints and Project Portfolios pages. They explain interface details the site used to leave alone: difficulty points, the board views in the side menu, epics, workstream users and Ask Cloe.
+- **Six editions, not five.** The new Editions page adds Enterprise Plus, says which apps each edition includes, how each is licensed and which ones ZedX hosts. "SaaS editions are licensed per user" (still on the home page) is replaced on this site by the per-edition detail, because Corporate combines users with app usage.
+- **Cloe AI**, the assistant built into the platform, "using OpenAI technology".
+- **Technology:** C# and .NET added to React, SQL Server and Azure.
+- **Demo and trial page.** The demo creates an account automatically. The free trial uses a registration wizard and is listed as "Available from Nov 2026". No sign-up link is published yet.
+- **Login page:** now offers Live, Training and Demo accounts. The site mentions only the demo.
+
 ## Group WorkStreams
 
 | ID | claim as published | source | used on |
 | --- | --- | --- | --- |
-| W1 | A workstream (workflow) for each function of the organisation | APP, GW | I W B |
-| W2 | Its tasks sit on a Kanban board | APP, GW | I W B |
-| W3 | Suits continuous-flow, operational, ad-hoc and non-Scrum work, and operational, administrative and service teams, without the overhead of a project plan or sprints | GW, PP, AS | I W B |
-| W4 | Each workstream has its own stages: the complaints log has five, catering issues three (set with New Stage / Edit Stage) | DEMO (stage names read from the boards) | I W B |
-| W5 | Work items show a reference, a priority from Low to Critical, and the assignee where one is set | DEMO | W |
+| W1 | A workstream for each functional area, service or operational activity; portfolios group workstreams by department, function or business activity | GW | I W B |
+| W2 | Each workstream is its own Kanban board, with its own work items, stages and team members | GW, APP | I W B |
+| W3 | For operational, administrative, service and departmental teams with continuous, ad-hoc and routine work and unexpected requests, without the overhead of a project plan or sprints | GW, AS | I W B |
+| W4 | Each workstream has its own stages: the complaints log has five, catering issues three (set with New Stage / Edit Stage) | DEMO (stage names read from the boards), GW (Workflow Stages module) | I W B |
+| W5 | Work items show a reference, a priority from Low to Critical, difficulty points, and the assignee where one is set | DEMO, GW (Work Items module: "set priorities and difficulty points") | W |
 | W6 | The workstreams list shows portfolio, active epics, active tasks, type and owners | DEMO | I W B |
-| W7 | The Insights dashboard charts work items per workstream a user can access, critical and non-critical | DEMO | I W B |
+| W7 | The Insights dashboard charts work items per workstream a user can access, critical and non-critical | DEMO, GW (Insights module) | I W B |
 | W8 | Can run alongside Agile Sprints for mixed delivery models, keeping operational and ad-hoc work out of the sprint | AS | I W A B |
-| W9 | Project workstreams in Project Portfolios can be linked to it, with progress summarised through structured project updates; Project Portfolios can show high-level progress while the detail stays in Group WorkStreams | PP, GW | W B |
+| W9 | Project workstreams in Project Portfolios can be linked to it, with progress summarised through structured project updates; Project Portfolios shows high-level progress while the detail stays in Group WorkStreams | PP, GW | I W B |
 | W10 | A workstream can be shown as a simple list, a Kanban board or a timeline; stages, fields and priorities can be changed | GW | I W B |
-| W11 | Dashboards show workload, progress and bottlenecks across workstreams; managers can follow them while teams organise their own work | GW | I W B |
-| W12 | Role-based permissions | GW | W |
+| W11 | Dashboards show workload, progress and bottlenecks across workstreams; managers can see workload pressures and bottlenecks without asking each team member for updates, and teams still organise their own work | GW | I W B |
+| W12 | Role-based permissions; the Workstream Users module manages each workstream's team, owners and access | GW | W |
 | W13 | A workstream can be linked to Agile Sprints when its work needs sprints, without duplicating data | GW | I W A B |
 | W14 | Can manage the delivery behind audit recommendations, governance actions and control improvements without adding governance complexity to day-to-day work | GW | W |
 | W15 | Education providers can use it with ZedX Study Planner, a student app that integrates with Group WorkStreams so tutors and students can plan assignments, coursework and learning activities | GW | W B |
+| W16 | Board views: Backlog, Current Stages, Epic and Archived | GW (Workstream Board Views module), DEMO (side menu) | I W |
+| W17 | Epics group related work items for larger pieces of work and show progress across them | GW (Epics module) | W |
+| W18 | Can replace the spreadsheets teams use to track their work, and reduces reliance on email updates and hand-kept task lists | GW (FAQ) | I W B |
+| W19 | Helps teams spot work that is delayed, blocked or piling up at one stage | GW (FAQ) | W |
+| W20 | Includes Ask Cloe, the AI assistant: ask questions, explore workstream information and keep a conversation going | GW (modules, FAQ), DEMO (Ask Cloe in the side menu) | I W |
+| W21 | Currently included in the Home, Professional and Group editions; Corporate, Enterprise and Enterprise Plus give access to every ZedX app | ED | I W B |
 
 ## Agile Sprints
 
 | ID | claim as published | source | used on |
 | --- | --- | --- | --- |
-| A1 | For delivery teams working in Scrum or sprint-based Agile; sprint and release management | AS | I A B |
-| A2 | Epics and user stories in a prioritised product backlog | AS | I A B |
-| A3 | Stories estimated in story points and selected into sprints against team capacity; scope, capacity and sprint goals visible before work begins | AS | I A B |
-| A4 | Configurable sprint boards; work in progress, completed and blocked work visible | AS | I A B |
-| A5 | Supports daily stand-ups and sprint reviews; online automated stand-up reporting | AS, APP | I A B |
+| A1 | For teams delivering software development, technology projects and other work in Scrum or sprint-based Agile; sprint and release management | AS | I A B |
+| A2 | Epics and user stories in a prioritised product backlog; epics hold the larger requirements and stories the work that delivers them | AS | I A B |
+| A3 | Stories estimated in story points and selected into sprints against team capacity, so goals stay realistic and teams don't overcommit; scope, capacity and sprint goals visible before work begins | AS | I A B |
+| A4 | Configurable sprint boards; work that is planned, in progress, blocked or completed is visible | AS | I A B |
+| A5 | Supports daily stand-ups and sprint reviews; automated stand-up reporting | AS, APP | I A B |
 | A6 | Sprint progress tracked in real time | AS | A |
 | A7 | Releases across one or more sprints; stories assigned to planned release versions | AS | I A B |
 | A8 | Metrics: sprint completion, velocity and carried-over work, with trends across sprints | AS | I A B |
-| A9 | Metrics are meant to inform teams and encourage learning, not enforce control | AS | A |
-| A10 | Role-based permissions | AS | A |
+| A9 | Metrics are meant to inform teams and encourage learning, and help them estimate more accurately | AS | A |
+| A10 | Role-based permissions; workstream access can be view-only | AS | A |
 | A11 | Used on its own, or linked to Project Portfolios; sprint progress summarised through periodic updates without task-level detail | AS, PP | I A B |
 | A12 | Backlog stages Ideas & Intake, Refinement Needed, Ready for Sprint; epics on a week-by-week timeline | DEMO | I A B |
+| A13 | A project holds several workstreams (Agile boards), each with its own epics, sprints, work items and team, so different teams manage their own backlogs and sprints; portfolios group related projects | AS (modules, FAQ) | A |
+| A14 | Epics have owners, priorities and delivery dates, and appear on Gantt charts | AS (Epics module) | I A B |
+| A15 | Sprints are timeboxed, have velocity targets tracked against actual performance, and are formally closed when complete | AS (Sprints module) | I A B |
+| A16 | Board views: Backlog, Current Sprint, Planned Sprints, Historic Sprints, Epics and Archived | AS (Workstream Board Views module), DEMO (side menu) | I A |
+| A17 | Insights dashboards and delivery metrics show which workstreams need management attention | AS (Insights module) | A |
+| A18 | Includes Ask Cloe, the AI assistant: ask questions and get guidance on Agile and Scrum work | AS (modules, FAQ) | I A |
+| A19 | Currently included in the Professional and Group editions (not Home); Corporate, Enterprise and Enterprise Plus give access to every ZedX app | ED | I A B |
 
-## Project Portfolios (supporting role, index only)
+## Project Portfolios (supporting role, index and brochure)
 
 | ID | claim as published | source |
 | --- | --- | --- |
@@ -66,31 +91,51 @@ Confidence is **high** for every published row: each is stated on the official p
 | P2 | Structured updates from project managers at agreed intervals, such as monthly or quarterly, in a consistent format | PP |
 | P3 | Updates include delivery confidence as a RAG status, narrative progress, key achievements, blockers, risks, dependencies and support required | PP |
 | P4 | Dashboards of delivery health across portfolios, programmes and projects; trends show whether confidence is improving, stable or deteriorating | PP |
-| P5 | Also: vision and objectives, portfolio-level Gantt view, export to Excel, automatic reminders for updates, benefits tracking | PP |
+| P5 | Also: vision and objectives, portfolio-level Gantt view, export to Excel, benefits tracking after delivery | PP |
 | P6 | Progress from linked workstreams arrives through periodic updates, not task-level detail | PP, AS |
+| P7 | Built for project management offices (PMOs), programme managers and senior leadership teams | PP (FAQ) |
+| P8 | Automatic reminders for updates reduce the effort of chasing them | PP (FAQ) |
+| P9 | Financial information at project, programme and portfolio level | PP (modules, FAQ) |
 
-## Platform, hosting and licensing
+## Platform, editions, hosting and licensing
 
 | ID | claim as published | source | used on |
 | --- | --- | --- | --- |
 | L1 | Single sign-on with Microsoft Entra ID | PLAT | I W A B |
-| L2 | Permissions follow the organisation's hierarchy: teams work in their own areas, and authorised users can see across departments, business units or the whole organisation | PLAT | I B |
-| L3 | Every ZedX app is built on the same platform, with one login and one interface; organisations can start with one app and add others | PLAT, HOME | I |
-| L4 | Technology: React, APIs, Microsoft SQL Server and Microsoft Azure | PLAT | I |
-| L5 | Editions: Home (individual use), Professional (SMEs), Group (unrelated teams), Corporate (medium-sized businesses), Enterprise (government, education and larger organisations) | HOME | I B |
-| L6 | SaaS editions are licensed per user; Enterprise has unlimited users and can be deployed in the customer's own Microsoft Azure account, which gives more control over infrastructure, integration and data | HOME, PLAT | I W A B |
-| L7 | Enterprise deployments can integrate ZedX with existing applications and data sources | PLAT | I B |
-| L8 | Apps on Demand: Swiftpro can build additional workflow apps from ZedX's reusable components | PLAT | I |
+| L2 | Role-based, granular permissions that follow the organisation's hierarchy: teams work in their own areas, and authorised users can see across departments, business units or the whole organisation | PLAT | I B |
+| L3 | Every ZedX app is built on the same platform, with one login, one interface and shared organisational structures; each app works on its own or with others; organisations can start with one app and add others | PLAT, APP | I B |
+| L4 | Technology: React, C# and .NET, Microsoft SQL Server, Microsoft Azure and APIs | PLAT | I |
+| L5 | Six editions: Home (individuals, who can invite friends and family), Professional (professionals and SMEs), Group (independent teams), Corporate (businesses that want the breadth of ZedX without their own infrastructure), Enterprise (government, education and larger organisations) and Enterprise Plus (every current and future app); Professional and Group are ideally suited to 1 to 50 users | ED | I B |
+| L6 | Licensing by edition: Home, Professional and Group per user; Corporate combines users with app usage; Enterprise has unlimited users, priced on the chosen apps and a usage allowance for each (for example a number of workstreams); Enterprise Plus has no usage limits | ED | I W A B |
+| L7 | Enterprise deployments can integrate ZedX with existing applications and data sources through its APIs; Swiftpro assesses and agrees each integration | PLAT | I B |
+| L8 | Apps on Demand: Swiftpro can build additional workflow apps from ZedX's reusable components; suitable apps carry no separate development charge (the customer pays for consultancy and a subscription); each is assessed first | PLAT, APP | I |
 | L9 | Demo requests go through the contact form to Swiftpro, whose form says "we will get back to you soon"; nothing is booked automatically | HOME | I W A B |
 | L10 | ZedX and the apps are products of Swiftpro Corporation Ltd, London | HOME footer, About | all |
-| L11 | The self-guided ZedX demo is open to everyone, with no registration | HOME, PLAT, LOGIN | I W A B P |
-| L12 | A free trial account is available: you register your details, and no credit card is needed | HOME, PLAT | I B |
+| L11 | The self-guided ZedX demo is open to everyone; it creates the demo account automatically, so there is nothing to register | HOME, PLAT, TRY, LOGIN | I W A B P |
+| L12 | A free trial account, listed as available from November 2026: register through a wizard, choose the apps to try, work in your own workspace, no credit card. zedxapps.com links no sign-up page | TRY, HOME, PLAT | I B |
 | L13 | Pricing is available in several currencies; this site shows no prices | HOME | I |
+| L14 | ZedX hosts Home, Professional, Group and Corporate; Enterprise and Enterprise Plus can be deployed in the customer's own Microsoft Azure subscription or other agreed infrastructure, for more control over hosting, integration and data | ED, PLAT | I W A B |
+| L15 | Cloe AI, the assistant built into the platform, uses OpenAI technology; it answers questions, gives guidance and prepares summaries; what it can do depends on the app and the information the user can access; it supports people's judgement and leaves important decisions to them | PLAT | I W A B |
+| L16 | Which apps each edition includes: Home currently Cloe AI and Group WorkStreams; Professional and Group currently Cloe AI, Agile Sprints and Group WorkStreams; Corporate and Enterprise any ZedX app; Enterprise Plus every current and future app | ED | I W A B |
 
-## Withdrawn by Swiftpro (October 2026 update)
+## Withdrawn or replaced by Swiftpro
 
-These were on this site until 8 October 2026. None of them is on any official
-page now, so they were removed. `e2e/content.spec.ts` fails if any returns.
+`e2e/content.spec.ts` fails if a withdrawn claim returns.
+
+### November 2026 update
+
+| old ID | claim | now |
+| --- | --- | --- |
+| L5 (part) | Five editions | six: Enterprise Plus added (ED) |
+| L6 (part) | "SaaS editions are licensed per user" as a blanket rule | per-edition licensing (L6); Corporate combines users and app usage |
+| W1 (source) | "Each workflow serves a dedicated and specific function" (APP) | gone from APP; W1 now rests on GW |
+| W2 (source) | "Tasks within each workflow are arranged as Kanban boards" (APP) | gone from APP; W2 now rests on GW and APP's "flexible Kanban boards" |
+| A5 (source) | "Online automated stand-ups reporting" (APP) | APP now says "automated stand-up reporting" |
+
+### October 2026 update
+
+These were on this site until 8 October 2026 and are still not on any official
+page, so they stay off.
 
 | old ID | claim | was used on |
 | --- | --- | --- |
@@ -102,9 +147,12 @@ page now, so they were removed. `e2e/content.spec.ts` fails if any returns.
 | L7 | Swiftpro Digital integration service, naming Oracle, SAP ERP and Tribal | I B |
 | L8 | Four licence options: per user, blocks of 10 or 100 users, per-app unlimited, all apps unlimited | I B |
 
+Enterprise hosting in "other agreed infrastructure" (ED, L14) is published in
+Swiftpro's November wording. The older "your own server" wording stays withdrawn.
+
 ## Legal notice and privacy policy
 
-Checked on 2026-10-04.
+Checked on 2026-11-08.
 
 | ID | claim as published | source | used on |
 | --- | --- | --- | --- |
@@ -125,8 +173,12 @@ Checked on 2026-10-04.
 | CSV import, Excel/PDF export platform-wide | G-Cloud 14 listing only | narrowed: Excel export is stated for Project Portfolios only |
 | Two-factor authentication, Cyber Essentials, support hours | G-Cloud 14 listing only | not confirmed current |
 | Prices (from £150 per 10 users per month, May 2024) | G-Cloud 14 pricing document | may be out of date; the site asks visitors to ask Swiftpro for pricing |
-| Sector editions for government, education and business | Sectors page | true but not needed for these two apps; the five named editions are published instead |
-| How to register for the free trial | no official page links a sign-up | the site tells visitors to ask Swiftpro |
-| The other ZedX apps (Risk Registers, Audit Actions, Governance Statement, Management Controls, Contingent Labour) | APP and their own pages | out of scope, except where the Group WorkStreams page names audit and governance work (W14) |
+| A sign-up link for the free trial | none published | the TRY page lists the trial as "Available from Nov 2026" with no link; the site tells visitors to ask Swiftpro |
+| The Training Account option on the login page | LOGIN | not described on any official page |
+| Sector configurations for government, education and business | Sectors, PLAT | true, but not needed for these two apps |
+| "Days" on Group WorkStreams cards, and the red counts in the workstreams list's Active Tasks column | DEMO | no official page explains them, so screenshots show them without comment |
+| Agile Sprints Insights screens | DEMO | the demo's Agile Sprints Insights page has no data; the dashboards are described in text only |
+| Books by Swiftpro consultants (Resources page) | Resources | out of scope for an app site |
+| The other ZedX apps (Risk Registers, Audit Actions, Governance Statements, Management Controls, Contingent Labour) | APP and their own pages | out of scope, except where the Group WorkStreams page names audit and governance work (W14) |
 | Any customer name, count, quote, rating or outcome | none | none are public; nothing invented |
 | Competitor comparisons | earlier research (`fixes.md`) | not supported by official sources; removed in the redesign |

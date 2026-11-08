@@ -19,6 +19,12 @@ writing rules are in `BRAND.md`.
 | recapture or re-crop screenshots | `npm run screens` (all), `npm run screens -- --only pp-insights`, `npm run screens -- --encode-only` |
 | preview images of the site (`previews/`, not published) | `npm run previews` |
 
+If the Chromium on your machine doesn't match the pinned Playwright version,
+point a local wrapper config at it with `use.launchOptions.executablePath`
+(and for the `tools/*.mjs` scripts, pass `executablePath` to
+`chromium.launch`) rather than editing `playwright.config.ts`. CI installs its
+own browser.
+
 The `check_site.py` checks are:
 
 - links, anchors, icons, `srcset` files and full-size viewer images;
@@ -37,24 +43,30 @@ out of the push checks so that an outage on zedxapps.com never blocks a deploy.
 ## Official sources
 
 Product claims come only from these pages. They were first read on 4 October
-2026 and re-read on 8 October 2026, after Swiftpro updated zedxapps.com. The
-earlier site's copy was treated as material to review, not as proof.
+2026, then re-read on 8 October and 8 November 2026 after each of Swiftpro's
+updates to zedxapps.com. The November update added the Editions and Demo/Trial
+pages, modules tables and FAQs on each app page, an FAQ on the Platform page and
+a rewritten Applications page. All of the site's text was rewritten from them.
+The earlier site's copy was treated as material to review, not as proof.
 
 | source | URL | supports |
 | --- | --- | --- |
-| Applications overview | https://www.zedxapps.com/Applications/index.html | Group WorkStreams one-liner ("a series of workflows… each serves a dedicated and specific function… Kanban boards"); Agile Sprints "online automated stand-ups reporting" |
-| Group WorkStreams (new in October 2026) | https://www.zedxapps.com/GroupWorkStreams/Index.html | who it suits and "without the overhead of formal project management or Agile ceremonies"; lists, Kanban boards or timeline views; adaptable stages, fields and priorities; dashboards of workload, progress and bottlenecks; role-based permissions; linking a workstream to Agile Sprints without duplicating data; audit and governance work; ZedX Study Planner for education |
-| Agile Sprints | https://www.zedxapps.com/AgileSprints/Index.html | the full Agile Sprints feature list. Also: periodic updates to Project Portfolios "without exposing task-level detail", and Group WorkStreams alongside for mixed delivery |
-| Project Portfolios | https://www.zedxapps.com/ProjectPortfolios/Index.html | the leadership section: structured periodic updates (monthly or quarterly) and their contents, dashboards and trends, Gantt view, Excel export, reminders, benefits. Also: project workstreams can link to Group WorkStreams or Agile Sprints |
-| Platform (rewritten in October 2026) | https://www.zedxapps.com/Platform/index.html | the adoption section: Entra ID single sign-on, permissions that follow the organisation's hierarchy, one login and interface, start with one app, React/APIs/SQL Server/Azure, SaaS per user and Enterprise in the customer's own Azure, Enterprise integration, Apps on Demand, self-service demo and trial account |
-| Home | https://www.zedxapps.com/index.html | the five editions, SaaS per user and Enterprise unlimited users, pricing in several currencies, the self-guided demo and the free trial. The contact form (`#formContact`) is the demo destination: "To book a demo or request further information, please send us a message", confirmed with "we will get back to you soon" |
-| Customer login | https://zedx.net/ | login destination. Its "Try Demo Account" card ("No registration required") opens the demo |
+| Applications overview (rewritten in November 2026) | https://www.zedxapps.com/Applications/index.html | Group WorkStreams' "flexible Kanban boards"; Agile Sprints' "automated stand-up reporting"; each app works on its own or with others, on shared organisational structures, user management and permissions; Apps on Demand |
+| Group WorkStreams | https://www.zedxapps.com/GroupWorkStreams/Index.html | who it suits and "without the overhead of formal project management or Agile ceremonies"; lists, Kanban boards or timeline views; adaptable stages, fields and priorities; dashboards of workload, progress and bottlenecks; linking to Agile Sprints without duplicating data; audit and governance work; ZedX Study Planner. Modules table (November 2026): portfolios, workstream users, epics, work items with difficulty points, the Backlog, Current Stages, Epic and Archived views, Insights, Ask Cloe. FAQ: replacing spreadsheets, managers seeing workload without asking for updates, blocked work, Cloe AI |
+| Agile Sprints | https://www.zedxapps.com/AgileSprints/Index.html | the Agile Sprints feature list; periodic updates to Project Portfolios "without exposing task-level detail"; Group WorkStreams alongside for mixed delivery. Modules table (November 2026): projects holding several Agile boards, epics with owners, priorities, delivery dates and Gantt charts, timeboxed sprints with velocity targets that are formally closed, six board views, view-only access, Insights, Ask Cloe. FAQ: software, technology projects and other Agile work; several teams; velocity; Cloe AI |
+| Project Portfolios | https://www.zedxapps.com/ProjectPortfolios/Index.html | the leadership section: structured periodic updates (monthly or quarterly) and their contents, dashboards and trends, Gantt view, Excel export, reminders, benefits; project workstreams linked to Group WorkStreams or Agile Sprints. November 2026: PMOs, programme managers and senior leadership; financials at project, programme and portfolio level; reminders that cut the chasing |
+| Platform | https://www.zedxapps.com/Platform/index.html | Entra ID single sign-on, role-based and granular permissions that follow the organisation's hierarchy, one login and interface, start with one app, Enterprise integration, Apps on Demand, demo and trial. FAQ (November 2026): React, C# and .NET, SQL Server, Azure and APIs; Cloe AI "using OpenAI technology"; other editions hosted by ZedX; integrations assessed and agreed |
+| Editions (new in November 2026) | https://www.zedxapps.com/Editions/index.html | the six editions (Home, Professional, Group, Corporate, Enterprise, Enterprise Plus), which apps each includes, how each is licensed, 1 to 50 users for Professional and Group, which editions ZedX hosts and which can run in the customer's own Azure or other agreed infrastructure |
+| Demo/Trial (new in November 2026) | https://www.zedxapps.com/Try/index.html | the demo account is created automatically; the free trial uses a registration wizard, lets you choose apps, needs no credit card and is "Available from Nov 2026". No sign-up link yet |
+| Home | https://www.zedxapps.com/index.html | Swiftpro's name and address, pricing in several currencies, the self-guided demo and the free trial. Its editions box still lists five editions; the site follows the Editions page. The contact form (`#formContact`) is the demo destination: "To book a demo or request further information, please send us a message", confirmed with "we will get back to you soon" |
+| Customer login | https://zedx.net/ | login destination. Its "Try Demo Account" card ("No registration required") opens the demo. Since November 2026 it also offers a Training Account, which no official page describes |
 | ZedX demo | https://demo.zedx.net/ | the "Try the demo yourself" links, and every screenshot |
 
-The detailed claim-by-claim register is `replica/claims.md`. Its "Withdrawn"
-table lists what the October 2026 update removed (ZedX's own sign-in, guest
-logins, app modules, the in-app store, licence blocks and own-server hosting,
-and the Swiftpro Digital integration service).
+The detailed claim-by-claim register is `replica/claims.md`. Its "Withdrawn or
+replaced" section lists what the 2026 updates removed or changed: ZedX's own
+sign-in, guest logins, app modules, the in-app store, licence blocks and
+own-server hosting and the Swiftpro Digital integration service in October; the
+blanket "five editions" and "SaaS editions are licensed per user" in November.
 
 ## Screenshots
 
@@ -73,13 +85,13 @@ title, columns), not from file names.
 
 | screen | app (verified on screen) | view | visible functions we describe | crops | used in |
 | --- | --- | --- | --- | --- | --- |
-| `gw-board` | Group WorkStreams | Complaints & Compliments Log, Current Stages | stages Outstanding, In Progress, Escalated, Response Issued, Closed - Ready for Archive; New Stage / Edit Stage; references, priorities (Low to Critical), assignees | `full`, `wide`, `sm` | workstreams.html hero |
+| `gw-board` | Group WorkStreams | Complaints & Compliments Log, Current Stages | stages Outstanding, In Progress, Escalated, Response Issued, Closed - Ready for Archive; New Stage / Edit Stage; references, priorities (Low to Critical), difficulty points, assignees; the Backlog, Current Stages, Epic and Archived views in the side menu | `full`, `wide`, `sm` | workstreams.html hero |
 | `gw-board-catering` | Group WorkStreams | Catering & Vending Machine Issues, Current Stages | three stages: New Issue, In Progress, Completed | `full`, `strip`, `board`, `sm` | index hero; workstreams.html "Stages"; social card; PDF cover |
-| `gw-workstreams` | Group WorkStreams | Workstreams list | name, portfolio (function), active epics, active tasks, type, owners | `full`, `list`, `sm` | index Group WorkStreams; workstreams.html "A workstream for each function"; PDF p2 |
+| `gw-workstreams` | Group WorkStreams | Workstreams list | name, portfolio (function), active epics, active tasks, type, owners; Ask Cloe in the side menu | `full`, `list`, `sm` | index Group WorkStreams; workstreams.html "A workstream for each function"; PDF p2 |
 | `gw-insights` | Group WorkStreams | Insights: Group Workstreams Dashboard | work items per workstream, critical and non-critical | `full`, `chart` | workstreams.html "See where the work is piling up" |
-| `as-sprint` | Agile Sprints | Current Sprint (3 - Attendance Capture) | stages On Hold, Not Started, In Progress, Completed Unverified, Completed Verified; epic IDs, priority, story points | `full`, `strip`, `wide`, `sm` | index hero; agile-sprints.html hero; social card; PDF cover |
+| `as-sprint` | Agile Sprints | Current Sprint (3 - Attendance Capture) | stages On Hold, Not Started, In Progress, Completed Unverified, Completed Verified; epic IDs, priority, story points; the Backlog, Current Sprint, Planned Sprints, Historic Sprints, Epics and Archived views in the side menu | `full`, `strip`, `wide`, `sm` | index hero; agile-sprints.html hero; social card; PDF cover |
 | `as-backlog` | Agile Sprints | Backlogs | stages Ideas & Intake, Refinement Needed, Ready for Sprint; epics E001–E006; story points | `full`, `board`, `refine`, `sm` | index Agile Sprints; agile-sprints.html "Plan from a prioritised backlog"; PDF p3 |
-| `as-epics` | Agile Sprints | Epics, Gantt view | six epics on a week-by-week timeline, January to March 2026 | `full`, `timeline`, `start` | index Agile Sprints (hidden on phones); agile-sprints.html "See epics over time" |
+| `as-epics` | Agile Sprints | Epics, Gantt view | six epics on a week-by-week Gantt chart, January to March 2026 | `full`, `timeline`, `start` | index Agile Sprints (hidden on phones); agile-sprints.html "See epics over time" |
 | `pp-insights` | Project Portfolios | Insights: Project Portfolios Dashboard A | RAG ratings by indicator across the college group's projects | `full`, `chart` | index leadership section only (supporting role) |
 
 Group WorkStreams' own "Portfolios" view (which groups workstreams by
@@ -99,9 +111,9 @@ The items below are not on the current official pages, or only appear in the
   - Power BI integration.
   - CSV import and Excel/PDF export as platform-wide features. Excel export is stated only for Project Portfolios, and is described there as such.
 - **Security:** two-factor authentication and Cyber Essentials.
-- **Commercial terms:** support hours and response times. (The free trial is now on zedxapps.com, so the site mentions it.)
+- **Commercial terms:** support hours and response times. (The free trial is on zedxapps.com, so the site mentions it.)
 - **Prices:** zedxapps.com says pricing is available in several currencies but shows no figures. The only public figures are G-Cloud 14 prices from May 2024.
-- **SaaS hosting details:** the official pages say where Enterprise can run (the customer's own Azure) but not where the SaaS editions are hosted, so the site doesn't say either.
+- **Where ZedX hosts its own editions:** the Editions page says ZedX hosts Home, Professional, Group and Corporate (resolved in November 2026, and on the site), but not in which country or region, so the site doesn't say.
 
 ### Reporting claims
 
@@ -111,7 +123,7 @@ The items below are not on the current official pages, or only appear in the
 ### Demo and assets
 
 - **Self-service demo:** resolved in October 2026. Swiftpro now promotes the demo on zedxapps.com ("self-guided demo, with no registration required") and on the login page ("Try Demo Account"), so the site links to https://demo.zedx.net/ as a secondary action.
-- **Free trial:** zedxapps.com offers a free trial account ("registering your details, with no credit card required") but links no sign-up page. The site mentions the trial and tells visitors to ask Swiftpro. Link the sign-up page if one appears.
+- **Free trial:** the Demo/Trial page lists a free trial account as "Available from Nov 2026", set up through a registration wizard with no credit card. It still links no sign-up page, so the site mentions the trial and tells visitors to ask Swiftpro. Link the sign-up page when one appears.
 - **Logos:**
   - No official logo files are in the repository, and none are used outside the screenshots.
   - The product logos inside screenshots are untouched.
@@ -120,10 +132,11 @@ The items below are not on the current official pages, or only appear in the
 - **Screenshot gaps:**
   - The demo's Agile Sprints Insights page has no data, so velocity, completion and carried-over metrics have no screenshot and are described in text only.
   - Releases have no screenshot either.
-- **Unexplained interface details** (shown, never described):
-  - the "Days" and "Difficulty Points" fields on Group WorkStreams cards;
+- **Interface details explained in November 2026** (now described on the site): Difficulty Points on Group WorkStreams cards (Work Items module), the board views in each app's side menu, and the "Ask Cloe" menu item (Cloe AI).
+- **Still unexplained** (shown, never described):
+  - the "Days" field on some Group WorkStreams cards;
   - the red counts in the workstreams list's Active Tasks column;
-  - the "Ask Cloe" menu item.
+  - the Training Account option on the login page.
 
 ### Legal notice, privacy policy and the work-in-progress notice
 

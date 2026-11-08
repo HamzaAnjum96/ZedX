@@ -1,6 +1,6 @@
 # Deploy checklist: independent promotional site
 
-- **Date:** 2026-10-08.
+- **Date:** 2026-11-08 (copy rewrite after Swiftpro's November update; first deployed 2026-10-04).
 - **Commit:** see `git log -1`.
 - **Go-ahead from the site owner:** yes. The redesign brief ended "Go", and later changes were asked to go straight to `main`.
 
@@ -21,9 +21,9 @@ the files in `docs/` are the site.
   - banned copy.
 - [x] **Tokens:** `python3 tools/build_tokens.py --check` reports `tokens.css` up to date.
 - [x] **Contrast:** `contrast.py replica/design/tokens.json` reports 27 pairs, 0 AA failures.
-- [x] **e2e suite:** 275 passed, 1 skipped by design, at 1440, 768 and 390px (see `test-plan.md`).
+- [x] **e2e suite:** 281 passed, 1 skipped by design, at 1440, 768 and 390px (see `test-plan.md`).
 - [x] **Open bugs:** none at S1 or S2 (`bugs.md`; BUG-005 to BUG-007 are fixed).
-- [x] **Claims:** every published claim is in `claims.md`, re-checked against zedxapps.com on 8 October 2026 after Swiftpro's site update. `tools/check_sources.py` finds every supporting phrase. Items needing Swiftpro's confirmation are listed in `DEVELOPER-NOTES.md`.
+- [x] **Claims:** every published claim is in `claims.md`, re-checked against zedxapps.com on 8 November 2026 after Swiftpro's second site update (new Editions and Demo/Trial pages, modules tables and FAQs). `tools/check_sources.py` finds all 118 supporting phrases. Items needing Swiftpro's confirmation are listed in `DEVELOPER-NOTES.md`.
 - [x] **Attribution:**
   - "Independent promotional site" appears in the header of every page.
   - Our role is stated in the hero, the FAQ and the footer.
@@ -64,7 +64,7 @@ To serve the site from a subdomain such as `boards.example.com`:
 
 ## Watch
 
-- [ ] **Before promoting:** someone at Swiftpro reads `replica/claims.md` and the open questions in `DEVELOPER-NOTES.md`. Those cover UK data residency, mobile support, Power BI, export formats, SaaS hosting, the free-trial sign-up and logos.
+- [ ] **Before promoting:** someone at Swiftpro reads `replica/claims.md` and the open questions in `DEVELOPER-NOTES.md`. Those cover UK data residency, mobile support, Power BI, export formats, the free-trial sign-up and logos. (SaaS hosting was answered by Swiftpro's November update: ZedX hosts Home, Professional, Group and Corporate.)
 - [ ] **Official sources:** the weekly "Official sources" workflow fails when a page on zedxapps.com changes. Re-read the page it names, then update `claims.md` and the copy.
 - [ ] **Partner name:** when the promotional partner's verified name exists, add it to the footer attribution and the legal notice.
 - [ ] **Legal pages:** add a contact address and governing law, and have both pages reviewed (see `DEVELOPER-NOTES.md`).

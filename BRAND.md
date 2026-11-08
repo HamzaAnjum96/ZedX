@@ -52,6 +52,7 @@ Rules:
   - Weight 600, tracking −0.01em.
   - Sizes: H1 35–50px, H2 27–34px, H3 22px.
   - Line lengths are capped (H1 15ch, H2 18–30ch) and wrapping is balanced.
+  - If a capped heading would break a sentence mid-line, keep a phrase together with a non-breaking space. The home H1 keeps "everyday work." and "delivery teams." whole, so each sentence ends at a line break at every width.
 - **Not used:**
   - eyebrow labels or kickers above headings, and monospace "technical" labels (a test fails if either comes back);
   - uppercase labels, slogans above H1 size, and text under 13px.
@@ -74,7 +75,7 @@ Three elements, used consistently. The site gets its character from the real scr
    - On wide screens, a product's "See how…" link lines up with the bottom of its screenshot caption.
 2. **Fine horizontal rules.**
    - 1px rules separate sections, specification rows and FAQ items.
-   - A 2px navy rule opens each sign-in, hosting and licensing group.
+   - A 2px navy rule opens each editions, sign-in and hosting group.
 3. **Plain captions.**
    - Every caption is one or two ordinary sentences that name the app and say what is visible, followed by "View full screen".
    - Captions carry no separate label.
@@ -88,14 +89,15 @@ Three elements, used consistently. The site gets its character from the real scr
 | Agile Sprints | heading beside two short paragraphs and a link, then two screenshots as a pair (backlog, epics timeline) | the evidence is a planning sequence |
 | comparison | white table: criterion, then the two apps; on phones each row stacks with small app labels | a compact answer to "which fits?" |
 | leadership | editorial text (7/12) with the Project Portfolios dashboard as a supporting figure (5/12) | reporting is explained, not sold as a third product |
-| adoption | three spec columns (sign-in, hosting, licensing) of label and detail rows | reference information, scannable |
+| editions, sign-in and hosting | three spec columns (editions, sign-in and access, hosting and integration) of label and detail rows | reference information, scannable; editions come first because buyers ask which edition includes the app |
 | FAQ, closing, footer | question list beside its heading; navy closing band with one cyan action; navy footer with the attribution | the main action at the end, and who runs the site |
 
 App pages open with a navy hero:
 
 - the H1 and the actions sit side by side;
 - a full-width board screenshot runs below them;
-- step sections vary (text and figure, flipped, half and half, wide) according to the evidence.
+- step sections vary (text and figure, flipped, half and half, wide) according to the evidence;
+- they end with "works alongside the other ZedX apps" rows, an FAQ about the app (including which editions include it) and the closing band.
 
 ## Components
 
@@ -117,7 +119,7 @@ App pages open with a navy hero:
   - Without JavaScript, the link opens the image file.
 - **Comparison table:** real table semantics, plus explicit roles so they survive the stacked layout on phones.
 - **Spec rows** (`dl.spec-rows`, `dl.rows`): label and detail, separated by rules.
-- **FAQ:** native `<details>`, with a chevron that turns on open.
+- **FAQ:** native `<details>`, with a chevron that turns on open. Used on the home page and on both app pages.
 - **Header:**
   - The text wordmark is the two product names, plus "Independent promotional site" in small type.
   - There is no logo, because we have no verified partner identity of our own.
@@ -149,9 +151,12 @@ Copy is written and edited with the `copywriting` and `copy-editing` skills in `
   - "We" means the promotional partner, and appears only where the site explains who runs it.
 - **Keep claims to the source:**
   - App features stay attached to their app.
-  - Hosting and integration stay attached to their edition: Enterprise can run in the customer's own Azure and integrate with existing systems; SaaS editions are licensed per user.
+  - Hosting, integration and licensing stay attached to their edition. ZedX hosts Home, Professional, Group and Corporate. Enterprise and Enterprise Plus can run in the customer's own Azure subscription or other agreed infrastructure, and integration is described for Enterprise only. Home, Professional and Group are licensed per user, Corporate combines users with app usage, Enterprise has unlimited users with a usage allowance per app, and Enterprise Plus has no usage limits.
+  - Which apps an edition includes comes from the Editions page and keeps its "currently".
+  - Cloe AI: say only what Swiftpro says it does (answers questions, gives guidance, prepares summaries), and attribute "uses OpenAI technology" to Swiftpro.
   - Nothing Swiftpro has withdrawn comes back (see "Withdrawn" in `replica/claims.md`).
   - Leadership reporting arrives as periodic updates; the tasks stay on the team's board.
 - **No invented numbers:** no prices, customers, testimonials, outcomes or adoption figures.
 - **The demo button opens a vendor enquiry form,** so say that the request goes to Swiftpro and that they get back to you. Never promise a booking or a calendar.
-- **"Try the demo yourself"** is the secondary action. It opens the public ZedX demo (demo.zedx.net), which needs no registration. Keep the two apart: "Request a demo" asks Swiftpro, "Try the demo yourself" opens the demo.
+- **"Try the demo yourself"** is the secondary action. It opens the public ZedX demo (demo.zedx.net), which creates a demo account automatically, so nobody registers. Keep the two apart: "Request a demo" asks Swiftpro, "Try the demo yourself" opens the demo.
+- **The free trial** is listed by Swiftpro as available from November 2026, with no credit card. There is no public sign-up link, so tell people to ask Swiftpro, and never link a guessed sign-up page.
