@@ -29,6 +29,7 @@ at the top; `DEVELOPER-NOTES.md` explains how to remove it.
 ## Read next
 
 - **[BRAND.md](BRAND.md):** the light "Daylight" identity: tokens, type, motion, composition, components and voice.
+- **[replica/design/premium-plan.md](replica/design/premium-plan.md):** the next design pass, planned and not yet built: the app switch in the hero and the demo card, editions as a table, and a finish layer.
 - **[DEVELOPER-NOTES.md](DEVELOPER-NOTES.md):**
   - commands and official source URLs;
   - the screenshot-to-app mapping;

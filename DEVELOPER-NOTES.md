@@ -16,6 +16,7 @@ writing rules are in `BRAND.md`.
 | e2e + axe at 1440, 768 and 390px | `npm install` then `npm test` |
 | PDF brochure, social card, touch icon | `npm run pdf` |
 | check the official pages still back every claim | `python3 tools/check_sources.py` (`--verbose` lists each phrase) |
+| add an icon or rebuild the sprite | `python3 -I tools/build_sprite.py <phosphor regular dir> . --prune` (how to fetch Phosphor is in the file's header) |
 | recapture or re-crop screenshots | `npm run screens` (all), `npm run screens -- --only as-epics`, `npm run screens -- --encode-only` |
 | preview images of the site (`previews/`, not published) | `npm run previews` |
 
