@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/ZedX/">
-  <script>document.documentElement.classList.add('js')</script>
-  <title>Page not found | Independent ZedX promotional site</title>
+  <script>document.documentElement.classList.add('js');window.__revealFailsafe=setTimeout(function(){document.documentElement.classList.add('reveal-failsafe')},3000)</script>
+  <title>Page not found | ZedX referral partner</title>
   <meta name="description" content="This page does not exist. Go to the home page, which compares Group WorkStreams and Agile Sprints, or to either app's own page.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#0E3562">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/geist-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <script type="module" src="assets/js/site.js"></script>
@@ -23,14 +24,13 @@
     <div class="wip-notice">
       <p class="container"><strong>This site is a work in progress.</strong> The content is not complete and may not be correct.</p>
     </div>
-    <div class="container header-inner">
+    <div class="header-inner">
       <a class="brand" href="./">
         <span class="brand-name">Group WorkStreams <span class="brand-amp">&amp;</span> Agile Sprints</span>
-        <span class="brand-note">Independent promotional site</span>
+        <span class="brand-note">From a ZedX referral partner</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
-        <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"/></svg>
-        <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#i-x"/></svg>
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
         <span class="visually-hidden">Menu</span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
@@ -42,7 +42,7 @@
         </ul>
         <ul class="nav-actions">
           <li><a class="nav-login" href="https://zedx.net/">Log in to ZedX<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-log-in"/></svg></a></li>
-          <li><a class="btn btn-outline" href="https://www.zedxapps.com/index.html#formContact">Request a demo</a></li>
+          <li><a class="btn btn-accent btn-sm" href="https://www.zedxapps.com/index.html#formContact">Request a demo</a></li>
         </ul>
       </nav>
     </div>
@@ -62,25 +62,16 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
+    <div class="container footer-inner">
       <div class="footer-about">
-        <p class="footer-title">About this site</p>
-        <p>An independent promotional website for two ZedX apps. Swiftpro Corporation Ltd does not run this site. ZedX, ZedX Apps, Group WorkStreams, Agile Sprints, Project Portfolios and the other ZedX names on this site are products of Swiftpro Corporation Ltd, London.</p>
+        <p class="footer-mark">Group WorkStreams <span class="brand-amp">&amp;</span> Agile Sprints</p>
+        <p>This site is run by a ZedX referral partner. ZedX, ZedX Apps, Group WorkStreams and Agile Sprints are products of Swiftpro Corporation Ltd, London, which does not run this site.</p>
       </div>
       <nav class="footer-nav" aria-label="Site">
-        <p class="footer-title">Pages</p>
         <ul>
-          <li><a href="./">Home</a></li>
+          <li><a href="brochure.pdf">Brochure (PDF)</a></li>
           <li><a href="legal.html">Legal notice</a></li>
           <li><a href="privacy.html">Privacy policy</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav" aria-label="Official ZedX sources">
-        <p class="footer-title">Official sources</p>
-        <ul>
-          <li><a href="https://www.zedxapps.com/Applications/index.html">ZedX applications</a></li>
-          <li><a href="https://www.zedxapps.com/Platform/index.html">ZedX Apps Platform</a></li>
-          <li><a href="https://zedx.net/">ZedX login</a></li>
         </ul>
       </nav>
     </div>

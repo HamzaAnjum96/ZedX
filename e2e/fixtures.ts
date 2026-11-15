@@ -8,6 +8,8 @@ export const DEMO_FORM = 'https://www.zedxapps.com/index.html#formContact';
 export const LOGIN = 'https://zedx.net/';
 // The public, self-guided ZedX demo. Swiftpro promotes it on zedxapps.com and the login page.
 export const DEMO_SITE = 'https://demo.zedx.net/';
+// The site's own role: a ZedX referral partner. Swiftpro makes ZedX.
+export const PARTNER_NOTE = 'From a ZedX referral partner';
 
 // Every test fails on console errors or warnings, uncaught exceptions,
 // 5xx responses and failed requests to the local site.
@@ -45,6 +47,17 @@ export async function scrollThrough(page: Page) {
     await expect.poll(() => img.evaluate((el) => (el as HTMLImageElement).complete && (el as HTMLImageElement).naturalWidth > 0)).toBe(true);
   }
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await settle(page);
+}
+
+// Finish every scroll reveal and the word-by-word tagline, so checks such as
+// axe see the page as a reader does once it has scrolled past each section.
+export async function settle(page: Page) {
+  await page.evaluate(async () => {
+    document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-revealed'));
+    document.querySelectorAll('.tw').forEach((el) => el.classList.add('is-on'));
+    await Promise.all(document.getAnimations().map((a) => a.finished.catch(() => undefined)));
+  });
 }
 
 export const isNarrow = (page: Page) => (page.viewportSize()?.width ?? 1440) < 1100;

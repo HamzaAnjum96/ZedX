@@ -53,7 +53,7 @@ try {
 
   // 3. Touch icon (iOS home screen), from the SVG favicon
   await page.setViewportSize({ width: 180, height: 180 });
-  await page.setContent(`<body style="margin:0"><img src="${BASE}assets/img/favicon.svg" width="180" height="180" style="display:block"></body>`, { waitUntil: 'networkidle' });
+  await page.setContent(`<link rel="icon" href="data:,"><body style="margin:0"><img src="${BASE}assets/img/favicon.svg" width="180" height="180" style="display:block"></body>`, { waitUntil: 'networkidle' });
   await page.screenshot({ path: 'docs/assets/img/apple-touch-icon.png' });
   console.log('wrote docs/assets/img/apple-touch-icon.png');
 

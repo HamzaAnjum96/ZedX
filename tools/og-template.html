@@ -4,24 +4,26 @@
   <meta charset="utf-8">
   <!-- Social preview card, rendered to docs/assets/img/og-image.png by tools/build_pdf.mjs -->
   <base href="http://localhost:4174/ZedX/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <style>
-    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
-    .og { position: relative; display: grid; grid-template-columns: 500px 1fr; gap: 48px; width: 1200px; height: 630px; padding: 64px 0 56px 64px; background: var(--c-navy); color: var(--c-on-navy); }
-    .og .tag { margin-bottom: 28px; font-size: 19px; line-height: 26px; color: var(--c-on-navy-muted); }
-    .og h1 { color: var(--c-white); font-size: 50px; line-height: 58px; max-width: none; }
-    .og .names { margin-top: 28px; font-size: 22px; line-height: 32px; color: var(--c-on-navy-muted); }
-    .og .names strong { color: var(--c-white); }
-    .og .note { position: absolute; left: 64px; bottom: 48px; font-size: 18px; color: var(--c-on-navy-muted); }
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: var(--c-raised); }
+    .og { position: relative; display: grid; grid-template-columns: 500px 1fr; gap: 48px; width: 1200px; height: 630px; padding: 64px 0 56px 64px; background: var(--c-raised); color: var(--c-text); }
+    .og .tag { margin-bottom: 28px; color: var(--c-muted); font-size: 19px; line-height: 26px; }
+    .og h1 { max-width: none; background: linear-gradient(90deg, var(--c-text-strong), var(--c-accent)); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.035em; }
+    .og .names { margin-top: 28px; color: var(--c-muted); font-size: 22px; line-height: 32px; }
+    .og .names strong { color: var(--c-text-strong); font-weight: 600; }
+    .og .note { position: absolute; left: 64px; bottom: 48px; color: var(--c-muted); font-size: 18px; }
     .og .shots { display: grid; gap: 22px; align-content: start; padding-top: 6px; }
-    .og .shot-frame { width: 640px; border-radius: 6px 0 0 6px; border-right: 0; border-color: var(--c-on-navy-rule); }
+    .og .shot-frame { width: 640px; overflow: hidden; border: 1px solid var(--c-line); border-right: 0; border-radius: 12px 0 0 12px; background: var(--c-bg); box-shadow: var(--shadow-frame); }
+    .og .shot-frame img { display: block; width: 772px; height: auto; }
   </style>
 </head>
 <body>
   <div class="og">
     <div>
-      <p class="tag">Independent promotional site</p>
+      <p class="tag">From a ZedX referral partner</p>
       <h1>Kanban boards<br>for everyday work.<br>Sprints for<br>delivery teams.</h1>
       <p class="names"><strong>Group WorkStreams</strong> and <strong>Agile Sprints</strong>,<br>two ZedX apps</p>
     </div>

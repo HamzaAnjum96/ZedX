@@ -1,14 +1,14 @@
 // Every page loads cleanly, is accessible, fits the screen, names its
-// promotional role, opens with the work-in-progress notice, and every link,
+// referral partner role, opens with the work-in-progress notice, and every link,
 // image and asset on it resolves.
 import AxeBuilder from '@axe-core/playwright';
-import { test, expect, PAGES, DOC_PAGES, WIP_NOTICE, scrollThrough } from './fixtures';
+import { test, expect, PAGES, DOC_PAGES, WIP_NOTICE, PARTNER_NOTE, scrollThrough } from './fixtures';
 
 for (const path of [...PAGES, ...DOC_PAGES]) {
   test.describe(path, () => {
     test('loads with a title, a description, one h1 and British English', async ({ page }) => {
       await page.goto(path);
-      await expect(page).toHaveTitle(/Independent ZedX promotional site/);
+      await expect(page).toHaveTitle(/ZedX referral partner/);
       await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /.{60,}/);
       await expect(page.locator('h1')).toHaveCount(1);
       await expect(page.locator('html')).toHaveAttribute('lang', 'en-GB');
@@ -87,12 +87,19 @@ for (const path of [...PAGES, ...DOC_PAGES]) {
       });
     }
 
-    test('says it is an independent promotional site, near the top and in the footer', async ({ page }) => {
+    test('says it comes from a ZedX referral partner, near the top and in the footer', async ({ page }) => {
       await page.goto(path);
-      await expect(page.locator('.brand-note')).toHaveText('Independent promotional site');
+      await expect(page.locator('.brand-note')).toHaveText(PARTNER_NOTE);
       await expect(page.locator('.brand-note')).toBeVisible();
-      await expect(page.locator('.site-footer')).toContainText('Swiftpro Corporation Ltd does not run this site');
-      await expect(page.locator('.site-footer')).toContainText('products of Swiftpro Corporation Ltd');
+      await expect(page.locator('.site-footer')).toContainText('This site is run by a ZedX referral partner');
+      await expect(page.locator('.site-footer')).toContainText('products of Swiftpro Corporation Ltd, London, which does not run this site');
+    });
+
+    test('keeps the footer short: one note and three site links', async ({ page }) => {
+      await page.goto(path);
+      const footer = page.locator('.site-footer');
+      await expect(footer.getByRole('link')).toHaveText(['Brochure (PDF)', 'Legal notice', 'Privacy policy']);
+      await expect(footer).not.toContainText(/official|checked on/i);
     });
 
     test('opens with the work-in-progress notice, above the header', async ({ page }) => {

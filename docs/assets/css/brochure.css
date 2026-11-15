@@ -1,22 +1,93 @@
-/* Print layout of the four-page A4 brochure (docs/brochure.html).
-   tools/build_pdf.mjs renders it to docs/brochure.pdf. Uses the same tokens,
-   fonts, labels and screenshot frames as the site (site.css). */
+/* Print layout of the four page A4 brochure (docs/brochure.html).
+   tools/build_pdf.mjs renders it to docs/brochure.pdf. Self-contained: the same
+   tokens and Geist type as the site, a pale blue cover like the site hero, and
+   ink on white inside so it prints well. */
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/geist-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/geist-sans-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/geist-sans-latin-600-normal.woff2') format('woff2');
+}
 
 @page {
   size: A4;
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--c-line-soft);
+}
+
 .brochure {
-  background: #d9dee4;
-  font-size: 10.5pt;
+  margin: 0;
+  color: var(--c-text-strong);
+  font-family: var(--font-sans);
+  font-size: 10pt;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+h1,
+h2,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+strong {
+  font-weight: 600;
 }
 
 .screen-note {
   max-width: 210mm;
   margin: 16px auto;
-  font-size: 15px;
+  color: var(--c-text);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.screen-note a {
+  color: var(--c-accent);
 }
 
 .sheets {
@@ -32,15 +103,18 @@
   height: 297mm;
   padding: 16mm 17mm 14mm;
   overflow: hidden;
-  background: var(--c-paper);
-  box-shadow: 0 4px 18px rgba(23, 42, 58, 0.18);
+  background: var(--c-bg);
   break-after: page;
 }
 
 .sheet h2 {
-  font-size: 20pt;
-  line-height: 1.2;
-  max-width: 28ch;
+  max-width: 24ch;
+  color: var(--c-text-strong);
+  font-size: 22pt;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .sheet-lead {
@@ -48,91 +122,164 @@
   max-width: 150mm;
   font-size: 12pt;
   line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.shot-frame {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--c-text-strong) 14%, transparent);
+  background: var(--c-bg);
 }
 
 .sheet .shot {
   margin-top: 7mm;
 }
 
-.sheet .shot-cap {
+.shot-cap {
   padding-top: 2mm;
+  color: var(--c-muted);
   font-size: 8.5pt;
   line-height: 1.45;
-}
-
-.sheet .shot-frame {
-  box-shadow: none;
 }
 
 .sheet-foot {
   position: absolute;
   left: 17mm;
   right: 17mm;
-  bottom: 12mm;
+  bottom: 11mm;
   padding-top: 3mm;
-  border-top: 1px solid var(--c-border);
+  border-top: 1px solid color-mix(in srgb, var(--c-text-strong) 14%, transparent);
+  color: var(--c-muted);
   font-size: 8pt;
   line-height: 1.45;
-  color: var(--c-ink-muted);
 }
 
-/* Cover */
+/* Cover: the site hero's pale blue, its gradient heading and a faint board-column texture. */
+.cover {
+  padding: 0;
+  background: var(--c-raised);
+  color: var(--c-text);
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='8'%3E%3Cpath d='M0.5 0V8' stroke='%23D5DEE8'/%3E%3C/svg%3E");
+  background-size: 22mm 8px;
+}
+
+.cover > * {
+  position: relative;
+}
+
 .b-wip {
   padding: 3mm 17mm;
-  background: var(--c-tint);
-  border-bottom: 1px solid var(--c-border);
-  font-size: 9pt;
+  border-bottom: 1px solid var(--c-line);
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-size: 8.5pt;
   line-height: 1.4;
-  color: var(--c-ink);
 }
 
 .b-wip strong {
-  color: var(--c-navy);
-}
-
-.cover {
-  padding: 0;
+  color: var(--c-text-strong);
+  font-weight: 500;
 }
 
 .cover-top {
-  padding: 14mm 17mm 11mm;
-  background: var(--c-navy);
-  color: var(--c-on-navy);
+  padding: 11mm 17mm 8mm;
 }
 
-.cover-top h1 {
-  color: var(--c-white);
-  font-size: 32pt;
-  line-height: 1.12;
-  max-width: 15ch;
+.cover-mark {
+  margin-bottom: 7mm;
+  color: var(--c-text-strong);
+  font-size: 10pt;
+  font-weight: 600;
+}
+
+.cover-mark span {
+  color: var(--c-accent);
+}
+
+.cover h1 {
+  background: linear-gradient(90deg, var(--c-text-strong), var(--c-muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 36pt;
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.cover h1 span {
+  display: block;
 }
 
 .cover-lead {
-  margin-top: 6mm;
+  margin-top: 5mm;
   max-width: 140mm;
-  font-size: 12.5pt;
+  color: var(--c-text);
+  font-size: 12pt;
   line-height: 1.5;
 }
 
 .cover-lead strong {
-  color: var(--c-white);
+  color: var(--c-text-strong);
 }
 
 .cover-shots {
   display: grid;
-  gap: 5mm;
-  padding: 7mm 17mm 0;
+  gap: 6mm;
+  padding: 2mm 17mm 0;
 }
 
-.cover-shots .shot {
+.cover .shot {
   margin-top: 0;
 }
 
-.cover .sheet-foot {
-  color: var(--c-ink-muted);
+.cover .shot-frame {
+  box-shadow: 0 0 0 1px var(--c-line);
 }
 
-/* Facts and rows */
+.cover .shot-cap {
+  color: var(--c-muted);
+}
+
+.cover .sheet-foot {
+  position: absolute;
+  color: var(--c-muted);
+  border-top-color: var(--c-line);
+}
+
+/* Interior */
+.b-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6mm;
+  margin-top: 7mm;
+}
+
+.b-benefits li {
+  padding-top: 3mm;
+  border-top: 2px solid var(--c-text-strong);
+  color: var(--c-muted);
+  font-size: 9.5pt;
+  line-height: 1.45;
+}
+
+.b-benefits strong {
+  display: block;
+  margin-bottom: 1.5mm;
+  color: var(--c-text-strong);
+  font-size: 10.5pt;
+  line-height: 1.3;
+}
+
 .b-cols {
   margin-top: 7mm;
   column-count: 2;
@@ -142,16 +289,12 @@
 .b-cols p {
   margin: 0 0 3mm;
   break-inside: avoid;
-}
-
-.b-rows dt {
-  font-weight: 600;
-  color: var(--c-navy);
+  text-wrap: pretty;
 }
 
 .b-h2 {
   margin-top: 6mm;
-  margin-bottom: 2.5mm;
+  margin-bottom: 3mm;
 }
 
 .sheet .b-h2 {
@@ -163,23 +306,21 @@
   margin-top: 5mm;
   border-collapse: collapse;
   table-layout: fixed;
-  background: var(--c-white);
-  border: 1px solid var(--c-border);
   font-size: 9.5pt;
   line-height: 1.45;
 }
 
 .b-table th,
 .b-table td {
-  padding: 2.5mm 3mm;
+  padding: 2.5mm 3mm 2.5mm 0;
   text-align: left;
   vertical-align: top;
 }
 
 .b-table thead th,
 .b-table thead td {
-  border-bottom: 2px solid var(--c-navy);
-  color: var(--c-navy);
+  border-bottom: 2px solid var(--c-text-strong);
+  font-size: 10pt;
   font-weight: 600;
 }
 
@@ -187,44 +328,92 @@
   width: 24%;
 }
 
+.b-table tbody tr {
+  border-bottom: 1px solid color-mix(in srgb, var(--c-text-strong) 14%, transparent);
+}
+
 .b-table tbody th {
-  color: var(--c-navy);
+  color: var(--c-muted);
+  font-weight: 500;
+}
+
+.b-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8mm;
+}
+
+.b-steps-title {
+  padding-bottom: 2mm;
+  border-bottom: 2px solid var(--c-text-strong);
+  font-size: 10.5pt;
   font-weight: 600;
 }
 
-.b-table tbody tr + tr {
-  border-top: 1px solid var(--c-border);
+.b-steps ol {
+  counter-reset: step;
 }
 
-.b-rows > div {
+.b-steps li {
+  position: relative;
+  padding: 2mm 0 2mm 7mm;
+  border-bottom: 1px solid color-mix(in srgb, var(--c-text-strong) 14%, transparent);
+  font-size: 9.5pt;
+  line-height: 1.45;
+  counter-increment: step;
+}
+
+.b-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 2mm;
+  color: var(--c-muted);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.b-rows div {
   display: grid;
-  grid-template-columns: 38mm 1fr;
+  grid-template-columns: 30mm minmax(0, 1fr);
   gap: 4mm;
-  padding-block: 1.5mm;
-  border-top: 1px solid var(--c-border);
+  padding-block: 2.2mm;
+  border-bottom: 1px solid color-mix(in srgb, var(--c-text-strong) 14%, transparent);
+  font-size: 9.5pt;
+  line-height: 1.45;
+}
+
+.b-rows dt {
+  font-weight: 600;
 }
 
 .b-next {
   margin-top: 5mm;
-  padding: 4mm 5mm;
-  background: var(--c-navy);
-  color: var(--c-on-navy);
-  border-radius: var(--radius-md);
-}
-
-.b-next strong {
-  color: var(--c-white);
+  padding: 4mm 7mm;
+  border-radius: 16px;
+  background: var(--c-raised);
+  color: var(--c-text);
+  font-size: 10pt;
 }
 
 .b-next-title {
-  margin-bottom: 1mm;
+  margin-bottom: 1.5mm;
+  color: var(--c-text-strong);
+  font-size: 13pt;
   font-weight: 600;
-  font-size: 12pt;
-  color: var(--c-white);
+  letter-spacing: -0.01em;
+}
+
+.b-next strong {
+  color: var(--c-accent);
+}
+
+.b-next a {
+  text-decoration: none;
 }
 
 @media print {
-  .brochure {
+  html {
     background: none;
   }
 
@@ -235,9 +424,5 @@
   .sheets {
     display: block;
     padding: 0;
-  }
-
-  .sheet {
-    box-shadow: none;
   }
 }

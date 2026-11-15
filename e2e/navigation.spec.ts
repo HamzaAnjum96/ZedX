@@ -40,7 +40,7 @@ test('Compare and Editions in the menu land on their sections from an app page',
 
 test('anchors used by earlier links still exist', async ({ page }) => {
   await page.goto('index.html');
-  for (const id of ['apps', 'workstreams', 'sprints', 'compare', 'leadership', 'adoption', 'platform', 'licensing', 'faq']) {
+  for (const id of ['apps', 'workstreams', 'sprints', 'how', 'compare', 'adoption', 'platform', 'licensing', 'faq']) {
     await expect(page.locator(`#${id}`), `#${id}`).toHaveCount(1);
   }
 });

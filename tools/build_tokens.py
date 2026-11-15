@@ -37,8 +37,11 @@ def render(tokens):
         lines.append("  --fs-%s: %s;" % (name, px(spec["size"])))
         lines.append("  --lh-%s: %s;" % (name, px(spec["line"])))
         lines.append("  --fw-%s: %s;" % (name, spec["weight"]))
-    for i, value in enumerate(tokens["space"]):
-        lines.append("  --space-%d: %s;" % (i, px(value)))
+    space = tokens["space"]
+    # A map uses the landing-page-design skill's names (25 = 2px ... 900 = 96px).
+    items = space.items() if isinstance(space, dict) else enumerate(space)
+    for name, value in items:
+        lines.append("  --space-%s: %s;" % (name, px(value)))
     for name, value in tokens["radius"].items():
         lines.append("  --radius-%s: %s;" % (name, px(value)))
     for name, value in tokens["shadow"].items():
