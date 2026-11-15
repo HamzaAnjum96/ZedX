@@ -71,6 +71,27 @@ test('the phone and tablet menu opens, closes with Escape and returns focus', as
   await expect(mainNav(page).getByRole('link', { name: 'Compare' })).toBeHidden();
 });
 
+// Chrome on Android lays a page out about 980px wide when "Desktop site" is on,
+// and a tablet on its side is 1024px. Both get the full navigation, on one line.
+for (const width of [980, 1024]) {
+  test(`at ${width}px the full navigation shows instead of the menu button`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto('agile-sprints.html');
+    await expect(page.getByRole('button', { name: 'Menu' })).toBeHidden();
+    for (const name of ['Group WorkStreams', 'Agile Sprints', 'Compare', 'Editions']) {
+      await expect(mainNav(page).getByRole('link', { name, exact: true })).toBeVisible();
+    }
+    await expect(mainNav(page).getByRole('link', { name: /Log in/ })).toBeVisible();
+    await expect(mainNav(page).getByRole('link', { name: 'Request a demo' })).toBeVisible();
+    const bar = await page.locator('.header-inner').boundingBox();
+    expect(bar!.height).toBeLessThanOrEqual(64);
+    expect(bar!.x).toBeGreaterThanOrEqual(0);
+    expect(bar!.x + bar!.width).toBeLessThanOrEqual(width);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(0);
+  });
+}
+
 test('the skip link jumps to the content', async ({ page }) => {
   await page.goto('workstreams.html');
   await page.keyboard.press('Tab');

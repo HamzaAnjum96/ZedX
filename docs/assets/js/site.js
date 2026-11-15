@@ -23,10 +23,10 @@ if (notice) {
   if ('ResizeObserver' in window) new ResizeObserver(setOffset).observe(notice);
 }
 
-// ---------- Menu: a full height panel below 1100px ----------
+// ---------- Menu: a full height panel below 960px ----------
 const toggle = document.querySelector('[data-menu-toggle]');
 const nav = toggle && document.getElementById(toggle.getAttribute('aria-controls'));
-const wide = window.matchMedia('(min-width: 1100px)');
+const wide = window.matchMedia('(min-width: 960px)');
 
 function setMenu(open, { focusToggle = false } = {}) {
   toggle.setAttribute('aria-expanded', String(open));

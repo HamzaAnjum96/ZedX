@@ -92,7 +92,7 @@ six-question FAQ and the closing panel.
 
 ## Components
 
-- **Header:** a floating, frosted white bar (`.header-inner`, `shadow-bar`) under the work-in-progress strip. The wordmark is the two product names with "From a ZedX referral partner" in small type. Below 1100px the navigation becomes a full-height menu with staggered links; the page behind it is made inert.
+- **Header:** a floating, frosted white bar (`.header-inner`, `shadow-bar`) under the work-in-progress strip. The wordmark is the two product names with "From a ZedX referral partner" in small type. Below 960px the navigation becomes a full-height menu with staggered links; the page behind it is made inert. From 960px the full navigation shows, so a phone in "desktop site" mode (about 980px) gets it, and up to 1100px the bar is tightened (smaller gaps, "Log in" for "Log in to ZedX").
 - **Buttons:** accent pill (primary), quiet link with an icon (secondary). Minimum height 44px.
 - **Screenshot figure** (`.shot`): white frame, 1px line, 12px radius, `shadow-frame`. Images are `<picture>` with a `-sm` detail crop up to 640px, width and height, srcset and sizes, lazy below the fold. Captions are one or two plain sentences naming the app, then "View full screen".
 - **Viewer:** a `<dialog>` with a visible Close button, Escape to close, focus returned, fit and actual size. Without JavaScript the link opens the image.

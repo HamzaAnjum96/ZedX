@@ -60,6 +60,7 @@ export async function settle(page: Page) {
   });
 }
 
-export const isNarrow = (page: Page) => (page.viewportSize()?.width ?? 1440) < 1100;
+// The menu button replaces the navigation below 960px (see the header rules in site.css).
+export const isNarrow = (page: Page) => (page.viewportSize()?.width ?? 1440) < 960;
 
 export { expect };

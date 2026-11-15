@@ -579,7 +579,7 @@ a:hover {
   color: var(--c-text-strong);
 }
 
-@media (max-width: 1099px) {
+@media (max-width: 959px) {
   .js .menu-toggle {
     display: inline-flex;
   }
@@ -666,11 +666,36 @@ a:hover {
   .nav-actions li:nth-child(2) { --i: 5; }
 }
 
-@media (min-width: 1100px) {
+/* The full navigation from 960px, so a phone in "desktop site" mode (laid out
+   about 980px wide) and a tablet on its side get it too. Up to 1100px the bar
+   is tightened to fit: smaller gaps and a shorter login label. */
+@media (min-width: 960px) {
   .header-inner {
     width: fit-content;
     max-width: calc(100% - 2 * var(--space-100));
     gap: var(--space-400);
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1099px) {
+  .header-inner {
+    gap: var(--space-200);
+  }
+
+  .site-nav {
+    gap: var(--space-100);
+  }
+
+  .nav-list a {
+    padding-inline: var(--space-75);
+  }
+
+  .nav-actions {
+    gap: var(--space-100);
+  }
+
+  .nav-login-more {
+    display: none;
   }
 }
 
