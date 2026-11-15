@@ -11,7 +11,6 @@ Sources:
 | APP | https://www.zedxapps.com/Applications/index.html (rewritten in November 2026, with an FAQ) |
 | GW | https://www.zedxapps.com/GroupWorkStreams/Index.html (modules table and FAQ added in November 2026) |
 | AS | https://www.zedxapps.com/AgileSprints/Index.html (modules table and FAQ added in November 2026) |
-| PP | https://www.zedxapps.com/ProjectPortfolios/Index.html (modules table and FAQ added in November 2026) |
 | PLAT | https://www.zedxapps.com/Platform/index.html (FAQ added in November 2026) |
 | ED | https://www.zedxapps.com/Editions/index.html (new in November 2026) |
 | TRY | https://www.zedxapps.com/Try/index.html, the "Demo/Trial" page (new in November 2026) |
@@ -45,7 +44,6 @@ Confidence is **high** for every published row: each is stated on the official p
 | W6 | The workstreams list shows portfolio, active epics, active tasks, type and owners | DEMO | I W B |
 | W7 | The Insights dashboard charts work items per workstream a user can access, critical and non-critical | DEMO, GW (Insights module) | I W B |
 | W8 | Can run alongside Agile Sprints for mixed delivery models, keeping operational and ad-hoc work out of the sprint | AS | I W A B |
-| W9 | Project workstreams in Project Portfolios can be linked to it, with progress summarised through structured project updates; Project Portfolios shows high-level progress while the detail stays in Group WorkStreams | PP, GW | I W B |
 | W10 | A workstream can be shown as a simple list, a Kanban board or a timeline; stages, fields and priorities can be changed | GW | I W B |
 | W11 | Dashboards show workload, progress and bottlenecks across workstreams; managers can see workload pressures and bottlenecks without asking each team member for updates, and teams still organise their own work | GW | I W B |
 | W12 | Role-based permissions; the Workstream Users module manages each workstream's team, owners and access | GW | W |
@@ -73,7 +71,6 @@ Confidence is **high** for every published row: each is stated on the official p
 | A8 | Metrics: sprint completion, velocity and carried-over work, with trends across sprints | AS | I A B |
 | A9 | Metrics are meant to inform teams and encourage learning, and help them estimate more accurately | AS | A |
 | A10 | Role-based permissions; workstream access can be view-only | AS | A |
-| A11 | Used on its own, or linked to Project Portfolios; sprint progress summarised through periodic updates without task-level detail | AS, PP | I A B |
 | A12 | Backlog stages Ideas & Intake, Refinement Needed, Ready for Sprint; epics on a week-by-week timeline | DEMO | I A B |
 | A13 | A project holds several workstreams (Agile boards), each with its own epics, sprints, work items and team, so different teams manage their own backlogs and sprints; portfolios group related projects | AS (modules, FAQ) | A |
 | A14 | Epics have owners, priorities and delivery dates, and appear on Gantt charts | AS (Epics module) | I A B |
@@ -82,20 +79,6 @@ Confidence is **high** for every published row: each is stated on the official p
 | A17 | Insights dashboards and delivery metrics show which workstreams need management attention | AS (Insights module) | A |
 | A18 | Includes Ask Cloe, the AI assistant: ask questions and get guidance on Agile and Scrum work | AS (modules, FAQ) | I A |
 | A19 | Currently included in the Professional and Group editions (not Home); Corporate, Enterprise and Enterprise Plus give access to every ZedX app | ED | I A B |
-
-## Project Portfolios (supporting role, index and brochure)
-
-| ID | claim as published | source |
-| --- | --- | --- |
-| P1 | A separate ZedX app where leaders follow delivery across portfolios, programmes and projects | PP |
-| P2 | Structured updates from project managers at agreed intervals, such as monthly or quarterly, in a consistent format | PP |
-| P3 | Updates include delivery confidence as a RAG status, narrative progress, key achievements, blockers, risks, dependencies and support required | PP |
-| P4 | Dashboards of delivery health across portfolios, programmes and projects; trends show whether confidence is improving, stable or deteriorating | PP |
-| P5 | Also: vision and objectives, portfolio-level Gantt view, export to Excel, benefits tracking after delivery | PP |
-| P6 | Progress from linked workstreams arrives through periodic updates, not task-level detail | PP, AS |
-| P7 | Built for project management offices (PMOs), programme managers and senior leadership teams | PP (FAQ) |
-| P8 | Automatic reminders for updates reduce the effort of chasing them | PP (FAQ) |
-| P9 | Financial information at project, programme and portfolio level | PP (modules, FAQ) |
 
 ## Platform, editions, hosting and licensing
 
@@ -170,7 +153,7 @@ Checked on 2026-11-08.
 | UK data storage and processing | G-Cloud 14 listing (2024) only | not on current official pages; confirm with Swiftpro |
 | Fully usable in a mobile browser | G-Cloud 14 listing only | as above |
 | Power BI integration | G-Cloud 14 listing only | as above |
-| CSV import, Excel/PDF export platform-wide | G-Cloud 14 listing only | narrowed: Excel export is stated for Project Portfolios only |
+| CSV import, Excel/PDF export platform-wide | G-Cloud 14 listing only | left off: Excel export is stated for Project Portfolios only, which is out of scope |
 | Two-factor authentication, Cyber Essentials, support hours | G-Cloud 14 listing only | not confirmed current |
 | Prices (from £150 per 10 users per month, May 2024) | G-Cloud 14 pricing document | may be out of date; the site asks visitors to ask Swiftpro for pricing |
 | A sign-up link for the free trial | none published | the TRY page lists the trial as "Available from Nov 2026" with no link; the site tells visitors to ask Swiftpro |
@@ -179,6 +162,7 @@ Checked on 2026-11-08.
 | "Days" on Group WorkStreams cards, and the red counts in the workstreams list's Active Tasks column | DEMO | no official page explains them, so screenshots show them without comment |
 | Agile Sprints Insights screens | DEMO | the demo's Agile Sprints Insights page has no data; the dashboards are described in text only |
 | Books by Swiftpro consultants (Resources page) | Resources | out of scope for an app site |
+| Project Portfolios, and linking workstreams or sprints to it (formerly P1 to P9, W9 and A11) | PP, APP | out of scope since November 2026: the site covers Group WorkStreams and Agile Sprints only |
 | The other ZedX apps (Risk Registers, Audit Actions, Governance Statements, Management Controls, Contingent Labour) | APP and their own pages | out of scope, except where the Group WorkStreams page names audit and governance work (W14) |
 | Any customer name, count, quote, rating or outcome | none | none are public; nothing invented |
 | Competitor comparisons | earlier research (`fixes.md`) | not supported by official sources; removed in the redesign |

@@ -1,12 +1,11 @@
-# Group WorkStreams & Agile Sprints: independent promotional site
+# Group WorkStreams & Agile Sprints: a ZedX referral partner site
 
-A GitHub Pages site promoting two ZedX apps. Both come from Swiftpro
-Corporation Ltd; this site is run by an independent promotional partner, not
-by Swiftpro.
+A GitHub Pages site introducing two ZedX apps. Both come from Swiftpro
+Corporation Ltd; this site is run by a ZedX referral partner, not by Swiftpro.
+Demo requests go to Swiftpro's own contact form through one tracked link.
 
 - **Group WorkStreams:** continuous operational work, organised as workflows on Kanban boards.
 - **Agile Sprints:** planned Scrum delivery, organised through backlogs and sprints.
-- **Project Portfolios** appears in a supporting role, as the place where leadership follows delivery through periodic updates.
 
 **Live:** https://hamzaanjum96.github.io/ZedX/
 
@@ -20,16 +19,16 @@ at the top; `DEVELOPER-NOTES.md` explains how to remove it.
 
 | file | what |
 | --- | --- |
-| `index.html` | both apps, comparison, leadership reporting, editions, sign-in and hosting, FAQ |
+| `index.html` | both apps, how the work moves (tabs), comparison, editions, access and hosting, FAQ |
 | `workstreams.html`, `agile-sprints.html` | one page per app, built around its screens, ending with an FAQ |
 | `brochure.html`, `brochure.pdf` | print layout and the 4-page A4 PDF made from it |
 | `legal.html`, `privacy.html` | legal notice (who runs the site, how far to rely on it, who owns the names) and privacy policy |
 | `404.html` | shown by GitHub Pages for any missing address |
-| `assets/` | `css/tokens.css` (generated), `css/site.css`, `css/brochure.css`, `js/site.js` (menu and screenshot viewer), IBM Plex fonts, icons, screenshots, favicon, social card |
+| `assets/` | `css/tokens.css` (generated), `css/site.css`, `css/brochure.css`, `js/site.js` (menu, reveals, tagline, tabs and screenshot viewer), Geist fonts, Phosphor icons, screenshots, favicon, social card |
 
 ## Read next
 
-- **[BRAND.md](BRAND.md):** tokens, typography, composition, components and voice.
+- **[BRAND.md](BRAND.md):** the light "Daylight" identity: tokens, type, motion, composition, components and voice.
 - **[DEVELOPER-NOTES.md](DEVELOPER-NOTES.md):**
   - commands and official source URLs;
   - the screenshot-to-app mapping;
@@ -71,6 +70,13 @@ and the before-and-after audit is in `replica/copy-review.md`. All of the text
 was rewritten again in November 2026, after Swiftpro's second update to
 zedxapps.com (new Editions and Demo/Trial pages, modules tables and FAQs).
 
+The November 2026 redesign used the `landing-page-design` skill from
+[ai-design-skills](https://github.com/elayadesign/ai-design-skills) (MIT),
+vendored in `.claude/skills/landing-page-design/`: Geist type on a named
+scale, one easing curve, scroll reveals, a floating header and a light theme
+close to the official ZedX site. Project Portfolios left the site's scope at
+the same time.
+
 Files under `replica/` from the first build that describe the earlier site are
 kept for history and marked as superseded:
 
@@ -82,8 +88,9 @@ kept for history and marked as superseded:
 
 ## Credits and licences
 
-- Font: [IBM Plex Sans](https://github.com/IBM/plex), SIL Open Font License (`docs/assets/fonts/OFL-IBM-Plex-Sans.txt`).
+- Font: [Geist](https://vercel.com/font), SIL Open Font License (`docs/assets/fonts/OFL-Geist.txt`).
+- Design skill: `landing-page-design` from [ai-design-skills](https://github.com/elayadesign/ai-design-skills), MIT, Elaya (`.claude/skills/AI-DESIGN-SKILLS-LICENSE`).
 - Copywriting skills: `copywriting` and `copy-editing` from [marketingskills](https://github.com/coreyhaines31/marketingskills), MIT, Corey Haines (`.claude/skills/MARKETINGSKILLS-LICENSE`).
-- Icons: [Lucide](https://lucide.dev), ISC License (`docs/assets/img/LICENSE-lucide.txt`).
+- Icons: [Phosphor](https://phosphoricons.com), MIT License (`docs/assets/img/LICENSE-phosphor.txt`).
 - Replica skill pack: MIT, Jake Schincariol (`.claude/skills/REPLICA-LICENSE`).
-- ZedX, ZedX Apps, Group WorkStreams, Agile Sprints and Project Portfolios are products of Swiftpro Corporation Ltd. Screenshots show the ZedX demo environment with its sample data.
+- ZedX, ZedX Apps, Group WorkStreams and Agile Sprints are products of Swiftpro Corporation Ltd. Screenshots show the ZedX demo environment with its sample data.

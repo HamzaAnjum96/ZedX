@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// Capture real screens of Group WorkStreams, Agile Sprints and Project
-// Portfolios from the public ZedX demo (https://demo.zedx.net/) and write
+// Capture real screens of Group WorkStreams and Agile Sprints from the
+// public ZedX demo (https://demo.zedx.net/) and write
 // web-ready WebP crops to docs/assets/img/screens/.
 //
 //   npm run screens                        capture every screen, then encode
-//   npm run screens -- --only pp-insights  capture just these screens, then encode all
+//   npm run screens -- --only as-epics     capture just these screens, then encode all
 //   npm run screens -- --encode-only       re-encode the last capture (tools/.screens-src/)
 //
 // Read-only: it presses the demo's own "Continue" and pre-filled "Login"
@@ -109,17 +109,6 @@ export const SHOTS = [
       full: FULL,
       timeline: { x: 238, y: 52, w: 1362, h: 388 },
       start: { x: 238, y: 52, w: 662, h: 310 },
-    },
-  },
-  {
-    name: 'pp-insights',
-    app: 'Project Portfolios',
-    view: 'Insights: Project Portfolios Dashboard A',
-    hash: '#/a2/insights',
-    wait: 7000,
-    crops: {
-      full: FULL,
-      chart: { x: 234, y: 60, w: 562, h: 568 },
     },
   },
 ];

@@ -16,7 +16,7 @@ writing rules are in `BRAND.md`.
 | e2e + axe at 1440, 768 and 390px | `npm install` then `npm test` |
 | PDF brochure, social card, touch icon | `npm run pdf` |
 | check the official pages still back every claim | `python3 tools/check_sources.py` (`--verbose` lists each phrase) |
-| recapture or re-crop screenshots | `npm run screens` (all), `npm run screens -- --only pp-insights`, `npm run screens -- --encode-only` |
+| recapture or re-crop screenshots | `npm run screens` (all), `npm run screens -- --only as-epics`, `npm run screens -- --encode-only` |
 | preview images of the site (`previews/`, not published) | `npm run previews` |
 
 If the Chromium on your machine doesn't match the pinned Playwright version,
@@ -53,8 +53,7 @@ The earlier site's copy was treated as material to review, not as proof.
 | --- | --- | --- |
 | Applications overview (rewritten in November 2026) | https://www.zedxapps.com/Applications/index.html | Group WorkStreams' "flexible Kanban boards"; Agile Sprints' "automated stand-up reporting"; each app works on its own or with others, on shared organisational structures, user management and permissions; Apps on Demand |
 | Group WorkStreams | https://www.zedxapps.com/GroupWorkStreams/Index.html | who it suits and "without the overhead of formal project management or Agile ceremonies"; lists, Kanban boards or timeline views; adaptable stages, fields and priorities; dashboards of workload, progress and bottlenecks; linking to Agile Sprints without duplicating data; audit and governance work; ZedX Study Planner. Modules table (November 2026): portfolios, workstream users, epics, work items with difficulty points, the Backlog, Current Stages, Epic and Archived views, Insights, Ask Cloe. FAQ: replacing spreadsheets, managers seeing workload without asking for updates, blocked work, Cloe AI |
-| Agile Sprints | https://www.zedxapps.com/AgileSprints/Index.html | the Agile Sprints feature list; periodic updates to Project Portfolios "without exposing task-level detail"; Group WorkStreams alongside for mixed delivery. Modules table (November 2026): projects holding several Agile boards, epics with owners, priorities, delivery dates and Gantt charts, timeboxed sprints with velocity targets that are formally closed, six board views, view-only access, Insights, Ask Cloe. FAQ: software, technology projects and other Agile work; several teams; velocity; Cloe AI |
-| Project Portfolios | https://www.zedxapps.com/ProjectPortfolios/Index.html | the leadership section: structured periodic updates (monthly or quarterly) and their contents, dashboards and trends, Gantt view, Excel export, reminders, benefits; project workstreams linked to Group WorkStreams or Agile Sprints. November 2026: PMOs, programme managers and senior leadership; financials at project, programme and portfolio level; reminders that cut the chasing |
+| Agile Sprints | https://www.zedxapps.com/AgileSprints/Index.html | the Agile Sprints feature list; Group WorkStreams alongside for mixed delivery. Modules table (November 2026): projects holding several Agile boards, epics with owners, priorities, delivery dates and Gantt charts, timeboxed sprints with velocity targets that are formally closed, six board views, view-only access, Insights, Ask Cloe. FAQ: software, technology projects and other Agile work; several teams; velocity; Cloe AI |
 | Platform | https://www.zedxapps.com/Platform/index.html | Entra ID single sign-on, role-based and granular permissions that follow the organisation's hierarchy, one login and interface, start with one app, Enterprise integration, Apps on Demand, demo and trial. FAQ (November 2026): React, C# and .NET, SQL Server, Azure and APIs; Cloe AI "using OpenAI technology"; other editions hosted by ZedX; integrations assessed and agreed |
 | Editions (new in November 2026) | https://www.zedxapps.com/Editions/index.html | the six editions (Home, Professional, Group, Corporate, Enterprise, Enterprise Plus), which apps each includes, how each is licensed, 1 to 50 users for Professional and Group, which editions ZedX hosts and which can run in the customer's own Azure or other agreed infrastructure |
 | Demo/Trial (new in November 2026) | https://www.zedxapps.com/Try/index.html | the demo account is created automatically; the free trial uses a registration wizard, lets you choose apps, needs no credit card and is "Available from Nov 2026". No sign-up link yet |
@@ -92,11 +91,12 @@ title, columns), not from file names.
 | `as-sprint` | Agile Sprints | Current Sprint (3 - Attendance Capture) | stages On Hold, Not Started, In Progress, Completed Unverified, Completed Verified; epic IDs, priority, story points; the Backlog, Current Sprint, Planned Sprints, Historic Sprints, Epics and Archived views in the side menu | `full`, `strip`, `wide`, `sm` | index hero; agile-sprints.html hero; social card; PDF cover |
 | `as-backlog` | Agile Sprints | Backlogs | stages Ideas & Intake, Refinement Needed, Ready for Sprint; epics E001–E006; story points | `full`, `board`, `refine`, `sm` | index Agile Sprints; agile-sprints.html "Plan from a prioritised backlog"; PDF p3 |
 | `as-epics` | Agile Sprints | Epics, Gantt view | six epics on a week-by-week Gantt chart, January to March 2026 | `full`, `timeline`, `start` | index Agile Sprints (hidden on phones); agile-sprints.html "See epics over time" |
-| `pp-insights` | Project Portfolios | Insights: Project Portfolios Dashboard A | RAG ratings by indicator across the college group's projects | `full`, `chart` | index leadership section only (supporting role) |
 
 Group WorkStreams' own "Portfolios" view (which groups workstreams by
 function) was captured earlier, then dropped. It could be mistaken for the
-Project Portfolios app.
+Project Portfolios app, which is outside this site's scope (since November
+2026 the site covers Group WorkStreams and Agile Sprints only, and the
+`pp-insights` screenshots were deleted).
 
 ## Unresolved claims and assets (for Swiftpro or the site owner)
 
@@ -109,7 +109,7 @@ The items below are not on the current official pages, or only appear in the
 - **Devices:** full use in a mobile browser.
 - **Integrations and formats:**
   - Power BI integration.
-  - CSV import and Excel/PDF export as platform-wide features. Excel export is stated only for Project Portfolios, and is described there as such.
+  - CSV import and Excel/PDF export as platform-wide features. Excel export is stated only for Project Portfolios, which is out of scope.
 - **Security:** two-factor authentication and Cyber Essentials.
 - **Commercial terms:** support hours and response times. (The free trial is on zedxapps.com, so the site mentions it.)
 - **Prices:** zedxapps.com says pricing is available in several currencies but shows no figures. The only public figures are G-Cloud 14 prices from May 2024.
@@ -117,7 +117,7 @@ The items below are not on the current official pages, or only appear in the
 
 ### Reporting claims
 
-- **"Automated reporting":** only Agile Sprints' "online automated stand-ups reporting" and Project Portfolios' "automatic reminders" are stated. Nothing on the site says leadership reporting is automatic or real-time.
+- **"Automated reporting":** only Agile Sprints' "automated stand-up reporting" is stated. Nothing on the site says leadership reporting is automatic or real-time.
 - **"Real time":** used only for Agile Sprints sprint progress, as its page states.
 
 ### Demo and assets
@@ -128,7 +128,8 @@ The items below are not on the current official pages, or only appear in the
   - No official logo files are in the repository, and none are used outside the screenshots.
   - The product logos inside screenshots are untouched.
   - If Swiftpro supplies logos and permission, use them unchanged.
-- **Partner identity:** the site's owner has no verified name or logo yet. The header uses a text wordmark plus "Independent promotional site". Add the partner's real name to the footer attribution when it is confirmed.
+- **Partner identity:** the site's owner is a ZedX referral partner with no published name or logo yet. The header uses a text wordmark plus "From a ZedX referral partner". Add the partner's real name to the footer when it is confirmed.
+- **Referral tracking:** zedxapps.com is linked only through the demo request (`https://www.zedxapps.com/index.html#formContact`), on every page and in the brochure, so introductions can be tracked. If Swiftpro issues a partner-specific link or code, replace that URL everywhere and update `DEMO_FORM` in `e2e/fixtures.ts`; a test fails on any other zedxapps.com link.
 - **Screenshot gaps:**
   - The demo's Agile Sprints Insights page has no data, so velocity, completion and carried-over metrics have no screenshot and are described in text only.
   - Releases have no screenshot either.

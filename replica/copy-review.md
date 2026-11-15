@@ -117,3 +117,15 @@ Scores for the home page after edits, out of 10:
 
 - No customer quotes or numbers exist, so the copy has no social proof. That is on purpose: none have been invented.
 - If Swiftpro confirms more facts (for example UK hosting or mobile use), add them to `claims.md` first, then to the copy.
+
+## November 2026: referral partner voice and the light redesign
+
+The owner asked for four changes, now on every page and in the brochure:
+
+- **Referral partner, said with finesse.** "Independent promotional site" became "From a ZedX referral partner". The hero says "This site comes from a ZedX referral partner. We make the introduction, and Swiftpro Corporation Ltd, the company that makes ZedX, takes it from there." The FAQ and the legal notice add that the partner may be rewarded when an introduction becomes a customer.
+- **No source dating outside the legal notice.** Lines such as "These details come from the official ZedX website, checked on…" were removed.
+- **A short footer.** One sentence on who runs the site and three links. The list of official sources went.
+- **One way to zedxapps.com.** The only link is the demo request (`#formContact`), so introductions can be tracked; "Read about … on zedxapps.com" links went.
+
+Project Portfolios left the site's scope, with its section, screenshots and claims.
+

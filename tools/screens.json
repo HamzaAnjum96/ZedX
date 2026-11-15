@@ -567,58 +567,6 @@
           ]
         }
       }
-    },
-    {
-      "name": "pp-insights",
-      "app": "Project Portfolios",
-      "view": "Insights: Project Portfolios Dashboard A",
-      "demo": "https://ztd01.zedx.net/?c=_CollegeDemo01-z#/a2/insights",
-      "crops": {
-        "full": {
-          "area": {
-            "x": 0,
-            "y": 0,
-            "w": 1600,
-            "h": 1000
-          },
-          "files": [
-            {
-              "file": "pp-insights-full-1600.webp",
-              "width": 1600,
-              "height": 1000,
-              "kb": 34
-            },
-            {
-              "file": "pp-insights-full-2400.webp",
-              "width": 2400,
-              "height": 1500,
-              "kb": 58
-            }
-          ]
-        },
-        "chart": {
-          "area": {
-            "x": 234,
-            "y": 60,
-            "w": 562,
-            "h": 568
-          },
-          "files": [
-            {
-              "file": "pp-insights-chart-562.webp",
-              "width": 562,
-              "height": 568,
-              "kb": 13
-            },
-            {
-              "file": "pp-insights-chart-1124.webp",
-              "width": 1124,
-              "height": 1136,
-              "kb": 28
-            }
-          ]
-        }
-      }
     }
   ]
 }

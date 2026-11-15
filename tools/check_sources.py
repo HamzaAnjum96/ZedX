@@ -48,7 +48,6 @@ SOURCES = [
         ('W3', 'administrative, operational, service and departmental teams'),
         ('W3', 'routine activities and unexpected requests'),
         ('W5', 'set priorities and difficulty points'),
-        ('W9', 'high-level progress can be referenced within project portfolios'),
         ('W10', 'simple lists, kanban-style boards, or timeline views'),
         ('W10', 'stages, fields, and priorities can be adapted'),
         ('W11', 'visibility of workload, progress, and bottlenecks across work streams'),
@@ -86,7 +85,6 @@ SOURCES = [
         ('A9', 'improve estimation accuracy'),
         ('A10', 'control access using role-based permissions'),
         ('A10', 'view-only permissions'),
-        ('A11', 'sprint progress is summarised through periodic updates without exposing task-level detail'),
         ('A13', 'each containing multiple workstreams (agile boards)'),
         ('A13', 'manage their own backlogs, sprints and delivery activities'),
         ('A14', 'assign owners, set priorities and delivery dates'),
@@ -97,22 +95,6 @@ SOURCES = [
         ('A17', 'identify workstreams requiring management attention'),
         ('A18', 'agile sprints benefits from cloe ai'),
         ('W8', 'operational and ad-hoc work to be managed separately'),
-    ]),
-    ('PP', ZEDX + 'ProjectPortfolios/Index.html', [
-        ('P1', 'portfolios, programmes, and projects'),
-        ('P2', 'monthly or quarterly'),
-        ('P3', 'delivery confidence using rag status, narrative progress, key achievements, '
-               'blockers, risks, dependencies, and support required'),
-        ('P4', 'improving, stable, or deteriorating'),
-        ('P5', 'portfolio-level gantt view'),
-        ('P5', 'export project and portfolio data to excel'),
-        ('P5', 'manage and track project benefits after delivery'),
-        ('P6', 'periodic reporting rather than task-level detail'),
-        ('P7', 'project management offices (pmos), programme managers and senior leadership teams'),
-        ('P8', 'automated reminders help encourage timely reporting and reduce the administrative '
-               'effort involved in chasing updates'),
-        ('P9', 'financial management capabilities at project, programme and portfolio levels'),
-        ('W9', 'project workstreams can be linked to group workstreams'),
     ]),
     ('PLAT', ZEDX + 'Platform/index.html', [
         ('L1', 'microsoft entra id provides single sign-on'),

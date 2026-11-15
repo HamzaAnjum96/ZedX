@@ -5,19 +5,24 @@ anything for this site.
 
 ## Who is writing
 
-The site is run by an independent promotional partner of ZedX. We do not develop, own or support ZedX:
-Swiftpro Corporation Ltd (London) does. Say so plainly near the top of every page and in the footer.
+The site is run by a ZedX referral partner. We introduce organisations to ZedX; we do not develop, own or
+support it. Swiftpro Corporation Ltd (London) does. Say so with a light touch, never as a disclaimer shouted
+at the reader: "From a ZedX referral partner" in the header, one sentence in the hero ("We make the
+introduction, and Swiftpro… takes it from there."), the footer, and a fuller answer in the FAQ and the legal
+notice, which also say we may be rewarded when an introduction becomes a customer.
 
 - **Never** write "our software", "our platform" or "we built".
-- **"We"** means the promotional partner. Use it only where the site explains who runs it.
+- **"We"** means the referral partner. Use it only where the site explains who runs it.
 - **No invented names:** no business name or logo for the partner is verified yet, so don't invent one.
+- **Links to zedxapps.com go only through the demo request link** (`https://www.zedxapps.com/index.html#formContact`), so referrals can be tracked. Name zedxapps.com in text if needed, without linking it.
+- **No source lists or "checked on" dates** outside the legal notice.
 
-## What we promote
+## What we introduce
 
 - **Group WorkStreams.** Continuous, operational work, without the overhead of a project plan or sprints. Each function of an organisation (complaints, catering, HR requests, finance queries) gets its own workstream, with its own team and a Kanban board with stages set for that workstream. Work items carry a reference, a priority and difficulty points. A workstream can also be a simple list or a timeline, and dashboards show workload, progress and bottlenecks, so managers don't have to ask each person for an update. Swiftpro says it can replace the spreadsheets teams use to track this work. Currently in the Home, Professional and Group editions.
 - **Agile Sprints.** Planned Scrum delivery for teams delivering software, technology projects and other work: epics (with owners, priorities, delivery dates and a Gantt chart) and user stories in a prioritised backlog, story points and team capacity, timeboxed sprints with velocity targets on a configurable board, stand-ups and sprint reviews, releases across sprints, and metrics for completion, velocity and carried-over work. A project can hold several Agile boards, one per team. Currently in the Professional and Group editions (not Home).
 - **Both apps** include Ask Cloe, the Cloe AI assistant, which Swiftpro says uses OpenAI technology. Both are available in Corporate, Enterprise and Enterprise Plus.
-- **Project Portfolios** (supporting role only). Where leaders follow delivery through structured updates that project managers submit at agreed intervals, such as monthly or quarterly. It is not a real-time feed of tasks.
+- **Out of scope:** Project Portfolios and the other ZedX apps. Leave them off.
 
 ## Audience
 
